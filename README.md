@@ -111,6 +111,6 @@ All versions and what changed in each are on the **[releases page](https://githu
 
 <div align="center">
 
-© 2026 Kai Rijswijk · Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.
+© 2026 TheFactoryGuy · Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.
 
 </div>
