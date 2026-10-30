@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coodoo · Your idea, built by Claude Code and Codex</title>
+<meta name="description" content="A software team on your own computer. You say what you want; Claude Code and Codex research, design, build, test and review it, and put it on GitHub.">
+<meta property="og:title" content="Coodoo">
+<meta property="og:description" content="Your idea, built by Claude Code and Codex. A software team on your own computer, made for people with ideas.">
+<meta property="og:image" content="https://thefactoryguy.github.io/coodoo-releases/assets/logo.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-2: #f6f7fb;
+    --card: #ffffff;
+    --text: #14151a;
+    --text-2: #4b4f5c;
+    --muted: #6f7380;
+    --border: #e6e8ef;
+    --blue: #2f6bff;
+    --violet: #8b3dff;
+    --cyan: #19c3f5;
+    --grad: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 45%, var(--violet) 100%);
+    --shadow: 0 18px 50px rgba(40, 60, 140, .12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0e14;
+      --bg-2: #13141c;
+      --card: #171925;
+      --text: #f2f3f7;
+      --text-2: #c3c6d2;
+      --muted: #8d91a1;
+      --border: #262938;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .45);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, -apple-system, 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  html[data-lang="en"] [lang="nl"], html[data-lang="nl"] [lang="en"] { display: none !important; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* top bar */
+  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--border); }
+  .top .wrap { display: flex; align-items: center; gap: 18px; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; text-decoration: none; }
+  .brand img { width: 32px; height: 32px; }
+  .nav { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; color: var(--text-2); }
+  .nav a { text-decoration: none; }
+  .nav a:hover { color: var(--text); }
+  .lang { display: flex; border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
+  .lang button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; cursor: pointer; }
+  .lang button.on { background: var(--text); color: var(--bg); }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; padding: 96px 0 72px; text-align: center; }
+  .hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; z-index: -1; }
+  .hero::before { width: 520px; height: 520px; left: -140px; top: -200px; background: var(--cyan); }
+  .hero::after { width: 560px; height: 560px; right: -160px; top: -120px; background: var(--violet); }
+  .hero img.logo { width: 112px; height: 112px; filter: drop-shadow(0 18px 40px rgba(47, 107, 255, .35)); }
+  .hero h1 { margin: 26px auto 14px; max-width: 860px; font-size: clamp(38px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035em; font-weight: 800; }
+  .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p.lead { margin: 0 auto; max-width: 660px; font-size: clamp(17px, 2.2vw, 20px); color: var(--text-2); }
+  .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 15.5px; text-decoration: none; border: 1px solid var(--border); background: var(--card); color: var(--text); transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn.primary { background: var(--grad); color: #fff; border: 0; box-shadow: 0 12px 30px rgba(47, 107, 255, .35); }
+  .btn svg { width: 18px; height: 18px; }
+  .meta { margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+
+  /* sections */
+  section { padding: 84px 0; }
+  section.alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .kicker { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+  h2 { margin: 10px 0 14px; font-size: clamp(28px, 4vw, 40px); line-height: 1.15; letter-spacing: -.025em; }
+  .intro { max-width: 720px; color: var(--text-2); font-size: 17.5px; margin: 0 0 44px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 24px; }
+  .card .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-size: 21px; background: color-mix(in srgb, var(--blue) 12%, transparent); margin-bottom: 14px; }
+  .card h3 { margin: 0 0 6px; font-size: 17.5px; letter-spacing: -.01em; }
+  .card p { margin: 0; color: var(--text-2); font-size: 15px; }
+
+  /* steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; counter-reset: step; }
+  .step { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 20px 20px; }
+  .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--grad); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+  .step b { display: block; margin-bottom: 4px; }
+  .step span { color: var(--text-2); font-size: 14.5px; }
+
+  /* flow illustration */
+  .flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 6px 0 34px; }
+  .chip { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); font: 600 14px/1 ui-monospace, 'SF Mono', Menlo, monospace; }
+  .chip.first { border-color: var(--blue); color: var(--blue); }
+  .arrow { color: var(--muted); font-size: 20px; }
+
+  /* safety */
+  .safety { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .safe { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 14px; background: var(--card); border: 1px solid var(--border); font-size: 15px; color: var(--text-2); }
+  .safe b { color: var(--text); }
+  .safe .ok { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #19b36b; color: #fff; font-size: 13px; font-weight: 800; }
+
+  /* requirements */
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  td { padding: 16px 20px; border-top: 1px solid var(--border); vertical-align: top; font-size: 15.5px; }
+  tr:first-child td { border-top: 0; }
+  td:first-child { width: 34%; font-weight: 600; }
+  td:last-child { color: var(--text-2); }
+
+  /* download */
+  .download { text-align: center; }
+  .dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 860px; margin: 32px auto 0; }
+  .dl a { display: flex; flex-direction: column; gap: 4px; padding: 22px; border-radius: 16px; border: 1px solid var(--border); background: var(--card); text-decoration: none; text-align: left; transition: transform .15s ease, box-shadow .15s ease; }
+  .dl a:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .dl a.mine { border: 2px solid var(--blue); }
+  .dl a b { font-size: 17px; }
+  .dl a span { color: var(--muted); font-size: 14px; }
+  .dl a .file { font: 12.5px ui-monospace, 'SF Mono', Menlo, monospace; color: var(--text-2); margin-top: 6px; }
+  .note { max-width: 760px; margin: 26px auto 0; font-size: 14.5px; color: var(--muted); }
+  .note b { color: var(--text-2); }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
+  footer .links { display: flex; gap: 20px; margin-left: auto; }
+  footer .fine { flex-basis: 100%; font-size: 12.5px; }
+
+  @media (max-width: 760px) {
+    .nav { display: none; }
+    .lang { margin-left: auto; }
+    .hero { padding: 64px 0 52px; }
+    section { padding: 60px 0; }
+    td:first-child { width: 40%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/logo.png" alt="">Coodoo</a>
+    <nav class="nav">
+      <a href="#features"><span lang="en">Features</span><span lang="nl">Functies</span></a>
+      <a href="#how"><span lang="en">How it works</span><span lang="nl">Hoe het werkt</span></a>
+      <a href="#safety"><span lang="en">Safety</span><span lang="nl">Veiligheid</span></a>
+      <a href="https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Manual</span><span lang="nl">Handleiding</span></a>
+      <a href="#download">Download</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-set="en">EN</button><button data-set="nl">NL</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <img class="logo" src="assets/logo.png" alt="Coodoo">
+      <h1>
+        <span lang="en">Your idea, <span class="grad">built by Claude Code and Codex.</span></span>
+        <span lang="nl">Jouw idee, <span class="grad">gebouwd door Claude Code en Codex.</span></span>
+      </h1>
+      <p class="lead">
+        <span lang="en">A software team on your own computer. You say what you want; two AI developers research, design, build, test and review it, and put it on GitHub.</span>
+        <span lang="nl">Een softwareteam op je eigen computer. Jij zegt wat je wilt; twee AI-ontwikkelaars onderzoeken, ontwerpen, bouwen, testen en reviewen het, en zetten het op GitHub.</span>
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#download" data-hero-download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span>
+        </a>
+        <a class="btn" href="#how"><span lang="en">See how it works</span><span lang="nl">Zo werkt het</span></a>
+      </div>
+      <div class="meta" data-version-line>
+        <span lang="en">For macOS and Windows</span><span lang="nl">Voor macOS en Windows</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="kicker"><span lang="en">Made for people with ideas</span><span lang="nl">Gemaakt voor mensen met ideeën</span></div>
+      <h2><span lang="en">Not for people with terminals.</span><span lang="nl">Niet voor mensen met terminals.</span></h2>
+      <p class="intro">
+        <span lang="en">You don't need to be a programmer. Write what you want in plain language, such as <i>"A login page with email and password"</i>. Coodoo turns it into a plan, builds it step by step, checks its own work and keeps your code safe on GitHub. Every screen explains what a button does before you press it.</span>
+        <span lang="nl">Je hoeft geen programmeur te zijn. Schrijf in gewone taal wat je wilt, bijvoorbeeld <i>"Een inlogpagina met e-mail en wachtwoord"</i>. Coodoo maakt er een plan van, bouwt het stap voor stap, controleert zijn eigen werk en bewaart je code veilig op GitHub. Elk scherm legt uit wat een knop doet voordat je erop drukt.</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="kicker"><span lang="en">What Coodoo does for you</span><span lang="nl">Wat Coodoo voor je doet</span></div>
+      <h2><span lang="en">A whole team, working while you think.</span><span lang="nl">Een heel team, aan het werk terwijl jij nadenkt.</span></h2>
+      <p class="intro"><span lang="en">Everything a good software team does, in one app, explained in plain words.</span><span lang="nl">Alles wat een goed softwareteam doet, in één app, uitgelegd in gewone woorden.</span></p>
+      <div class="grid">
+        <div class="card"><div class="ic">🧑‍💻</div><h3><span lang="en">A real team, not a chatbot</span><span lang="nl">Een echt team, geen chatbot</span></h3><p><span lang="en">A developer, researcher, designer and reviewer. One AI builds, the other checks. If one gets stuck, the other takes over.</span><span lang="nl">Een ontwikkelaar, onderzoeker, ontwerper en reviewer. De ene AI bouwt, de andere controleert. Loopt er een vast, dan neemt de ander het over.</span></p></div>
+        <div class="card"><div class="ic">🚀</div><h3><span lang="en">Autopilot from idea to code</span><span lang="nl">Autopilot van idee tot code</span></h3><p><span lang="en">Put goals in a queue and press start. Coodoo researches, designs, plans, builds and reviews each one, and picks up where it stopped.</span><span lang="nl">Zet doelen in de wachtrij en druk op start. Coodoo onderzoekt, ontwerpt, plant, bouwt en reviewt ze, en gaat verder waar het stopte.</span></p></div>
+        <div class="card"><div class="ic">👀</div><h3><span lang="en">It looks at your app</span><span lang="nl">Het bekijkt je app</span></h3><p><span lang="en">After every task Coodoo starts your app and checks it really works, like a person would. Broken? The developer fixes it first.</span><span lang="nl">Na elke taak start Coodoo je app en kijkt of hij echt werkt, zoals een mens zou doen. Kapot? Dan repareert de ontwikkelaar het eerst.</span></p></div>
+        <div class="card"><div class="ic">🗺️</div><h3><span lang="en">A map of your code</span><span lang="nl">Een kaart van je code</span></h3><p><span lang="en">The agents find their way by meaning ("where do we check the password?"), with a small AI model on your own computer. Faster and cheaper.</span><span lang="nl">De agents vinden hun weg op betekenis ("waar controleren we het wachtwoord?"), met een klein AI-model op je eigen computer. Sneller en goedkoper.</span></p></div>
+        <div class="card"><div class="ic">🛤️</div><h3><span lang="en">Flows like the pros</span><span lang="nl">Flows zoals de profs</span></h3><p><span lang="en">development → staging → main. Work moves one step at a time with Promote, following your branch rules on GitHub.</span><span lang="nl">development → staging → main. Werk gaat stap voor stap verder met Doorzetten, volgens je branch-regels op GitHub.</span></p></div>
+        <div class="card"><div class="ic">🔐</div><h3><span lang="en">Security built in</span><span lang="nl">Veiligheid ingebouwd</span></h3><p><span lang="en">Keys in a vault, never in your code. Vulnerable packages, unsafe logins and leaking data are found and fixed before anything else.</span><span lang="nl">Sleutels in een kluis, nooit in je code. Kwetsbare pakketten, onveilige logins en lekkende gegevens worden gevonden en eerst opgelost.</span></p></div>
+        <div class="card"><div class="ic">🧩</div><h3><span lang="en">Herd, Docker, databases</span><span lang="nl">Herd, Docker, databases</span></h3><p><span lang="en">Coodoo knows the services your project uses, starts them before your app and fills in the settings for you.</span><span lang="nl">Coodoo kent de services van je project, start ze voor je app en vult de instellingen voor je in.</span></p></div>
+        <div class="card"><div class="ic">💻</div><h3><span lang="en">On every computer</span><span lang="nl">Op elke computer</span></h3><p><span lang="en">Worked on your laptop? Get latest on your desktop. An agent checks both sides first, so nothing is overwritten.</span><span lang="nl">Gewerkt op je laptop? Haal het nieuwste op je desktop. Een agent kijkt eerst beide kanten na, zodat niets wordt overschreven.</span></p></div>
+        <div class="card"><div class="ic">📦</div><h3><span lang="en">Release in three steps</span><span lang="nl">Uitbrengen in drie stappen</span></h3><p><span lang="en">Choose a version, choose where it goes, press release. Coodoo builds your app and writes the release notes.</span><span lang="nl">Kies een versie, kies waarheen, druk op uitbrengen. Coodoo bouwt je app en schrijft de release notes.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="alt">
+    <div class="wrap">
+      <div class="kicker"><span lang="en">How it works</span><span lang="nl">Hoe het werkt</span></div>
+      <h2><span lang="en">From a sentence to working software.</span><span lang="nl">Van één zin naar werkende software.</span></h2>
+      <p class="intro"><span lang="en">For every goal Coodoo works through the steps a good team would. A quick check decides which steps a goal really needs, so a small fix goes straight to work.</span><span lang="nl">Voor elk doel doorloopt Coodoo de stappen die een goed team zou nemen. Een snelle check bepaalt welke stappen nodig zijn, zodat een kleine fix meteen aan de slag gaat.</span></p>
+      <div class="steps">
+        <div class="step"><b><span lang="en">Chat</span><span lang="nl">Chat</span></b><span><span lang="en">Tell the agent what you want; together you turn it into a goal.</span><span lang="nl">Vertel de agent wat je wilt; samen maak je er een doel van.</span></span></div>
+        <div class="step"><b><span lang="en">Research & design</span><span lang="nl">Onderzoek & ontwerp</span></b><span><span lang="en">How the project works, the best approach, and the screens.</span><span lang="nl">Hoe het project werkt, de beste aanpak, en de schermen.</span></span></div>
+        <div class="step"><b><span lang="en">Plan</span><span lang="nl">Plannen</span></b><span><span lang="en">A technical design, split into small tasks.</span><span lang="nl">Een technisch ontwerp, opgedeeld in kleine taken.</span></span></div>
+        <div class="step"><b><span lang="en">Build & review</span><span lang="nl">Bouwen & reviewen</span></b><span><span lang="en">Built, run, looked at, and approved by the other AI.</span><span lang="nl">Gebouwd, gestart, bekeken en goedgekeurd door de andere AI.</span></span></div>
+        <div class="step"><b><span lang="en">On GitHub</span><span lang="nl">Op GitHub</span></b><span><span lang="en">Version, changelog, and every commit in your name.</span><span lang="nl">Versie, changelog, en elke commit op jouw naam.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="text-align:center">
+      <div class="kicker"><span lang="en">Flows</span><span lang="nl">Flows</span></div>
+      <h2><span lang="en">Nothing reaches main that wasn't tested first.</span><span lang="nl">Niets komt op main dat niet eerst getest is.</span></h2>
+      <div class="flow">
+        <span class="chip first">development</span><span class="arrow">→</span><span class="chip">staging</span><span class="arrow">→</span><span class="chip">main</span>
+      </div>
+      <p class="intro" style="margin: 0 auto">
+        <span lang="en">The autopilot works on the first branch. With one click work moves one step on, through a pull request where GitHub requires one, waiting for checks, and telling you when someone has to approve.</span>
+        <span lang="nl">De autopilot werkt op de eerste branch. Met één klik gaat werk een stap verder, via een pull request waar GitHub dat vraagt, wachtend op checks, en met een seintje als iemand moet goedkeuren.</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="safety" class="alt">
+    <div class="wrap">
+      <div class="kicker"><span lang="en">Safety rules that are always on</span><span lang="nl">Veiligheidsregels die altijd aan staan</span></div>
+      <h2><span lang="en">The agents work on their own. Within hard limits.</span><span lang="nl">De agents werken zelfstandig. Binnen harde grenzen.</span></h2>
+      <p class="intro"><span lang="en">No goal, agent or button can switch these off.</span><span lang="nl">Geen doel, agent of knop kan deze uitzetten.</span></p>
+      <div class="safety">
+        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Your repository stays.</span><span lang="nl">Je repository blijft.</span></b> <span lang="en">Never deleted, archived, transferred or made public.</span><span lang="nl">Nooit verwijderd, gearchiveerd, overgedragen of openbaar gemaakt.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">History is never rewritten.</span><span lang="nl">Geschiedenis wordt nooit herschreven.</span></b> <span lang="en">No force pushes, no deleted branches or tags.</span><span lang="nl">Geen force-push, geen verwijderde branches of tags.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Keys stay secret.</span><span lang="nl">Sleutels blijven geheim.</span></b> <span lang="en">Encrypted, never shown, never committed.</span><span lang="nl">Versleuteld, nooit getoond, nooit gecommit.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">The agents can't reach your login.</span><span lang="nl">De agents kunnen niet bij je login.</span></b> <span lang="en">They only write inside your project folder.</span><span lang="nl">Ze schrijven alleen in je projectmap.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Commits in your name.</span><span lang="nl">Commits op jouw naam.</span></b> <span lang="en">Never in the AI's.</span><span lang="nl">Nooit op naam van de AI.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Work follows your flow.</span><span lang="nl">Werk volgt je flow.</span></b> <span lang="en">No step is ever skipped.</span><span lang="nl">Er wordt nooit een stap overgeslagen.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="kicker"><span lang="en">What you need</span><span lang="nl">Wat je nodig hebt</span></div>
+      <h2><span lang="en">Four things, and you're building.</span><span lang="nl">Vier dingen, en je bouwt.</span></h2>
+      <table>
+        <tr><td><span lang="en">A computer</span><span lang="nl">Een computer</span></td><td><span lang="en">macOS (Apple silicon or Intel) or Windows (x64 or ARM)</span><span lang="nl">macOS (Apple silicon of Intel) of Windows (x64 of ARM)</span></td></tr>
+        <tr><td><span lang="en">An AI subscription</span><span lang="nl">Een AI-abonnement</span></td><td><span lang="en">Claude (for Claude Code) and/or ChatGPT (for Codex). One is enough; with both, one builds and the other reviews.</span><span lang="nl">Claude (voor Claude Code) en/of ChatGPT (voor Codex). Eén is genoeg; met beide bouwt de een en reviewt de ander.</span></td></tr>
+        <tr><td><span lang="en">A GitHub account</span><span lang="nl">Een GitHub-account</span></td><td><span lang="en">Your code lives here.</span><span lang="nl">Hier staat je code.</span></td></tr>
+        <tr><td><span lang="en">A Coodoo license</span><span lang="nl">Een Coodoo-licentie</span></td><td><span lang="en">Asked for when you first start the app.</span><span lang="nl">Wordt gevraagd als je de app voor het eerst start.</span></td></tr>
+      </table>
+      <p class="note" style="margin-left:0"><span lang="en">Coodoo installs Claude Code, Codex and the tools your project needs (such as Node.js or Python) for you, with the official installers.</span><span lang="nl">Coodoo installeert Claude Code, Codex en wat je project nodig heeft (zoals Node.js of Python) voor je, met de officiële installers.</span></p>
+    </div>
+  </section>
+
+  <section id="download" class="alt download">
+    <div class="wrap">
+      <img src="assets/logo.png" alt="" width="72" height="72">
+      <h2><span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span></h2>
+      <div class="meta" data-version><span lang="en">The latest version</span><span lang="nl">De nieuwste versie</span></div>
+      <div class="dl">
+        <a href="https://github.com/TheFactoryGuy/coodoo-releases/releases/latest" data-asset="arm64.dmg" data-os="mac">
+          <b><span lang="en">Mac with Apple silicon</span><span lang="nl">Mac met Apple silicon</span></b>
+          <span>M1, M2, M3, M4 <span lang="en">and newer</span><span lang="nl">en nieuwer</span></span>
+          <span class="file">.dmg</span>
+        </a>
+        <a href="https://github.com/TheFactoryGuy/coodoo-releases/releases/latest" data-asset="intel.dmg" data-os="mac">
+          <b><span lang="en">Mac with Intel</span><span lang="nl">Mac met Intel</span></b>
+          <span><span lang="en">Older Macs</span><span lang="nl">Oudere Macs</span></span>
+          <span class="file">.dmg</span>
+        </a>
+        <a href="https://github.com/TheFactoryGuy/coodoo-releases/releases/latest" data-asset="exe" data-os="win">
+          <b>Windows</b>
+          <span>x64 &amp; ARM</span>
+          <span class="file">.exe</span>
+        </a>
+      </div>
+      <p class="note">
+        <span lang="en"><b>First time on a Mac?</b> If macOS says it can't check Coodoo, open System Settings → Privacy &amp; Security and click <b>Open Anyway</b>. <b>On Windows</b>, choose More info → Run anyway. Updates come in by themselves after that.</span>
+        <span lang="nl"><b>Eerste keer op een Mac?</b> Zegt macOS dat het Coodoo niet kan controleren, open dan Systeeminstellingen → Privacy en beveiliging en klik op <b>Open toch</b>. <b>Op Windows</b> kies je Meer informatie → Toch uitvoeren. Daarna komen updates vanzelf binnen.</span>
+      </p>
+      <div class="cta" style="margin-top:22px">
+        <a class="btn" href="https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Read the manual</span><span lang="nl">Lees de handleiding</span></a>
+        <a class="btn" href="https://github.com/TheFactoryGuy/coodoo-releases/releases"><span lang="en">All versions</span><span lang="nl">Alle versies</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#" style="font-size:15px"><img src="assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> TheFactoryGuy</span>
+    <div class="links">
+      <a href="https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Manual</span><span lang="nl">Handleiding</span></a>
+      <a href="https://github.com/TheFactoryGuy/coodoo-releases/releases"><span lang="en">Releases</span><span lang="nl">Versies</span></a>
+      <a href="https://github.com/TheFactoryGuy/coodoo-releases">GitHub</a>
+    </div>
+    <div class="fine"><span lang="en">Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.</span><span lang="nl">Coodoo is niet verbonden aan Anthropic of OpenAI. Claude Code is een product van Anthropic; Codex is een product van OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  // language: the visitor's choice, else the browser's language
+  const MANUAL = { en: 'https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo', nl: 'https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welkom-bij-Coodoo-(NL)' }
+  function setLang(lang) {
+    document.documentElement.dataset.lang = lang
+    document.documentElement.lang = lang
+    document.querySelectorAll('.lang button').forEach((b) => b.classList.toggle('on', b.dataset.set === lang))
+    document.querySelectorAll('[data-manual]').forEach((a) => (a.href = MANUAL[lang]))
+    try { localStorage.setItem('coodoo-lang', lang) } catch {}
+  }
+  let saved = null
+  try { saved = localStorage.getItem('coodoo-lang') } catch {}
+  setLang(saved || ((navigator.language || '').toLowerCase().startsWith('nl') ? 'nl' : 'en'))
+  document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.set)))
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+
+  // this visitor's computer goes first
+  const ua = navigator.userAgent
+  const os = /Windows/i.test(ua) ? 'win' : /Mac/i.test(ua) ? 'mac' : ''
+  if (os) {
+    const box = document.querySelector('.dl')
+    const mine = [...box.children].filter((a) => a.dataset.os === os)
+    mine.forEach((a) => a.classList.add('mine'))
+    mine.reverse().forEach((a) => box.prepend(a))
+  }
+
+  // the newest version and its files, straight from GitHub
+  fetch('https://api.github.com/repos/TheFactoryGuy/coodoo-releases/releases/latest')
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((rel) => {
+      const v = rel.tag_name.replace(/^v/, '')
+      const find = (test) => rel.assets.find((a) => test(a.name))
+      const files = {
+        'arm64.dmg': find((n) => /arm64\.dmg$/.test(n)),
+        'intel.dmg': find((n) => /\.dmg$/.test(n) && !/arm64/.test(n)),
+        exe: find((n) => /\.exe$/.test(n))
+      }
+      document.querySelectorAll('[data-asset]').forEach((a) => {
+        const f = files[a.dataset.asset]
+        if (!f) return
+        a.href = f.browser_download_url
+        a.querySelector('.file').textContent = `${f.name} · ${Math.round(f.size / 1048576)} MB`
+      })
+      const date = new Date(rel.published_at)
+      document.querySelector('[data-version]').innerHTML =
+        `<span lang="en">Version ${v} · ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>` +
+        `<span lang="nl">Versie ${v} · ${date.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}</span>`
+      document.querySelector('[data-version-line]').innerHTML =
+        `<span lang="en">Version ${v} · for macOS and Windows</span><span lang="nl">Versie ${v} · voor macOS en Windows</span>`
+      // the big button downloads straight away for Windows; on a Mac the choice between chips stays below
+      if (os === 'win' && files.exe) document.querySelector('[data-hero-download]').href = files.exe.browser_download_url
+    })
+    .catch(() => {})
+</script>
+</body>
+</html>
