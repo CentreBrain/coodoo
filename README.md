@@ -12,7 +12,7 @@ A software team on your own computer. You say what you want; two AI developers r
 ![macOS](https://img.shields.io/badge/macOS-Apple%20silicon%20%26%20Intel-333)
 ![Windows](https://img.shields.io/badge/Windows-x64%20%26%20ARM-333)
 
-**[Download the latest version →](https://github.com/TheFactoryGuy/coodoo-releases/releases/latest)**
+**[Download the latest version →](https://github.com/TheFactoryGuy/coodoo-releases/releases/latest)** · **[Read the manual](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo)** · [Handleiding (NL)](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welkom-bij-Coodoo-(NL))
 
 </div>
 
@@ -124,6 +124,10 @@ Coodoo installs Claude Code, Codex and the tools your project needs (such as Nod
 Coodoo checks for new versions by itself. On **Windows** the update downloads in the background and installs with one click. On **macOS** Coodoo tells you a new version is ready and opens the download for you. A running autopilot is paused first, so no work is lost.
 
 All versions and what changed in each are on the **[releases page](https://github.com/TheFactoryGuy/coodoo-releases/releases)**.
+
+## Manual
+
+Every screen is explained step by step in the **[manual](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo)**, in English and **[Dutch](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welkom-bij-Coodoo-(NL))**. It's the same help that is built into the app (press F1).
 
 ---
 
