@@ -12,7 +12,7 @@ A software team on your own computer. You say what you want; two AI developers r
 ![macOS](https://img.shields.io/badge/macOS-Apple%20silicon%20%26%20Intel-333)
 ![Windows](https://img.shields.io/badge/Windows-x64%20%26%20ARM-333)
 
-**[Download the latest version →](https://github.com/TheFactoryGuy/coodoo-releases/releases/latest)** · **[Read the manual](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo)** · [Handleiding (NL)](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welkom-bij-Coodoo-(NL))
+**[Website](https://thefactoryguy.github.io/coodoo-releases/)** · **[Download the latest version →](https://github.com/TheFactoryGuy/coodoo-releases/releases/latest)** · **[Read the manual](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welcome-to-Coodoo)** · [Handleiding (NL)](https://github.com/TheFactoryGuy/coodoo-releases/wiki/Welkom-bij-Coodoo-(NL))
 
 </div>
 
