@@ -101,9 +101,15 @@ The agents work on your code on their own, so Coodoo enforces hard limits that n
 | **A computer** | macOS (Apple silicon or Intel) or Windows (x64 or ARM) |
 | **An AI subscription** | Claude (for Claude Code) and/or ChatGPT (for Codex). One is enough; with both, one builds and the other reviews |
 | **A GitHub account** | Your code lives here |
-| **A Coodoo license** | Asked for when you first start the app |
+| **A Coodoo license** | €19.99 per year (excl. VAT). Asked for when you first start the app. **[Buy a license →](https://buy.stripe.com/fZu7sM7wagEY8AN2yd1oI00)** |
 
 Coodoo installs Claude Code, Codex and the tools your project needs (such as Node.js or Python) for you, with the official installers.
+
+## Price
+
+Downloading Coodoo is free; to use it you need a license: **€19.99 per year (excl. VAT)**, a one-off payment that does not renew by itself. It includes every feature and every update while the license is valid, on Mac and Windows. The AI subscription (Claude or ChatGPT) is separate.
+
+**[Buy a license →](https://buy.stripe.com/fZu7sM7wagEY8AN2yd1oI00)**
 
 ## Download and install
 

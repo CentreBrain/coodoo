@@ -40,7 +40,7 @@
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, -apple-system, 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: inherit; }
   html[data-lang="en"] [lang="nl"], html[data-lang="nl"] [lang="en"] { display: none !important; }
@@ -112,6 +112,16 @@
   td:first-child { width: 34%; font-weight: 600; }
   td:last-child { color: var(--text-2); }
 
+  /* price */
+  .price { max-width: 440px; margin: 0 auto; text-align: center; background: var(--card); border: 2px solid var(--blue); border-radius: 22px; padding: 34px 30px 30px; box-shadow: var(--shadow); }
+  .price .amount { font-size: 54px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .price .per { margin-top: 8px; color: var(--muted); font-size: 15px; }
+  .price ul { list-style: none; padding: 0; margin: 24px 0 26px; text-align: left; display: grid; gap: 10px; font-size: 15px; color: var(--text-2); }
+  .price li { display: flex; gap: 10px; align-items: flex-start; }
+  .price li::before { content: '✓'; flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: #19b36b; color: #fff; font-size: 12px; font-weight: 800; margin-top: 1px; }
+  .price .btn { width: 100%; justify-content: center; }
+  .price .fine { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
   /* download */
   .download { text-align: center; }
   .dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 860px; margin: 32px auto 0; }
@@ -148,6 +158,7 @@
       <a href="#how"><span lang="en">How it works</span><span lang="nl">Hoe het werkt</span></a>
       <a href="#safety"><span lang="en">Safety</span><span lang="nl">Veiligheid</span></a>
       <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Manual</span><span lang="nl">Handleiding</span></a>
+      <a href="#price"><span lang="en">Price</span><span lang="nl">Prijs</span></a>
       <a href="#download">Download</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -264,13 +275,35 @@
         <tr><td><span lang="en">A computer</span><span lang="nl">Een computer</span></td><td><span lang="en">macOS (Apple silicon or Intel) or Windows (x64 or ARM)</span><span lang="nl">macOS (Apple silicon of Intel) of Windows (x64 of ARM)</span></td></tr>
         <tr><td><span lang="en">An AI subscription</span><span lang="nl">Een AI-abonnement</span></td><td><span lang="en">Claude (for Claude Code) and/or ChatGPT (for Codex). One is enough; with both, one builds and the other reviews.</span><span lang="nl">Claude (voor Claude Code) en/of ChatGPT (voor Codex). Eén is genoeg; met beide bouwt de een en reviewt de ander.</span></td></tr>
         <tr><td><span lang="en">A GitHub account</span><span lang="nl">Een GitHub-account</span></td><td><span lang="en">Your code lives here.</span><span lang="nl">Hier staat je code.</span></td></tr>
-        <tr><td><span lang="en">A Coodoo license</span><span lang="nl">Een Coodoo-licentie</span></td><td><span lang="en">Asked for when you first start the app.</span><span lang="nl">Wordt gevraagd als je de app voor het eerst start.</span></td></tr>
+        <tr><td><span lang="en">A Coodoo license</span><span lang="nl">Een Coodoo-licentie</span></td><td><span lang="en">€19.99 per year (excl. VAT). Asked for when you first start the app. <a href="#price">Buy a license</a></span><span lang="nl">€19,99 per jaar (excl. btw). Wordt gevraagd als je de app voor het eerst start. <a href="#price">Licentie kopen</a></span></td></tr>
       </table>
       <p class="note" style="margin-left:0"><span lang="en">Coodoo installs Claude Code, Codex and the tools your project needs (such as Node.js or Python) for you, with the official installers.</span><span lang="nl">Coodoo installeert Claude Code, Codex en wat je project nodig heeft (zoals Node.js of Python) voor je, met de officiële installers.</span></p>
     </div>
   </section>
 
-  <section id="download" class="alt download">
+  <section id="price" class="alt">
+    <div class="wrap">
+      <div style="text-align:center">
+        <div class="kicker"><span lang="en">Price</span><span lang="nl">Prijs</span></div>
+        <h2><span lang="en">One license, one price.</span><span lang="nl">Eén licentie, één prijs.</span></h2>
+        <p class="intro" style="margin:0 auto 36px"><span lang="en">Download Coodoo for free; to use it you need a license.</span><span lang="nl">Coodoo downloaden is gratis; om het te gebruiken heb je een licentie nodig.</span></p>
+      </div>
+      <div class="price">
+        <div class="amount"><span lang="en">€19.99</span><span lang="nl">€19,99</span></div>
+        <div class="per"><span lang="en">per year, excl. VAT</span><span lang="nl">per jaar, excl. btw</span></div>
+        <ul>
+          <li><span lang="en">Every feature: both agents, the autopilot, the GitHub flow and the safety rules</span><span lang="nl">Alles erin: beide agents, de autopilot, de GitHub-flow en de veiligheidsregels</span></li>
+          <li><span lang="en">Every update while your license is valid</span><span lang="nl">Alle updates zolang je licentie geldig is</span></li>
+          <li><span lang="en">Mac and Windows</span><span lang="nl">Mac en Windows</span></li>
+          <li><span lang="en">A one-off payment: nothing renews by itself</span><span lang="nl">Eén keer betalen: er loopt niets vanzelf door</span></li>
+        </ul>
+        <a class="btn primary" href="https://buy.stripe.com/fZu7sM7wagEY8AN2yd1oI00" rel="noopener"><span lang="en">Buy a license</span><span lang="nl">Licentie kopen</span></a>
+        <div class="fine"><span lang="en">You pay securely through Stripe. The AI subscription (Claude or ChatGPT) is separate.</span><span lang="nl">Je betaalt veilig via Stripe. Het AI-abonnement (Claude of ChatGPT) is apart.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
     <div class="wrap">
       <img src="assets/logo.png" alt="" width="72" height="72">
       <h2><span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span></h2>
