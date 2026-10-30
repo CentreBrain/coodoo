@@ -133,6 +133,6 @@ Every screen is explained step by step in the **[manual](https://github.com/Cent
 
 <div align="center">
 
-© 2026 TheFactoryGuy · Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.
+© 2026 CentreBrain · Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.
 
 </div>
