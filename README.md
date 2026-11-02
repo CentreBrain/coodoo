@@ -94,6 +94,17 @@ The agents work on your code on their own, so Coodoo enforces hard limits that n
 - Keys and tokens never end up in a commit.
 - With a flow, work only reaches a later branch through the flow.
 
+## Working with AI: please read
+
+Coodoo has AI agents (Claude Code and Codex) work for you: they write and change code, run commands in your project and put changes on GitHub.
+
+- **AI can make mistakes.** Code may not work, may contain a security hole or may do something other than you asked, and an answer can be wrong, even when it sounds convincing.
+- **Check what the team makes yourself**, before you use it, publish it or give it to others. You remain responsible for your project and for what you do with it.
+- Coodoo's safety rules limit the risks, but **offer no guarantee**.
+- **Coodoo and CentreBrain are not liable** for mistakes, damage or loss caused by what the AI does or makes. You use Coodoo at your own risk. The terms of Anthropic and OpenAI also apply to the AI services themselves.
+
+Coodoo shows this once when you first start it, and you accept it before you can begin.
+
 ## What you need
 
 | | |
@@ -139,6 +150,6 @@ Every screen is explained step by step in the **[manual](https://github.com/Cent
 
 <div align="center">
 
-© 2026 CentreBrain · Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.
+© 2026 CentreBrain · AI can make mistakes: check what Coodoo makes before you use it. · Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.
 
 </div>

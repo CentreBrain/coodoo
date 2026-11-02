@@ -105,6 +105,17 @@
   .safe b { color: var(--text); }
   .safe .ok { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #19b36b; color: #fff; font-size: 13px; font-weight: 800; }
 
+  /* working with AI */
+  .disclaimer { margin-top: 28px; padding: 22px 24px; border-radius: 16px; background: #fff8e6; border: 1px solid #f3d27a; color: #4a3b10; }
+  .disclaimer h3 { margin: 0 0 10px; font-size: 18px; color: #3a2e08; display: flex; gap: 10px; align-items: center; }
+  .disclaimer ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15px; line-height: 1.55; }
+  .disclaimer p { margin: 12px 0 0; font-size: 13.5px; color: #6b5a24; }
+  @media (prefers-color-scheme: dark) {
+    .disclaimer { background: #2a2210; border-color: #5c4a1a; color: #eadcb0; }
+    .disclaimer h3 { color: #f6e7b8; }
+    .disclaimer p { color: #c9b77f; }
+  }
+
   /* requirements */
   table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
   td { padding: 16px 20px; border-top: 1px solid var(--border); vertical-align: top; font-size: 15.5px; }
@@ -264,6 +275,16 @@
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Commits in your name.</span><span lang="nl">Commits op jouw naam.</span></b> <span lang="en">Never in the AI's.</span><span lang="nl">Nooit op naam van de AI.</span></span></div>
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Work follows your flow.</span><span lang="nl">Werk volgt je flow.</span></b> <span lang="en">No step is ever skipped.</span><span lang="nl">Er wordt nooit een stap overgeslagen.</span></span></div>
       </div>
+      <div class="disclaimer" id="ai">
+        <h3><span aria-hidden="true">⚠️</span><span lang="en">Working with AI: please read</span><span lang="nl">Werken met AI: lees dit even</span></h3>
+        <ul>
+          <li><span lang="en"><b>AI can make mistakes.</b> Code may not work, may contain a security hole or may do something other than you asked, and an answer can be wrong, even when it sounds convincing.</span><span lang="nl"><b>AI kan fouten maken.</b> Code kan niet werken, een beveiligingslek bevatten of iets anders doen dan je vroeg, en een antwoord kan onjuist zijn, ook als het overtuigend klinkt.</span></li>
+          <li><span lang="en"><b>Check what the team makes yourself</b>, before you use it, publish it or give it to others. You remain responsible for your project and for what you do with it.</span><span lang="nl"><b>Controleer zelf wat het team maakt</b>, voordat je het gebruikt, publiceert of aan anderen geeft. Jij blijft verantwoordelijk voor je project en voor wat je ermee doet.</span></li>
+          <li><span lang="en">The safety rules above limit the risks, but <b>offer no guarantee</b>.</span><span lang="nl">De veiligheidsregels hierboven beperken de risico’s, maar <b>bieden geen garantie</b>.</span></li>
+          <li><span lang="en"><b>Coodoo and CentreBrain are not liable</b> for mistakes, damage or loss caused by what the AI does or makes. You use Coodoo at your own risk. The terms of Anthropic and OpenAI also apply to the AI services themselves.</span><span lang="nl"><b>Coodoo en CentreBrain zijn niet aansprakelijk</b> voor fouten, schade of verlies door wat de AI doet of maakt. Je gebruikt Coodoo op eigen risico. Voor de AI-diensten zelf gelden ook de voorwaarden van Anthropic en OpenAI.</span></li>
+        </ul>
+        <p><span lang="en">Coodoo shows this once when you first start it, and you accept it before you can begin.</span><span lang="nl">Coodoo laat dit zien als je hem voor het eerst start, en je accepteert het voordat je kunt beginnen.</span></p>
+      </div>
     </div>
   </section>
 
@@ -346,7 +367,7 @@
       <a href="https://github.com/CentreBrain/coodoo/releases"><span lang="en">Releases</span><span lang="nl">Versies</span></a>
       <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
     </div>
-    <div class="fine"><span lang="en">Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.</span><span lang="nl">Coodoo is niet verbonden aan Anthropic of OpenAI. Claude Code is een product van Anthropic; Codex is een product van OpenAI.</span></div>
+    <div class="fine"><span lang="en">AI can make mistakes: check what Coodoo makes before you use it. Coodoo and CentreBrain are not liable for what the AI does or makes (<a href="#ai">more</a>). </span><span lang="nl">AI kan fouten maken: controleer wat Coodoo maakt voordat je het gebruikt. Coodoo en CentreBrain zijn niet aansprakelijk voor wat de AI doet of maakt (<a href="#ai">meer</a>). </span><span lang="en">Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.</span><span lang="nl">Coodoo is niet verbonden aan Anthropic of OpenAI. Claude Code is een product van Anthropic; Codex is een product van OpenAI.</span></div>
   </div>
 </footer>
 
