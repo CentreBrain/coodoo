@@ -11,99 +11,309 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
-    --bg-2: #f6f7fb;
+    --bg-2: #f6f7f9;
     --card: #ffffff;
-    --text: #14151a;
-    --text-2: #4b4f5c;
-    --muted: #6f7380;
-    --border: #e6e8ef;
-    --blue: #2f6bff;
-    --violet: #8b3dff;
-    --cyan: #19c3f5;
-    --grad: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 45%, var(--violet) 100%);
-    --shadow: 0 18px 50px rgba(40, 60, 140, .12);
+    --text: #15161a;
+    --text-2: #4a4f57;
+    --muted: #747983;
+    --border: #e4e6ea;
+    --blue: #3574f0;
+    --shadow: 0 1px 2px rgba(20, 22, 30, .06), 0 12px 32px rgba(20, 22, 30, .08);
+    /* the app itself (Coodoo's light theme) */
+    --app-bg: #ffffff;
+    --app-panel: #f7f8fa;
+    --app-panel-2: #f2f3f5;
+    --app-border: #e3e5e8;
+    --app-hover: #e6e8eb;
+    --app-text: #1e1f22;
+    --app-text-2: #4a4f57;
+    --app-muted: #7c818a;
+    --app-faint: #b4b8bf;
+    --app-green: #3e9c45;
+    --app-green-bg: #e5f3e6;
+    --app-red: #d1453b;
+    --app-red-bg: #fcebea;
+    --app-yellow-bg: #fbf3df;
+    --app-yellow-fg: #7a5a0f;
+    --app-yellow-border: #efd9a2;
+    --app-blue-bg: #e3ecfd;
+    --app-blue-fg: #2556c4;
+    --claude: #d97757;
+    --codex: #3b82d6;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0d0e14;
-      --bg-2: #13141c;
-      --card: #171925;
-      --text: #f2f3f7;
-      --text-2: #c3c6d2;
-      --muted: #8d91a1;
-      --border: #262938;
-      --shadow: 0 18px 50px rgba(0, 0, 0, .45);
+      --bg: #111214;
+      --bg-2: #17181b;
+      --card: #1c1d21;
+      --text: #eceef1;
+      --text-2: #b4b8bf;
+      --muted: #8a8f98;
+      --border: #26282c;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 20px 50px rgba(0, 0, 0, .45);
+      /* Coodoo's dark theme */
+      --app-bg: #1e1f22;
+      --app-panel: #2b2d30;
+      --app-panel-2: #26282b;
+      --app-border: #393b40;
+      --app-hover: #393b40;
+      --app-text: #dfe1e5;
+      --app-text-2: #b4b8bf;
+      --app-muted: #6f737a;
+      --app-faint: #4e5157;
+      --app-green: #5fb865;
+      --app-green-bg: #253627;
+      --app-red: #db5c5c;
+      --app-red-bg: #402929;
+      --app-yellow-bg: #3d3424;
+      --app-yellow-fg: #e9cf95;
+      --app-yellow-border: #5a4a2a;
+      --app-blue-bg: #25324d;
+      --app-blue-fg: #8fb6f7;
+      --codex: #5ba3ef;
     }
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 64px; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, -apple-system, 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, -apple-system, 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   a { color: inherit; }
   html[data-lang="en"] [lang="nl"], html[data-lang="nl"] [lang="en"] { display: none !important; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
   /* top bar */
-  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--border); }
-  .top .wrap { display: flex; align-items: center; gap: 18px; height: 64px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; text-decoration: none; }
-  .brand img { width: 32px; height: 32px; }
+  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--border); }
+  .top .wrap { display: flex; align-items: center; gap: 18px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; text-decoration: none; }
+  .brand img { width: 28px; height: 28px; }
   .nav { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; color: var(--text-2); }
   .nav a { text-decoration: none; }
   .nav a:hover { color: var(--text); }
-  .lang { display: flex; border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
-  .lang button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; cursor: pointer; }
+  .lang { display: flex; border: 1px solid var(--border); border-radius: 8px; padding: 2px; }
+  .lang button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 12.5px; font-weight: 600; padding: 3px 9px; border-radius: 6px; cursor: pointer; }
   .lang button.on { background: var(--text); color: var(--bg); }
 
   /* hero */
-  .hero { position: relative; overflow: hidden; padding: 96px 0 72px; text-align: center; }
-  .hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; z-index: -1; }
-  .hero::before { width: 520px; height: 520px; left: -140px; top: -200px; background: var(--cyan); }
-  .hero::after { width: 560px; height: 560px; right: -160px; top: -120px; background: var(--violet); }
-  .hero img.logo { width: 112px; height: 112px; filter: drop-shadow(0 18px 40px rgba(47, 107, 255, .35)); }
-  .hero h1 { margin: 26px auto 14px; max-width: 860px; font-size: clamp(38px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035em; font-weight: 800; }
-  .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero p.lead { margin: 0 auto; max-width: 660px; font-size: clamp(17px, 2.2vw, 20px); color: var(--text-2); }
-  .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-  .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 15.5px; text-decoration: none; border: 1px solid var(--border); background: var(--card); color: var(--text); transition: transform .15s ease, box-shadow .15s ease; }
-  .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
-  .btn.primary { background: var(--grad); color: #fff; border: 0; box-shadow: 0 12px 30px rgba(47, 107, 255, .35); }
-  .btn svg { width: 18px; height: 18px; }
-  .meta { margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+  .hero { padding: 76px 0 0; }
+  .hero h1 { margin: 0 0 18px; max-width: 760px; font-size: clamp(36px, 5.4vw, 58px); line-height: 1.06; letter-spacing: -.035em; font-weight: 750; }
+  .hero h1 em { font-style: normal; color: var(--muted); }
+  .hero p.lead { margin: 0; max-width: 620px; font-size: clamp(17px, 2vw, 19px); color: var(--text-2); }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 9px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--border); background: var(--card); color: var(--text); transition: background .15s ease, border-color .15s ease; }
+  .btn:hover { border-color: color-mix(in srgb, var(--text) 25%, var(--border)); }
+  .btn.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .btn.primary:hover { background: #2f68d8; border-color: #2f68d8; }
+  .btn svg { width: 17px; height: 17px; }
+  .meta { font-size: 13.5px; color: var(--muted); }
+  .cta .meta { margin-left: 6px; }
+  .shot { margin-top: 56px; position: relative; }
+  .shot::after { content: ''; position: absolute; inset: auto 0 -1px 0; height: 56px; background: linear-gradient(to bottom, transparent, var(--bg)); pointer-events: none; }
 
   /* sections */
-  section { padding: 84px 0; }
+  section { padding: 96px 0; }
   section.alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .kicker { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
-  h2 { margin: 10px 0 14px; font-size: clamp(28px, 4vw, 40px); line-height: 1.15; letter-spacing: -.025em; }
-  .intro { max-width: 720px; color: var(--text-2); font-size: 17.5px; margin: 0 0 44px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 24px; }
-  .card .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-size: 21px; background: color-mix(in srgb, var(--blue) 12%, transparent); margin-bottom: 14px; }
-  .card h3 { margin: 0 0 6px; font-size: 17.5px; letter-spacing: -.01em; }
-  .card p { margin: 0; color: var(--text-2); font-size: 15px; }
+  h2 { margin: 0 0 14px; font-size: clamp(28px, 3.6vw, 38px); line-height: 1.15; letter-spacing: -.025em; font-weight: 700; }
+  .intro { max-width: 640px; color: var(--text-2); font-size: 17px; margin: 0 0 40px; }
 
-  /* steps */
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; counter-reset: step; }
-  .step { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 20px 20px; }
-  .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--grad); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
-  .step b { display: block; margin-bottom: 4px; }
-  .step span { color: var(--text-2); font-size: 14.5px; }
+  /* a feature: words on one side, the part of the app it is about on the other */
+  .feature { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; }
+  .feature + .feature { margin-top: 104px; }
+  .feature.flip > :first-child { order: 2; }
+  .feature h3 { margin: 0 0 12px; font-size: clamp(24px, 2.8vw, 30px); line-height: 1.2; letter-spacing: -.02em; font-weight: 700; }
+  .feature p { margin: 0 0 14px; color: var(--text-2); font-size: 16.5px; }
+  .feature ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 15px; color: var(--text-2); }
+  .feature li { display: flex; gap: 10px; }
+  .feature li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); margin-top: 9px; }
+  .step-no { font: 600 13px/1 var(--mono); color: var(--muted); margin-bottom: 14px; display: block; }
 
-  /* flow illustration */
-  .flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 6px 0 34px; }
-  .chip { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); font: 600 14px/1 ui-monospace, 'SF Mono', Menlo, monospace; }
-  .chip.first { border-color: var(--blue); color: var(--blue); }
-  .arrow { color: var(--muted); font-size: 20px; }
+  /* more features, as a plain list */
+  .more { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 40px; }
+  .more div { border-top: 1px solid var(--border); padding-top: 16px; }
+  .more b { display: block; font-size: 15.5px; margin-bottom: 4px; }
+  .more span { color: var(--text-2); font-size: 14.5px; }
+
+  /* ---------------------------------------------------------------- the app */
+  .win { background: var(--app-bg); color: var(--app-text); border: 1px solid var(--app-border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); font-size: 12.5px; line-height: 1.45; text-align: left; }
+  .win.big { border-radius: 14px; }
+  .titlebar { display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 14px; background: var(--app-panel); border-bottom: 1px solid var(--app-border); white-space: nowrap; }
+  .lights { display: flex; gap: 7px; flex: none; }
+  .lights i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+  .lights i:nth-child(2) { background: #febc2e; }
+  .lights i:nth-child(3) { background: #28c840; }
+  .tb-project { display: flex; align-items: center; gap: 7px; font-weight: 600; margin-left: 14px; }
+  .tb-project .av { width: 18px; height: 18px; border-radius: 5px; background: #e0864a; color: #fff; display: grid; place-items: center; font-size: 10.5px; font-weight: 700; }
+  .tb-branch { color: var(--app-text-2); display: flex; align-items: center; gap: 5px; }
+  .tb-branch svg, .pill svg { width: 12px; height: 12px; }
+  .grow { flex: 1; min-width: 0; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--app-border); background: var(--app-bg); color: var(--app-text-2); font-size: 11.5px; white-space: nowrap; }
+  .pill.live { color: var(--app-green); border-color: color-mix(in srgb, var(--app-green) 35%, var(--app-border)); background: var(--app-green-bg); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
+  .live .dot { animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { .live .dot, .typing i, .bar i { animation: none !important; } }
+  .tbtn { padding: 3px 10px; border-radius: 6px; border: 1px solid var(--app-border); background: var(--app-bg); color: var(--app-text-2); font-size: 11.5px; }
+
+  .app { display: grid; grid-template-columns: 38px 230px minmax(0, 1fr) 236px; min-height: 470px; }
+  .rail { background: var(--app-panel); border-right: 1px solid var(--app-border); display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 10px; }
+  .rail i { width: 20px; height: 20px; border-radius: 5px; display: block; background: var(--app-faint); opacity: .55; -webkit-mask: var(--m) center / 16px no-repeat; mask: var(--m) center / 16px no-repeat; }
+  .rail i.on { background: var(--blue); opacity: 1; }
+  .pane { background: var(--app-panel); border-right: 1px solid var(--app-border); padding: 12px 12px 0; overflow: hidden; }
+  .pane.right { border-right: 0; border-left: 1px solid var(--app-border); }
+  .pane-title { font-weight: 600; font-size: 12.5px; margin-bottom: 12px; }
+  .heading { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--app-muted); margin: 14px 0 7px; display: flex; gap: 6px; }
+  .heading .n { margin-left: auto; background: var(--app-hover); border-radius: 999px; padding: 0 6px; letter-spacing: 0; }
+  .box { background: var(--app-bg); border: 1px solid var(--app-border); border-radius: 8px; padding: 9px 10px; }
+  .box + .box { margin-top: 6px; }
+  .box.now { border-color: color-mix(in srgb, var(--blue) 45%, var(--app-border)); }
+  .box .t { font-weight: 600; }
+  .sub { color: var(--app-muted); font-size: 11px; }
+  .segs { display: flex; gap: 3px; margin: 8px 0 6px; }
+  .segs i { flex: 1; height: 4px; border-radius: 2px; background: var(--app-hover); }
+  .segs i.d { background: var(--app-green); }
+  .segs i.a { background: var(--blue); }
+  .q { display: flex; gap: 8px; align-items: center; padding: 6px 2px; color: var(--app-text-2); }
+  .q + .q { border-top: 1px solid var(--app-border); }
+  .ic { width: 14px; height: 14px; flex: none; }
+  .ok-ic { color: var(--app-green); }
+  .run-ic { color: var(--blue); animation: spin 1.2s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .wait-ic { color: var(--app-faint); }
+
+  .main { background: var(--app-bg); display: flex; flex-direction: column; min-width: 0; }
+  .tabs { display: flex; gap: 2px; padding: 0 12px; border-bottom: 1px solid var(--app-border); background: var(--app-bg); }
+  .tabs span { padding: 9px 10px 8px; color: var(--app-muted); border-bottom: 2px solid transparent; }
+  .tabs span.on { color: var(--app-text); border-color: var(--blue); }
+  .page { padding: 14px 16px; display: grid; gap: 12px; flex: 1; align-content: start; }
+  .card-a { background: var(--app-panel); border: 1px solid var(--app-border); border-radius: 9px; padding: 12px 14px; }
+  .proj { display: flex; align-items: center; gap: 10px; }
+  .proj h4 { margin: 2px 0 1px; font-size: 16px; letter-spacing: -.01em; }
+  .pipe { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; position: relative; }
+  .pipe::before { content: ''; position: absolute; left: 8%; right: 8%; top: 9px; height: 1px; background: var(--app-border); }
+  .pipe div { position: relative; display: grid; justify-items: center; gap: 3px; color: var(--app-muted); font-size: 11.5px; }
+  .pipe b { width: 19px; height: 19px; border-radius: 50%; display: grid; place-items: center; background: var(--app-bg); border: 1px solid var(--app-border); font-size: 10px; color: var(--app-muted); }
+  .pipe .d b { background: var(--app-green); border-color: var(--app-green); color: #fff; }
+  .pipe .a b { background: var(--blue); border-color: var(--blue); color: #fff; box-shadow: 0 0 0 4px color-mix(in srgb, var(--blue) 18%, transparent); }
+  .pipe .a { color: var(--app-text); font-weight: 600; }
+  .pipe small { font-size: 10.5px; font-weight: 400; color: var(--app-muted); display: flex; align-items: center; gap: 4px; }
+  .who { width: 8px; height: 8px; border-radius: 2px; display: inline-block; flex: none; }
+  .who.cl { background: var(--claude); }
+  .who.cx { background: var(--codex); }
+  .task { display: flex; gap: 9px; align-items: center; padding: 7px 0; }
+  .task + .task { border-top: 1px solid var(--app-border); }
+  .task .r { margin-left: auto; color: var(--app-muted); font-size: 11px; display: flex; gap: 5px; align-items: center; }
+  .task.cur { font-weight: 600; }
+  .log { border-top: 1px solid var(--app-border); background: var(--app-bg); padding: 8px 14px 10px; font-size: 11.5px; }
+  .log .lt { display: flex; gap: 14px; margin-bottom: 6px; color: var(--app-muted); }
+  .log .lt b { color: var(--app-text); font-weight: 600; }
+  .log p { margin: 0; display: flex; gap: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .log time { font-family: var(--mono); color: var(--app-muted); font-size: 10.5px; flex: none; }
+  .log .g { color: var(--app-green); }
+  .log .bl { color: var(--blue); }
+  .agent { background: var(--app-bg); border: 1px solid var(--app-border); border-radius: 9px; padding: 10px; }
+  .agent + .agent { margin-top: 8px; }
+  .agent-h { display: flex; align-items: center; gap: 8px; }
+  .logo-sq { width: 24px; height: 24px; border-radius: 6px; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 12px; flex: none; }
+  .logo-sq.cl { background: var(--claude); }
+  .logo-sq.cx { background: #111; }
+  .chips { display: flex; gap: 4px; margin: 8px 0 0; flex-wrap: wrap; }
+  .chip-a { padding: 1px 7px; border-radius: 5px; background: var(--app-panel-2); color: var(--app-text-2); font-size: 10.5px; }
+  .doing { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--app-border); color: var(--app-text-2); font-size: 11px; display: flex; gap: 6px; align-items: center; }
+  .doing code { font: 10.5px var(--mono); color: var(--app-text); }
+  .bar { height: 4px; border-radius: 2px; background: var(--app-hover); margin-top: 8px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 42%; background: var(--claude); border-radius: 2px; animation: grow 6s ease-in-out infinite alternate; }
+  @keyframes grow { to { width: 58%; } }
+
+  /* chat */
+  .chat { padding: 14px; display: grid; gap: 10px; background: var(--app-panel); }
+  .msg { max-width: 86%; padding: 9px 12px; border-radius: 10px; font-size: 13px; line-height: 1.5; }
+  .msg.me { justify-self: end; background: var(--blue); color: #fff; border-bottom-right-radius: 3px; }
+  .msg.ai { background: var(--app-bg); border: 1px solid var(--app-border); border-bottom-left-radius: 3px; }
+  .msg.ai .from { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--app-muted); margin-bottom: 4px; }
+  .goal-card { margin-top: 10px; border: 1px solid color-mix(in srgb, var(--blue) 40%, var(--app-border)); border-radius: 9px; padding: 10px 12px; background: color-mix(in srgb, var(--blue) 5%, var(--app-bg)); }
+  .goal-card .k { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--app-blue-fg); }
+  .goal-card .t { font-weight: 600; margin: 3px 0 4px; }
+  .goal-card ul { margin: 0 0 10px; padding-left: 16px; color: var(--app-text-2); font-size: 12px; }
+  .abtn { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 6px; font-size: 12px; font-weight: 600; background: var(--blue); color: #fff; }
+  .abtn.ghost { background: var(--app-bg); color: var(--app-text-2); border: 1px solid var(--app-border); font-weight: 500; }
+  .input { margin: 0 14px 14px; border: 1px solid var(--app-border); border-radius: 9px; background: var(--app-bg); padding: 9px 12px; color: var(--app-muted); display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+  .typing { display: inline-flex; gap: 3px; }
+  .typing i { width: 5px; height: 5px; border-radius: 50%; background: var(--app-muted); animation: blink 1.2s infinite; }
+  .typing i:nth-child(2) { animation-delay: .2s; }
+  .typing i:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 50% { opacity: .25; } }
+
+  /* review */
+  .rev { padding: 14px; display: grid; gap: 8px; background: var(--app-panel); }
+  .rv { background: var(--app-bg); border: 1px solid var(--app-border); border-radius: 9px; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; }
+  .rv .tag { justify-self: start; }
+  .rv p { grid-column: 2; margin: 0; color: var(--app-text-2); font-size: 12px; }
+  .rv p code { font: 11px var(--mono); background: var(--app-panel-2); padding: 0 4px; border-radius: 4px; color: var(--app-text); }
+  .tag { padding: 1px 7px; border-radius: 5px; font-size: 10.5px; font-weight: 600; }
+  .tag.red { background: var(--app-red-bg); color: var(--app-red); }
+  .tag.green { background: var(--app-green-bg); color: var(--app-green); }
+  .tag.blue { background: var(--app-blue-bg); color: var(--app-blue-fg); }
+  .peek { display: grid; grid-template-columns: 132px 1fr; gap: 12px; align-items: center; background: var(--app-bg); border: 1px solid var(--app-border); border-radius: 9px; padding: 10px; }
+  .mini { border: 1px solid var(--app-border); border-radius: 6px; overflow: hidden; background: #fff; aspect-ratio: 4 / 3; display: grid; grid-template-rows: 12px 1fr; }
+  .mini .mb { background: #eceef1; display: flex; gap: 3px; align-items: center; padding-left: 5px; }
+  .mini .mb i { width: 4px; height: 4px; border-radius: 50%; background: #c9ccd1; }
+  .mini .mc { padding: 7px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; align-content: start; }
+  .mini .mc .h { grid-column: 1 / -1; height: 7px; width: 55%; background: #1e1f22; border-radius: 2px; }
+  .mini .mc span { height: 34px; border-radius: 4px; background: linear-gradient(135deg, #f5c38b, #e7895a); position: relative; }
+  .mini .mc span:nth-child(3) { background: linear-gradient(135deg, #a8d58a, #5aa36b); }
+  .mini .mc span:nth-child(4) { background: linear-gradient(135deg, #f2a3a3, #d65f6a); }
+  .mini .mc span:nth-child(5) { background: linear-gradient(135deg, #a9c6f5, #5d86d6); }
+  .mini .mc span::after { content: '♥'; position: absolute; right: 3px; top: 1px; font-size: 8px; color: #fff; }
+
+  /* flow (GitHub page) */
+  .flowp { padding: 14px; display: grid; gap: 8px; background: var(--app-panel); }
+  .br { background: var(--app-bg); border: 1px solid var(--app-border); border-radius: 9px; padding: 10px 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .br.first { border-color: var(--blue); }
+  .br code { font: 600 12px var(--mono); background: var(--app-panel-2); padding: 2px 7px; border-radius: 5px; }
+  .br .lock { color: var(--app-muted); font-size: 11px; }
+  .arrow-d { justify-self: center; color: var(--app-muted); font-size: 13px; line-height: 1; }
+  .promote { margin-left: auto; }
+  .checks { display: flex; gap: 10px; font-size: 11px; color: var(--app-text-2); width: 100%; padding-top: 6px; border-top: 1px solid var(--app-border); }
+  .checks span { display: flex; gap: 4px; align-items: center; }
+
+  /* failsafe notice */
+  .toast { background: var(--app-bg); color: var(--app-text); border: 1px solid var(--app-border); border-left: 3px solid var(--app-red); border-radius: 10px; padding: 12px 14px; box-shadow: var(--shadow); font-size: 13px; display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; }
+  .toast .k { font-weight: 700; }
+  .toast p { margin: 0; grid-column: 2; color: var(--app-text-2); font-size: 12.5px; }
+  .toast code { font: 11.5px var(--mono); background: var(--app-panel-2); padding: 1px 5px; border-radius: 4px; color: var(--app-text); }
+  .needs { background: var(--app-yellow-bg); color: var(--app-yellow-fg); border: 1px solid var(--app-yellow-border); border-radius: 10px; padding: 12px 14px; font-size: 13px; }
+  .needs b { display: block; margin-bottom: 3px; }
+  .needs code { font: 11.5px var(--mono); }
+  .stack { display: grid; gap: 12px; }
+
+  @media (max-width: 1060px) {
+    .app { grid-template-columns: 38px 210px minmax(0, 1fr); }
+    .app .right { display: none; }
+  }
+  @media (max-width: 860px) {
+    .feature { grid-template-columns: 1fr; gap: 30px; }
+    .feature.flip > :first-child { order: 0; }
+    .more { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    .app { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+    .app .rail, .app .pane { display: none; }
+    .tb-branch, .titlebar .tbtn { display: none; }
+    .pipe small { display: none; }
+    .more { grid-template-columns: 1fr; }
+  }
 
   /* safety */
-  .safety { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-  .safe { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 14px; background: var(--card); border: 1px solid var(--border); font-size: 15px; color: var(--text-2); }
+  .safety-wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 48px; align-items: start; }
+  .safety { display: grid; gap: 0; }
+  .safe { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-top: 1px solid var(--border); font-size: 15px; color: var(--text-2); }
+  .safe:last-child { border-bottom: 1px solid var(--border); }
   .safe b { color: var(--text); }
-  .safe .ok { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #19b36b; color: #fff; font-size: 13px; font-weight: 800; }
+  .safe .ok { flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--app-green); color: #fff; font-size: 11px; font-weight: 800; margin-top: 2px; }
+  @media (max-width: 860px) { .safety-wrap { grid-template-columns: 1fr; } }
 
   /* working with AI */
   .disclaimer { margin-top: 28px; padding: 22px 24px; border-radius: 16px; background: #fff8e6; border: 1px solid #f3d27a; color: #4a3b10; }
@@ -117,28 +327,28 @@
   }
 
   /* requirements */
-  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
   td { padding: 16px 20px; border-top: 1px solid var(--border); vertical-align: top; font-size: 15.5px; }
   tr:first-child td { border-top: 0; }
   td:first-child { width: 34%; font-weight: 600; }
   td:last-child { color: var(--text-2); }
 
   /* price */
-  .price { max-width: 440px; margin: 0 auto; text-align: center; background: var(--card); border: 2px solid var(--blue); border-radius: 22px; padding: 34px 30px 30px; box-shadow: var(--shadow); }
+  .price { max-width: 440px; margin: 0 auto; text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 34px 30px 30px; box-shadow: var(--shadow); }
   .price .amount { font-size: 54px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
   .price .per { margin-top: 8px; color: var(--muted); font-size: 15px; }
   .price ul { list-style: none; padding: 0; margin: 24px 0 26px; text-align: left; display: grid; gap: 10px; font-size: 15px; color: var(--text-2); }
   .price li { display: flex; gap: 10px; align-items: flex-start; }
-  .price li::before { content: '✓'; flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: #19b36b; color: #fff; font-size: 12px; font-weight: 800; margin-top: 1px; }
+  .price li::before { content: '✓'; flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--app-green); color: #fff; font-size: 12px; font-weight: 800; margin-top: 1px; }
   .price .btn { width: 100%; justify-content: center; }
   .price .fine { margin-top: 14px; font-size: 13px; color: var(--muted); }
 
   /* download */
   .download { text-align: center; }
   .dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 860px; margin: 32px auto 0; }
-  .dl a { display: flex; flex-direction: column; gap: 4px; padding: 22px; border-radius: 16px; border: 1px solid var(--border); background: var(--card); text-decoration: none; text-align: left; transition: transform .15s ease, box-shadow .15s ease; }
-  .dl a:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-  .dl a.mine { border: 2px solid var(--blue); }
+  .dl a { display: flex; flex-direction: column; gap: 4px; padding: 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); text-decoration: none; text-align: left; transition: transform .15s ease, box-shadow .15s ease; }
+  .dl a:hover { border-color: color-mix(in srgb, var(--text) 25%, var(--border)); }
+  .dl a.mine { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
   .dl a b { font-size: 17px; }
   .dl a > span { color: var(--muted); font-size: 14px; }
   .dl a .file { font: 12.5px ui-monospace, 'SF Mono', Menlo, monospace; color: var(--text-2); margin-top: 6px; }
@@ -153,8 +363,8 @@
   @media (max-width: 760px) {
     .nav { display: none; }
     .lang { margin-left: auto; }
-    .hero { padding: 64px 0 52px; }
-    section { padding: 60px 0; }
+    .hero { padding: 48px 0 0; }
+    section { padding: 64px 0; }
     td:first-child { width: 40%; }
   }
 </style>
@@ -178,102 +388,286 @@
   </div>
 </header>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
 <main>
   <div class="hero">
     <div class="wrap">
-      <img class="logo" src="assets/logo.png" alt="Coodoo">
       <h1>
-        <span lang="en">Your idea, <span class="grad">built by Claude Code and Codex.</span></span>
-        <span lang="nl">Jouw idee, <span class="grad">gebouwd door Claude Code en Codex.</span></span>
+        <span lang="en">Your idea, built by Claude Code and Codex. <em>While you watch.</em></span>
+        <span lang="nl">Jouw idee, gebouwd door Claude Code en Codex. <em>Terwijl jij meekijkt.</em></span>
       </h1>
       <p class="lead">
-        <span lang="en">A software team on your own computer. You say what you want; two AI developers research, design, build, test and review it, and put it on GitHub.</span>
-        <span lang="nl">Een softwareteam op je eigen computer. Jij zegt wat je wilt; twee AI-ontwikkelaars onderzoeken, ontwerpen, bouwen, testen en reviewen het, en zetten het op GitHub.</span>
+        <span lang="en">A software team on your own computer. You say what you want in plain words; two AI developers research, build, test and review it, and put it on GitHub. No terminal needed.</span>
+        <span lang="nl">Een softwareteam op je eigen computer. Jij zegt in gewone woorden wat je wilt; twee AI-ontwikkelaars onderzoeken, bouwen, testen en reviewen het, en zetten het op GitHub. Zonder terminal.</span>
       </p>
       <div class="cta">
         <a class="btn primary" href="#download" data-hero-download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg>
           <span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span>
         </a>
         <a class="btn" href="#how"><span lang="en">See how it works</span><span lang="nl">Zo werkt het</span></a>
+        <span class="meta" data-version-line><span lang="en">For macOS and Windows</span><span lang="nl">Voor macOS en Windows</span></span>
       </div>
-      <div class="meta" data-version-line>
-        <span lang="en">For macOS and Windows</span><span lang="nl">Voor macOS en Windows</span>
+
+      <!-- the app, with a demo project -->
+      <div class="shot" aria-label="Coodoo">
+        <div class="win big">
+          <div class="titlebar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="tb-project"><span class="av">R</span>recepten-app</span>
+            <span class="tb-branch"><svg><use href="#i-branch"/></svg>development</span>
+            <span class="grow"></span>
+            <span class="pill live"><span class="dot"></span><span lang="en">Autopilot working · Build</span><span lang="nl">Autopilot werkt · Ontwikkelen</span></span>
+            <span class="tbtn"><span lang="en">Pause</span><span lang="nl">Pauzeren</span></span>
+          </div>
+          <div class="app">
+            <div class="rail">
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-files"/></svg>
+              <svg class="ic" style="color:var(--blue)"><use href="#i-list"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-gh"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-rocket"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-chart"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-book"/></svg>
+              <span class="grow"></span>
+              <svg class="ic" style="color:var(--app-muted);margin-bottom:12px"><use href="#i-term"/></svg>
+            </div>
+            <div class="pane">
+              <div class="pane-title"><span lang="en">Goals</span><span lang="nl">Doelen</span></div>
+              <div class="heading"><span lang="en">Working on</span><span lang="nl">Nu bezig</span></div>
+              <div class="box now">
+                <div class="t"><span lang="en">Save recipes as favourites</span><span lang="nl">Recepten bewaren als favoriet</span></div>
+                <div class="segs"><i class="d"></i><i class="d"></i><i class="a"></i><i></i><i></i></div>
+                <div class="sub"><span lang="en">2/5 tasks · 14 min</span><span lang="nl">2/5 taken · 14 min</span></div>
+              </div>
+              <div class="heading"><span lang="en">Queue</span><span lang="nl">Wachtrij</span><span class="n">2</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">Search by ingredient</span><span lang="nl">Zoeken op ingrediënt</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">Dark mode</span><span lang="nl">Donkere modus</span></div>
+              </div>
+              <div class="heading"><span lang="en">History</span><span lang="nl">Geschiedenis</span><span class="n">6</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Log in with email</span><span lang="nl">Inloggen met e-mail</span></div>
+                <div class="q"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Recipe page with photos</span><span lang="nl">Receptpagina met foto’s</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Security: update packages</span><span lang="nl">Beveiliging: packages bijwerken</span></div>
+              </div>
+            </div>
+            <div class="main">
+              <div class="tabs"><span class="on">Autopilot</span><span>GitHub</span><span>Chat</span></div>
+              <div class="page">
+                <div class="card-a proj">
+                  <div class="grow">
+                    <h4>recepten-app</h4>
+                    <div class="sub">demo/recepten-app · <span lang="en">6 done · 2 in queue</span><span lang="nl">6 afgerond · 2 in wachtrij</span></div>
+                  </div>
+                </div>
+                <div class="card-a pipe">
+                  <div class="d"><b>✓</b>Research<small>Codex</small></div>
+                  <div class="d"><b>✓</b>Design<small>Claude</small></div>
+                  <div class="d"><b>✓</b><span lang="en">Plan</span><span lang="nl">Plannen</span><small>Claude</small></div>
+                  <div class="a"><b>3</b><span lang="en">Build</span><span lang="nl">Ontwikkelen</span><small><span class="who cl"></span>Claude</small></div>
+                  <div><b>–</b>Review<small><span class="who cx"></span>Codex</small></div>
+                  <div><b>–</b><span lang="en">Finish</span><span lang="nl">Afronden</span><small>Coodoo</small></div>
+                </div>
+                <div class="card-a">
+                  <div class="heading" style="margin-top:0"><span lang="en">Tasks</span><span lang="nl">Taken</span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Favourites table and migration</span><span lang="nl">Tabel en migratie voor favorieten</span><span class="r"><span class="tag green"><span lang="en">approved</span><span lang="nl">goedgekeurd</span></span></span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">API: add and remove a favourite</span><span lang="nl">API: favoriet toevoegen en verwijderen</span><span class="r"><span class="tag green"><span lang="en">approved</span><span lang="nl">goedgekeurd</span></span></span></div>
+                  <div class="task cur"><svg class="ic run-ic"><use href="#i-run"/></svg><span lang="en">Heart button on the recipe card</span><span lang="nl">Hartje-knop op de receptkaart</span><span class="r"><span class="who cl"></span>Claude</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">“My favourites” page</span><span lang="nl">Pagina “Mijn favorieten”</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">Tests and a look at the app</span><span lang="nl">Tests en de app bekijken</span></div>
+                </div>
+              </div>
+              <div class="log">
+                <div class="lt"><b>Run</b><span lang="en">All</span><span lang="nl">Alles</span><span lang="en">Messages</span><span lang="nl">Berichten</span><span lang="en">Problems</span><span lang="nl">Problemen</span></div>
+                <p><time>14:02:11</time><span class="g">✔ <span lang="en">Review approved: API: add and remove a favourite</span><span lang="nl">Review goedgekeurd: API: favoriet toevoegen en verwijderen</span></span></p>
+                <p><time>14:02:14</time><span class="bl"><span lang="en">Commit and push to development</span><span lang="nl">Commit en push naar development</span></span></p>
+                <p><time>14:02:15</time><span><span lang="en">Claude Code · Build: working on “Heart button on the recipe card”</span><span lang="nl">Claude Code · Ontwikkelen: bezig met “Hartje-knop op de receptkaart”</span></span></p>
+              </div>
+            </div>
+            <div class="pane right">
+              <div class="pane-title">Team</div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cl">✳</span><div class="grow"><b>Claude Code</b><div class="sub"><span lang="en">Working</span><span lang="nl">Bezig</span></div></div><span class="pill live" style="padding:2px 7px"><span class="dot"></span></span></div>
+                <div class="chips"><span class="chip-a"><span lang="en">Development</span><span lang="nl">Ontwikkeling</span></span><span class="chip-a">Design</span></div>
+                <div class="doing"><span lang="en">Writes</span><span lang="nl">Schrijft</span> <code>FavoriteButton.tsx</code></div>
+                <div class="bar"><i></i></div>
+              </div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cx">◎</span><div class="grow"><b>Codex</b><div class="sub"><span lang="en">Waiting for review</span><span lang="nl">Wacht op review</span></div></div></div>
+                <div class="chips"><span class="chip-a">Research</span><span class="chip-a">Code review</span></div>
+              </div>
+              <div class="heading"><span lang="en">Security</span><span lang="nl">Veiligheid</span></div>
+              <div class="box q" style="padding:8px 10px"><svg class="ic ok-ic"><use href="#i-shield"/></svg><span lang="en">No open problems</span><span lang="nl">Geen open problemen</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
+  <section id="how">
+    <div class="wrap">
+      <!-- 1. chat -->
+      <div class="feature" id="features">
+        <div>
+          <span class="step-no">01</span>
+          <h3><span lang="en">Say what you want. Together you turn it into a goal.</span><span lang="nl">Zeg wat je wilt. Samen maak je er een doel van.</span></h3>
+          <p><span lang="en">You don't need to be a programmer. Describe what you want in your own words; the agent asks what it needs to know and proposes a goal. One click puts it in the queue.</span><span lang="nl">Je hoeft geen programmeur te zijn. Beschrijf in je eigen woorden wat je wilt; de agent vraagt wat hij moet weten en stelt een doel voor. Eén klik zet het in de wachtrij.</span></p>
+          <ul>
+            <li><span lang="en">Testers' GitHub issues can be discussed the same way</span><span lang="nl">GitHub-issues van je testers bespreek je op dezelfde manier</span></li>
+            <li><span lang="en">Chatting never changes your code</span><span lang="nl">Chatten verandert nooit je code</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">Chat</span><span class="grow"></span><span class="pill"><span class="who cl"></span>Claude Code</span></div>
+          <div class="chat">
+            <div class="msg me"><span lang="en">I want people to be able to save recipes they like, so they can find them again later.</span><span lang="nl">Ik wil dat mensen recepten die ze lekker vinden kunnen bewaren, zodat ze ze later terugvinden.</span></div>
+            <div class="msg ai">
+              <div class="from"><span class="who cl"></span>Claude Code</div>
+              <span lang="en">Good idea. Users already log in, so I'll keep the favourites per account. This is the goal I suggest:</span><span lang="nl">Goed idee. Gebruikers loggen al in, dus ik bewaar de favorieten per account. Dit doel stel ik voor:</span>
+              <div class="goal-card">
+                <div class="k"><span lang="en">Goal</span><span lang="nl">Doel</span></div>
+                <div class="t"><span lang="en">Save recipes as favourites</span><span lang="nl">Recepten bewaren als favoriet</span></div>
+                <ul>
+                  <li><span lang="en">A heart on every recipe card</span><span lang="nl">Een hartje op elke receptkaart</span></li>
+                  <li><span lang="en">A “My favourites” page</span><span lang="nl">Een pagina “Mijn favorieten”</span></li>
+                  <li><span lang="en">Only for logged-in users</span><span lang="nl">Alleen voor ingelogde gebruikers</span></li>
+                </ul>
+                <span class="abtn"><span lang="en">Add to queue</span><span lang="nl">In de wachtrij</span></span>
+                <span class="abtn ghost"><span lang="en">Change</span><span lang="nl">Aanpassen</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="input"><span class="grow"><span lang="en">Message Claude Code…</span><span lang="nl">Bericht aan Claude Code…</span></span><svg class="ic"><use href="#i-send"/></svg></div>
+        </div>
+      </div>
+
+      <!-- 2. build, look, review -->
+      <div class="feature flip">
+        <div>
+          <span class="step-no">02</span>
+          <h3><span lang="en">One AI builds. The other checks. Then it looks at your app.</span><span lang="nl">De ene AI bouwt. De andere controleert. Dan kijkt hij naar je app.</span></h3>
+          <p><span lang="en">Every task is reviewed by the other agent before it's committed. After that Coodoo starts your app and looks at it, like a person would. Broken or unsafe? It goes back to the developer first.</span><span lang="nl">Elke taak wordt door de andere agent gereviewd voordat hij wordt gecommit. Daarna start Coodoo je app en bekijkt hem, zoals een mens zou doen. Kapot of onveilig? Dan gaat het eerst terug naar de ontwikkelaar.</span></p>
+          <ul>
+            <li><span lang="en">Security problems are fixed before anything else</span><span lang="nl">Beveiligingsproblemen worden eerst opgelost</span></li>
+            <li><span lang="en">Lessons from rejected work are remembered next to the code</span><span lang="nl">Lessen uit afgekeurd werk worden bij de code onthouden</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project"><span lang="en">Review · API: add and remove a favourite</span><span lang="nl">Review · API: favoriet toevoegen en verwijderen</span></span></div>
+          <div class="rev">
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag red"><span lang="en">changes needed</span><span lang="nl">verbeteren</span></span></span>
+              <p><span lang="en">Anyone can remove someone else's favourite: the route doesn't check the owner.</span><span lang="nl">Iedereen kan de favoriet van een ander verwijderen: de route controleert de eigenaar niet.</span> <code>routes/favorites.ts:38</code></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cl" style="width:20px;height:20px;font-size:10px">✳</span>
+              <span><b>Claude Code</b> · <span class="tag blue"><span lang="en">fixed</span><span lang="nl">opgelost</span></span></span>
+              <p><span lang="en">Only the owner can remove it now, with a test for the other case.</span><span lang="nl">Alleen de eigenaar kan hem nu verwijderen, met een test voor het andere geval.</span></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag green"><span lang="en">approved</span><span lang="nl">goedgekeurd</span></span></span>
+            </div>
+            <div class="peek">
+              <div class="mini"><div class="mb"><i></i><i></i><i></i></div><div class="mc"><div class="h"></div><span></span><span></span><span></span><span></span></div></div>
+              <div>
+                <div style="display:flex;gap:6px;align-items:center;font-weight:600"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">App started and looked at</span><span lang="nl">App gestart en bekeken</span></div>
+                <div class="sub" style="margin-top:3px"><span lang="en">The page loads without errors; the hearts are on the cards.</span><span lang="nl">De pagina laadt zonder fouten; de hartjes staan op de kaarten.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. flow -->
+      <div class="feature">
+        <div>
+          <span class="step-no">03</span>
+          <h3><span lang="en">Neat on GitHub. Nothing reaches main untested.</span><span lang="nl">Netjes op GitHub. Niets komt ongetest op main.</span></h3>
+          <p><span lang="en">The autopilot works on the first branch of your flow. With Promote the work moves one step on, through a pull request where GitHub asks for one, waiting for the checks. Every commit is in your name, never in the AI's.</span><span lang="nl">De autopilot werkt op de eerste branch van je flow. Met Promote gaat het werk een stap verder, via een pull request waar GitHub daarom vraagt, en wachtend op de checks. Elke commit staat op jouw naam, nooit op die van de AI.</span></p>
+          <ul>
+            <li><span lang="en">Coodoo puts your flow on GitHub as branch rules</span><span lang="nl">Coodoo zet je flow als branch-regels op GitHub</span></li>
+            <li><span lang="en">Releases for Mac and Windows in three steps</span><span lang="nl">Releases voor Mac en Windows in drie stappen</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">GitHub · <span lang="en">Branches</span><span lang="nl">Branches</span></span><span class="grow"></span><span class="pill"><span class="dot" style="color:var(--app-green)"></span><span lang="en">In sync with GitHub</span><span lang="nl">Gelijk met GitHub</span></span></div>
+          <div class="flowp">
+            <div class="br first"><code>development</code><span class="tag blue"><span lang="en">The autopilot works here</span><span lang="nl">Hier werkt de autopilot</span></span><span class="abtn promote"><span lang="en">Promote to staging</span><span lang="nl">Promote naar staging</span></span>
+              <div class="checks"><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>build</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>tests</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>review</span></div>
+            </div>
+            <div class="arrow-d">↓</div>
+            <div class="br"><code>staging</code><span class="lock"><span lang="en">Only through a pull request</span><span lang="nl">Alleen via een pull request</span></span><span class="grow"></span><span class="sub"><span lang="en">3 goals behind</span><span lang="nl">3 doelen achter</span></span></div>
+            <div class="arrow-d">↓</div>
+            <div class="br"><code>main</code><span class="lock"><span lang="en">Only through a pull request · no force-push</span><span lang="nl">Alleen via een pull request · geen force-push</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="alt">
     <div class="wrap">
-      <div class="kicker"><span lang="en">Made for people with ideas</span><span lang="nl">Gemaakt voor mensen met ideeën</span></div>
-      <h2><span lang="en">Not for people with terminals.</span><span lang="nl">Niet voor mensen met terminals.</span></h2>
-      <p class="intro">
-        <span lang="en">You don't need to be a programmer. Write what you want in plain language, such as <i>"A login page with email and password"</i>. Coodoo turns it into a plan, builds it step by step, checks its own work and keeps your code safe on GitHub. Every screen explains what a button does before you press it.</span>
-        <span lang="nl">Je hoeft geen programmeur te zijn. Schrijf in gewone taal wat je wilt, bijvoorbeeld <i>"Een inlogpagina met e-mail en wachtwoord"</i>. Coodoo maakt er een plan van, bouwt het stap voor stap, controleert zijn eigen werk en bewaart je code veilig op GitHub. Elk scherm legt uit wat een knop doet voordat je erop drukt.</span>
-      </p>
-    </div>
-  </section>
-
-  <section id="features">
-    <div class="wrap">
-      <div class="kicker"><span lang="en">What Coodoo does for you</span><span lang="nl">Wat Coodoo voor je doet</span></div>
-      <h2><span lang="en">A whole team, working while you think.</span><span lang="nl">Een heel team, aan het werk terwijl jij nadenkt.</span></h2>
-      <p class="intro"><span lang="en">Everything a good software team does, in one app, explained in plain words.</span><span lang="nl">Alles wat een goed softwareteam doet, in één app, uitgelegd in gewone woorden.</span></p>
-      <div class="grid">
-        <div class="card"><div class="ic">🧑‍💻</div><h3><span lang="en">A real team, not a chatbot</span><span lang="nl">Een echt team, geen chatbot</span></h3><p><span lang="en">A developer, researcher, designer and reviewer. One AI builds, the other checks. If one gets stuck, the other takes over.</span><span lang="nl">Een ontwikkelaar, onderzoeker, ontwerper en reviewer. De ene AI bouwt, de andere controleert. Loopt er een vast, dan neemt de ander het over.</span></p></div>
-        <div class="card"><div class="ic">🚀</div><h3><span lang="en">Autopilot from idea to code</span><span lang="nl">Autopilot van idee tot code</span></h3><p><span lang="en">Put goals in a queue and press start. Coodoo researches, designs, plans, builds and reviews each one, and picks up where it stopped.</span><span lang="nl">Zet doelen in de wachtrij en druk op start. Coodoo onderzoekt, ontwerpt, plant, bouwt en reviewt ze, en gaat verder waar het stopte.</span></p></div>
-        <div class="card"><div class="ic">👀</div><h3><span lang="en">It looks at your app</span><span lang="nl">Het bekijkt je app</span></h3><p><span lang="en">After every task Coodoo starts your app and checks it really works, like a person would. Broken? The developer fixes it first.</span><span lang="nl">Na elke taak start Coodoo je app en kijkt of hij echt werkt, zoals een mens zou doen. Kapot? Dan repareert de ontwikkelaar het eerst.</span></p></div>
-        <div class="card"><div class="ic">🗺️</div><h3><span lang="en">A map of your code</span><span lang="nl">Een kaart van je code</span></h3><p><span lang="en">The agents find their way by meaning ("where do we check the password?"), with a small AI model on your own computer. Faster and cheaper.</span><span lang="nl">De agents vinden hun weg op betekenis ("waar controleren we het wachtwoord?"), met een klein AI-model op je eigen computer. Sneller en goedkoper.</span></p></div>
-        <div class="card"><div class="ic">🛤️</div><h3><span lang="en">Flows like the pros</span><span lang="nl">Flows zoals de profs</span></h3><p><span lang="en">development → staging → main. Work moves one step at a time with Promote, following your branch rules on GitHub.</span><span lang="nl">development → staging → main. Werk gaat stap voor stap verder met Doorzetten, volgens je branch-regels op GitHub.</span></p></div>
-        <div class="card"><div class="ic">🔐</div><h3><span lang="en">Security built in</span><span lang="nl">Veiligheid ingebouwd</span></h3><p><span lang="en">Keys in a vault, never in your code. Vulnerable packages, unsafe logins and leaking data are found and fixed before anything else.</span><span lang="nl">Sleutels in een kluis, nooit in je code. Kwetsbare pakketten, onveilige logins en lekkende gegevens worden gevonden en eerst opgelost.</span></p></div>
-        <div class="card"><div class="ic">🧩</div><h3><span lang="en">Herd, Docker, databases</span><span lang="nl">Herd, Docker, databases</span></h3><p><span lang="en">Coodoo knows the services your project uses, starts them before your app and fills in the settings for you.</span><span lang="nl">Coodoo kent de services van je project, start ze voor je app en vult de instellingen voor je in.</span></p></div>
-        <div class="card"><div class="ic">💻</div><h3><span lang="en">On every computer</span><span lang="nl">Op elke computer</span></h3><p><span lang="en">Worked on your laptop? Get latest on your desktop. An agent checks both sides first, so nothing is overwritten.</span><span lang="nl">Gewerkt op je laptop? Haal het nieuwste op je desktop. Een agent kijkt eerst beide kanten na, zodat niets wordt overschreven.</span></p></div>
-        <div class="card"><div class="ic">📦</div><h3><span lang="en">Release in three steps</span><span lang="nl">Uitbrengen in drie stappen</span></h3><p><span lang="en">Choose a version, choose where it goes, press release. Coodoo builds your app and writes the release notes.</span><span lang="nl">Kies een versie, kies waarheen, druk op uitbrengen. Coodoo bouwt je app en schrijft de release notes.</span></p></div>
+      <h2><span lang="en">And everything around it.</span><span lang="nl">En alles eromheen.</span></h2>
+      <p class="intro"><span lang="en">The things a good team takes care of without being asked.</span><span lang="nl">Wat een goed team regelt zonder dat je erom vraagt.</span></p>
+      <div class="more">
+        <div><b><span lang="en">A map of your code</span><span lang="nl">Een kaart van je code</span></b><span><span lang="en">The agents find their way by meaning, with a small AI model on your own computer. Faster and cheaper.</span><span lang="nl">De agents vinden hun weg op betekenis, met een klein AI-model op je eigen computer. Sneller en goedkoper.</span></span></div>
+        <div><b><span lang="en">A vault for your keys</span><span lang="nl">Een kluis voor je sleutels</span></b><span><span lang="en">Encrypted, never shown again, never in a commit, and blanked out as REDACTED in every log.</span><span lang="nl">Versleuteld, nooit meer zichtbaar, nooit in een commit, en als REDACTED weggelakt in elk log.</span></span></div>
+        <div><b><span lang="en">Herd, Docker, databases</span><span lang="nl">Herd, Docker, databases</span></b><span><span lang="en">Coodoo starts the services your project needs before your app, and fills in the settings.</span><span lang="nl">Coodoo start de services van je project voor je app, en vult de instellingen in.</span></span></div>
+        <div><b><span lang="en">Share with a link</span><span lang="nl">Delen met een link</span></b><span><span lang="en">Let others try your running app through a Cloudflare tunnel, on your own domain if you like.</span><span lang="nl">Laat anderen je draaiende app proberen via een Cloudflare-tunnel, als je wilt op je eigen domein.</span></span></div>
+        <div><b><span lang="en">On every computer</span><span lang="nl">Op elke computer</span></b><span><span lang="en">Worked on your laptop? Get latest on your desktop. An agent checks both sides first.</span><span lang="nl">Gewerkt op je laptop? Haal het nieuwste op je desktop. Een agent kijkt eerst beide kanten na.</span></span></div>
+        <div><b><span lang="en">When it needs you</span><span lang="nl">Als hij je nodig heeft</span></b><span><span lang="en">A command only you can run? A yellow card says so, and one click lets Coodoo do it for you.</span><span lang="nl">Een opdracht die alleen jij kunt geven? Een gele kaart zegt het, en met één klik doet Coodoo het voor je.</span></span></div>
       </div>
-    </div>
-  </section>
-
-  <section id="how" class="alt">
-    <div class="wrap">
-      <div class="kicker"><span lang="en">How it works</span><span lang="nl">Hoe het werkt</span></div>
-      <h2><span lang="en">From a sentence to working software.</span><span lang="nl">Van één zin naar werkende software.</span></h2>
-      <p class="intro"><span lang="en">For every goal Coodoo works through the steps a good team would. A quick check decides which steps a goal really needs, so a small fix goes straight to work.</span><span lang="nl">Voor elk doel doorloopt Coodoo de stappen die een goed team zou nemen. Een snelle check bepaalt welke stappen nodig zijn, zodat een kleine fix meteen aan de slag gaat.</span></p>
-      <div class="steps">
-        <div class="step"><b><span lang="en">Chat</span><span lang="nl">Chat</span></b><span><span lang="en">Tell the agent what you want; together you turn it into a goal.</span><span lang="nl">Vertel de agent wat je wilt; samen maak je er een doel van.</span></span></div>
-        <div class="step"><b><span lang="en">Research & design</span><span lang="nl">Onderzoek & ontwerp</span></b><span><span lang="en">How the project works, the best approach, and the screens.</span><span lang="nl">Hoe het project werkt, de beste aanpak, en de schermen.</span></span></div>
-        <div class="step"><b><span lang="en">Plan</span><span lang="nl">Plannen</span></b><span><span lang="en">A technical design, split into small tasks.</span><span lang="nl">Een technisch ontwerp, opgedeeld in kleine taken.</span></span></div>
-        <div class="step"><b><span lang="en">Build & review</span><span lang="nl">Bouwen & reviewen</span></b><span><span lang="en">Built, run, looked at, and approved by the other AI.</span><span lang="nl">Gebouwd, gestart, bekeken en goedgekeurd door de andere AI.</span></span></div>
-        <div class="step"><b><span lang="en">On GitHub</span><span lang="nl">Op GitHub</span></b><span><span lang="en">Version, changelog, and every commit in your name.</span><span lang="nl">Versie, changelog, en elke commit op jouw naam.</span></span></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap" style="text-align:center">
-      <div class="kicker"><span lang="en">Flows</span><span lang="nl">Flows</span></div>
-      <h2><span lang="en">Nothing reaches main that wasn't tested first.</span><span lang="nl">Niets komt op main dat niet eerst getest is.</span></h2>
-      <div class="flow">
-        <span class="chip first">development</span><span class="arrow">→</span><span class="chip">staging</span><span class="arrow">→</span><span class="chip">main</span>
-      </div>
-      <p class="intro" style="margin: 0 auto">
-        <span lang="en">The autopilot works on the first branch. With one click work moves one step on, through a pull request where GitHub requires one, waiting for checks, and telling you when someone has to approve.</span>
-        <span lang="nl">De autopilot werkt op de eerste branch. Met één klik gaat werk een stap verder, via een pull request waar GitHub dat vraagt, wachtend op checks, en met een seintje als iemand moet goedkeuren.</span>
-      </p>
     </div>
   </section>
 
   <section id="safety" class="alt">
     <div class="wrap">
-      <div class="kicker"><span lang="en">Safety rules that are always on</span><span lang="nl">Veiligheidsregels die altijd aan staan</span></div>
       <h2><span lang="en">The agents work on their own. Within hard limits.</span><span lang="nl">De agents werken zelfstandig. Binnen harde grenzen.</span></h2>
-      <p class="intro"><span lang="en">No goal, agent or button can switch these off.</span><span lang="nl">Geen doel, agent of knop kan deze uitzetten.</span></p>
-      <div class="safety">
+      <p class="intro"><span lang="en">These rules are always on. No goal, agent or button can switch them off; Coodoo stops whatever tries.</span><span lang="nl">Deze regels staan altijd aan. Geen doel, agent of knop kan ze uitzetten; Coodoo houdt tegen wat het toch probeert.</span></p>
+      <div class="safety-wrap">
+        <div class="safety">
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Your repository stays.</span><span lang="nl">Je repository blijft.</span></b> <span lang="en">Never deleted, archived, transferred or made public.</span><span lang="nl">Nooit verwijderd, gearchiveerd, overgedragen of openbaar gemaakt.</span></span></div>
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">History is never rewritten.</span><span lang="nl">Geschiedenis wordt nooit herschreven.</span></b> <span lang="en">No force pushes, no deleted branches or tags.</span><span lang="nl">Geen force-push, geen verwijderde branches of tags.</span></span></div>
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Keys stay secret.</span><span lang="nl">Sleutels blijven geheim.</span></b> <span lang="en">Encrypted, never shown, never committed.</span><span lang="nl">Versleuteld, nooit getoond, nooit gecommit.</span></span></div>
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">The agents can't reach your login.</span><span lang="nl">De agents kunnen niet bij je login.</span></b> <span lang="en">They only write inside your project folder.</span><span lang="nl">Ze schrijven alleen in je projectmap.</span></span></div>
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Commits in your name.</span><span lang="nl">Commits op jouw naam.</span></b> <span lang="en">Never in the AI's.</span><span lang="nl">Nooit op naam van de AI.</span></span></div>
         <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Work follows your flow.</span><span lang="nl">Werk volgt je flow.</span></b> <span lang="en">No step is ever skipped.</span><span lang="nl">Er wordt nooit een stap overgeslagen.</span></span></div>
+        </div>
+        <div class="stack">
+          <div class="toast">
+            <svg class="ic" style="color:var(--app-red);margin-top:2px"><use href="#i-shield"/></svg>
+            <span class="k"><span lang="en">Failsafe: push refused</span><span lang="nl">Failsafe: push geweigerd</span></span>
+            <p><code>git push --force</code> <span lang="en">would rewrite history on GitHub. The goal stops; nothing was changed.</span><span lang="nl">zou de geschiedenis op GitHub herschrijven. Het doel stopt; er is niets veranderd.</span></p>
+          </div>
+          <div class="toast" style="border-left-color:var(--app-green)">
+            <svg class="ic ok-ic" style="margin-top:2px"><use href="#i-ok"/></svg>
+            <span class="k"><span lang="en">Key kept out of the commit</span><span lang="nl">Sleutel buiten de commit gehouden</span></span>
+            <p><span lang="en">A file with a key from your vault was not committed. In the log it says</span><span lang="nl">Een bestand met een sleutel uit je kluis is niet gecommit. In het log staat</span> <code>REDACTED</code>.</p>
+          </div>
+          <div class="needs">
+            <b><span lang="en">Coodoo needs you</span><span lang="nl">Coodoo heeft je nodig</span></b>
+            <span lang="en">The team left a command:</span><span lang="nl">Het team liet een opdracht achter:</span> <code>npm run db:migrate</code><br>
+            <span class="abtn" style="margin-top:9px"><span lang="en">Let Coodoo do this</span><span lang="nl">Laat Coodoo dit doen</span></span>
+          </div>
+        </div>
       </div>
       <div class="disclaimer" id="ai">
         <h3><span aria-hidden="true">⚠️</span><span lang="en">Working with AI: please read</span><span lang="nl">Werken met AI: lees dit even</span></h3>
@@ -290,7 +684,6 @@
 
   <section>
     <div class="wrap">
-      <div class="kicker"><span lang="en">What you need</span><span lang="nl">Wat je nodig hebt</span></div>
       <h2><span lang="en">Four things, and you're building.</span><span lang="nl">Vier dingen, en je bouwt.</span></h2>
       <table>
         <tr><td><span lang="en">A computer</span><span lang="nl">Een computer</span></td><td><span lang="en">macOS (Apple silicon or Intel) or Windows (x64 or ARM)</span><span lang="nl">macOS (Apple silicon of Intel) of Windows (x64 of ARM)</span></td></tr>
@@ -305,7 +698,6 @@
   <section id="price" class="alt">
     <div class="wrap">
       <div style="text-align:center">
-        <div class="kicker"><span lang="en">Price</span><span lang="nl">Prijs</span></div>
         <h2><span lang="en">One license, one price.</span><span lang="nl">Eén licentie, één prijs.</span></h2>
         <p class="intro" style="margin:0 auto 36px"><span lang="en">Download Coodoo for free; to use it you need a license.</span><span lang="nl">Coodoo downloaden is gratis; om het te gebruiken heb je een licentie nodig.</span></p>
       </div>
@@ -326,7 +718,7 @@
 
   <section id="download" class="download">
     <div class="wrap">
-      <img src="assets/logo.png" alt="" width="72" height="72">
+      <img src="assets/logo.png" alt="" width="56" height="56">
       <h2><span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span></h2>
       <div class="meta" data-version><span lang="en">The latest version</span><span lang="nl">De nieuwste versie</span></div>
       <div class="dl">
