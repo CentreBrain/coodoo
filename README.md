@@ -133,8 +133,8 @@ Downloading Coodoo is free; to use it you need a license: **€19.99 per year (e
 
 **Opening Coodoo for the first time**
 
-- **macOS** may say that Apple can't check Coodoo. Open **System Settings → Privacy & Security**, scroll down and click **Open Anyway**. You only need to do this once.
-- **Windows** may show *Windows protected your PC*. Click **More info → Run anyway**.
+- **macOS**: Coodoo is signed and notarized by Apple, so it opens right away.
+- **Windows** may show *Windows protected your PC*. Click **More info → Run anyway**. You only need to do this once.
 
 ## Updates
 
