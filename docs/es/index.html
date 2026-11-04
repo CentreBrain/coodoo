@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coodoo · Tu propio equipo de software con IA, en tu ordenador</title>
+<meta name="description" content="Coodoo es un equipo de software con IA en tu ordenador. Describe tu idea con tus palabras; agentes de IA la crean, prueban, revisan y suben a GitHub. Funciona con Claude Code y Codex (tu propia suscripción, no incluida).">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CentreBrain">
+<meta name="theme-color" content="#3574f0">
+<link rel="canonical" href="https://coodoo.centrebrain.net/es/">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coodoo">
+<meta property="og:url" content="https://coodoo.centrebrain.net/es/">
+<meta property="og:title" content="Coodoo · Tu propio equipo de software con IA, en tu ordenador">
+<meta property="og:description" content="Describe tu idea con tus propias palabras; agentes de IA la crean, la prueban, la revisan y la suben a GitHub. Sin terminal. Funciona con Claude Code y Codex.">
+<meta property="og:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="La app Coodoo: un equipo de IA creando una app de recetas, con objetivos, tareas y un registro de ejecución">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coodoo · Tu propio equipo de software con IA, en tu ordenador">
+<meta name="twitter:description" content="Describe tu idea con tus propias palabras; agentes de IA la crean, la prueban, la revisan y la suben a GitHub. Sin terminal. Funciona con Claude Code y Codex.">
+<meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://coodoo.centrebrain.net/#app","name":"Coodoo","url":"https://coodoo.centrebrain.net/es/","description":"Coodoo es un equipo de software con IA en tu ordenador. Describe tu idea con tus palabras; agentes de IA la crean, prueban, revisan y suben a GitHub. Funciona con Claude Code y Codex (tu propia suscripción, no incluida).","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Windows","inLanguage":"es","image":"https://coodoo.centrebrain.net/assets/og-image.png","downloadUrl":"https://github.com/CentreBrain/coodoo/releases/latest","offers":{"@type":"Offer","price":"19.99","priceCurrency":"EUR","description":"Licencia anual, IVA no incluido. Tu suscripción de IA (Claude o ChatGPT) no está incluida.","url":"https://coodoo.centrebrain.net/es/#price"},"publisher":{"@id":"https://coodoo.centrebrain.net/#org"}},{"@type":"Organization","@id":"https://coodoo.centrebrain.net/#org","name":"CentreBrain","url":"https://coodoo.centrebrain.net/","logo":"https://coodoo.centrebrain.net/assets/logo.png","sameAs":["https://github.com/CentreBrain"]},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Están incluidos Claude y ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"No. Coodoo es el equipo alrededor de la IA: los objetivos, el piloto automático, las revisiones, GitHub y las reglas de seguridad. La IA en sí viene de tu propia suscripción de Anthropic (Claude Pro o Max, para Claude Code) y/o de OpenAI (ChatGPT Plus o Pro, para Codex). La contratas y la pagas tú; no forma parte de la licencia de Coodoo."}},{"@type":"Question","name":"¿Necesito saber programar?","acceptedAnswer":{"@type":"Answer","text":"No. Describes lo que quieres con tus propias palabras y el equipo de IA lo crea. No necesitas un terminal. Eso sí, conviene revisar lo que crea el equipo antes de usarlo."}},{"@type":"Question","name":"¿Necesito Claude y ChatGPT a la vez?","acceptedAnswer":{"@type":"Answer","text":"Con uno basta. Con los dos, un agente crea y el otro revisa su trabajo, lo que detecta más errores."}},{"@type":"Question","name":"¿Dónde está mi código?","acceptedAnswer":{"@type":"Answer","text":"En tu propio ordenador y en tu propia cuenta de GitHub. Coodoo se ejecuta en tu ordenador; CentreBrain no almacena tu código. Lo que leen los agentes se envía al servicio de IA que usas (Anthropic u OpenAI), según sus condiciones."}},{"@type":"Question","name":"¿En qué ordenadores funciona Coodoo?","acceptedAnswer":{"@type":"Answer","text":"macOS (Apple silicon e Intel) y Windows (x64 y ARM)."}},{"@type":"Question","name":"¿Es seguro dejar que la IA trabaje sola?","acceptedAnswer":{"@type":"Answer","text":"Coodoo tiene reglas de seguridad siempre activas, como no borrar nunca tu repositorio ni reescribir el historial, y mantener tus claves en secreto. Limitan los riesgos, pero no pueden eliminarlos: la IA puede cometer errores. Lee el aviso legal y los riesgos de la IA."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="#features"><span>Funciones</span></a>
+      <a href="#how"><span>Cómo funciona</span></a>
+      <a href="#safety"><span>Seguridad</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="#price"><span>Precio</span></a>
+      <a href="#download">Download</a>
+    </nav>
+    <nav class="lang" aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang-link="en">EN</a><a href="/nl/" hreflang="nl" lang="nl" data-lang-link="nl">NL</a><a href="/de/" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/" hreflang="es" lang="es" data-lang-link="es" aria-current="page">ES</a></nav>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>
+        <span>Tu idea, creada por tu propio equipo de IA. <em>Mientras miras.</em></span>
+      </h1>
+      <p class="lead">
+        <span>Un equipo de software en tu propio ordenador. Dices lo que quieres con tus propias palabras; agentes de IA lo investigan, lo crean, lo prueban, lo revisan y lo suben a GitHub. Sin terminal. Coodoo funciona con los agentes de programación con IA que ya usas: Claude Code y Codex.</span>
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#download" data-hero-download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg>
+          <span>Descargar Coodoo</span>
+        </a>
+        <a class="btn" href="#how"><span>Ver cómo funciona</span></a>
+        <span class="meta" data-version-line><span>Para macOS y Windows</span></span>
+      </div>
+      <p class="byo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Claude y ChatGPT no están incluidos.</b> Usas tu propia suscripción de Anthropic (Claude) y/o de OpenAI (ChatGPT); Coodoo es el equipo que trabaja con ella. <a href="#faq">Cómo funciona</a></span></p>
+
+      <!-- the app, with a demo project -->
+      <div class="shot" aria-label="Coodoo">
+        <div class="win big">
+          <div class="titlebar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="tb-project"><span class="av">R</span>recepten-app</span>
+            <span class="tb-branch"><svg><use href="#i-branch"/></svg>development</span>
+            <span class="grow"></span>
+            <span class="pill live"><span class="dot"></span><span>Piloto automático en marcha · Desarrollo</span></span>
+            <span class="tbtn"><span>Pausar</span></span>
+          </div>
+          <div class="app">
+            <div class="rail">
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-files"/></svg>
+              <svg class="ic" style="color:var(--blue)"><use href="#i-list"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-gh"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-rocket"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-chart"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-book"/></svg>
+              <span class="grow"></span>
+              <svg class="ic" style="color:var(--app-muted);margin-bottom:12px"><use href="#i-term"/></svg>
+            </div>
+            <div class="pane">
+              <div class="pane-title"><span>Objetivos</span></div>
+              <div class="heading"><span>Trabajando en</span></div>
+              <div class="box now">
+                <div class="t"><span>Guardar recetas como favoritas</span></div>
+                <div class="segs"><i class="d"></i><i class="d"></i><i class="a"></i><i></i><i></i></div>
+                <div class="sub"><span>2/5 tareas · 14 min</span></div>
+              </div>
+              <div class="heading"><span>Cola</span><span class="n">2</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Buscar por ingrediente</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Modo oscuro</span></div>
+              </div>
+              <div class="heading"><span>Historial</span><span class="n">6</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Iniciar sesión con email</span></div>
+                <div class="q"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Página de receta con fotos</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Seguridad: actualizar paquetes</span></div>
+              </div>
+            </div>
+            <div class="main">
+              <div class="tabs"><span class="on">Autopilot</span><span>GitHub</span><span>Chat</span></div>
+              <div class="page">
+                <div class="card-a proj">
+                  <div class="grow">
+                    <h4>recepten-app</h4>
+                    <div class="sub">demo/recepten-app · <span>6 hechos · 2 en cola</span></div>
+                  </div>
+                </div>
+                <div class="card-a pipe">
+                  <div class="d"><b>✓</b>Research<small>Codex</small></div>
+                  <div class="d"><b>✓</b>Design<small>Claude</small></div>
+                  <div class="d"><b>✓</b><span>Planificar</span><small>Claude</small></div>
+                  <div class="a"><b>3</b><span>Desarrollo</span><small><span class="who cl"></span>Claude</small></div>
+                  <div><b>–</b>Review<small><span class="who cx"></span>Codex</small></div>
+                  <div><b>–</b><span>Finalizar</span><small>Coodoo</small></div>
+                </div>
+                <div class="card-a">
+                  <div class="heading" style="margin-top:0"><span>Tareas</span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Tabla de favoritos y migración</span><span class="r"><span class="tag green"><span>aprobado</span></span></span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>API: añadir y quitar un favorito</span><span class="r"><span class="tag green"><span>aprobado</span></span></span></div>
+                  <div class="task cur"><svg class="ic run-ic"><use href="#i-run"/></svg><span>Botón de corazón en la tarjeta de receta</span><span class="r"><span class="who cl"></span>Claude</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Página «Mis favoritos»</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Pruebas y un vistazo a la app</span></div>
+                </div>
+              </div>
+              <div class="log">
+                <div class="lt"><b>Run</b><span>Todo</span><span>Mensajes</span><span>Problemas</span></div>
+                <p><time>14:02:11</time><span class="g">✔ <span>Revisión aprobada: API: añadir y quitar un favorito</span></span></p>
+                <p><time>14:02:14</time><span class="bl"><span>Commit y push a development</span></span></p>
+                <p><time>14:02:15</time><span><span>Claude Code · Desarrollo: trabajando en «Botón de corazón en la tarjeta de receta»</span></span></p>
+              </div>
+            </div>
+            <div class="pane right">
+              <div class="pane-title">Team</div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cl">✳</span><div class="grow"><b>Claude Code</b><div class="sub"><span>Trabajando</span></div></div><span class="pill live" style="padding:2px 7px"><span class="dot"></span></span></div>
+                <div class="chips"><span class="chip-a"><span>Desarrollo</span></span><span class="chip-a">Design</span></div>
+                <div class="doing"><span>Escribe</span> <code>FavoriteButton.tsx</code></div>
+                <div class="bar"><i></i></div>
+              </div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cx">◎</span><div class="grow"><b>Codex</b><div class="sub"><span>Esperando revisión</span></div></div></div>
+                <div class="chips"><span class="chip-a">Research</span><span class="chip-a">Code review</span></div>
+              </div>
+              <div class="heading"><span>Seguridad</span></div>
+              <div class="box q" style="padding:8px 10px"><svg class="ic ok-ic"><use href="#i-shield"/></svg><span>Ningún problema abierto</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 class="how-h"><span>De la idea a una app que funciona, en tres pasos.</span></h2>
+      <!-- 1. chat -->
+      <div class="feature" id="features">
+        <div>
+          <span class="step-no">01</span>
+          <h3><span>Di lo que quieres. Juntos lo convertís en un objetivo.</span></h3>
+          <p><span>No hace falta que sepas programar. Describe lo que quieres con tus propias palabras; el agente te pregunta lo que necesita saber y te propone un objetivo. Con un clic lo pones en la cola.</span></p>
+          <ul>
+            <li><span>Las issues de GitHub de tus testers se pueden comentar de la misma forma</span></li>
+            <li><span>Chatear nunca cambia tu código</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">Chat</span><span class="grow"></span><span class="pill"><span class="who cl"></span>Claude Code</span></div>
+          <div class="chat">
+            <div class="msg me"><span>Quiero que la gente pueda guardar las recetas que le gustan, para encontrarlas más tarde.</span></div>
+            <div class="msg ai">
+              <div class="from"><span class="who cl"></span>Claude Code</div>
+              <span>Buena idea. Los usuarios ya inician sesión, así que guardaré los favoritos por cuenta. Este es el objetivo que propongo:</span>
+              <div class="goal-card">
+                <div class="k"><span>Objetivo</span></div>
+                <div class="t"><span>Guardar recetas como favoritas</span></div>
+                <ul>
+                  <li><span>Un corazón en cada tarjeta de receta</span></li>
+                  <li><span>Una página «Mis favoritos»</span></li>
+                  <li><span>Solo para usuarios con sesión iniciada</span></li>
+                </ul>
+                <span class="abtn"><span>Añadir a la cola</span></span>
+                <span class="abtn ghost"><span>Cambiar</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="input"><span class="grow"><span>Escribe a Claude Code…</span></span><svg class="ic"><use href="#i-send"/></svg></div>
+        </div>
+      </div>
+
+      <!-- 2. build, look, review -->
+      <div class="feature flip">
+        <div>
+          <span class="step-no">02</span>
+          <h3><span>Una IA crea. La otra revisa. Después mira tu app.</span></h3>
+          <p><span>Cada tarea la revisa el otro agente antes de hacer el commit. Después, Coodoo inicia tu app y la mira, como lo haría una persona. ¿Algo no funciona o no es seguro? Primero vuelve al desarrollador.</span></p>
+          <ul>
+            <li><span>Los problemas de seguridad se arreglan antes que nada</span></li>
+            <li><span>Las lecciones del trabajo rechazado se guardan junto al código</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project"><span>Revisión · API: añadir y quitar un favorito</span></span></div>
+          <div class="rev">
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag red"><span>cambios necesarios</span></span></span>
+              <p><span>Cualquiera puede quitar el favorito de otra persona: la ruta no comprueba quién es el propietario.</span> <code>routes/favorites.ts:38</code></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cl" style="width:20px;height:20px;font-size:10px">✳</span>
+              <span><b>Claude Code</b> · <span class="tag blue"><span>arreglado</span></span></span>
+              <p><span>Ahora solo el propietario puede quitarlo, con una prueba para el otro caso.</span></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag green"><span>aprobado</span></span></span>
+            </div>
+            <div class="peek">
+              <div class="mini"><div class="mb"><i></i><i></i><i></i></div><div class="mc"><div class="h"></div><span></span><span></span><span></span><span></span></div></div>
+              <div>
+                <div style="display:flex;gap:6px;align-items:center;font-weight:600"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>App iniciada y revisada</span></div>
+                <div class="sub" style="margin-top:3px"><span>La página carga sin errores; los corazones están en las tarjetas.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. flow -->
+      <div class="feature">
+        <div>
+          <span class="step-no">03</span>
+          <h3><span>Ordenado en GitHub. Nada llega a main sin probar.</span></h3>
+          <p><span>El piloto automático trabaja en la primera rama de tu flujo. Con Promote, el trabajo avanza un paso, mediante un pull request cuando GitHub lo exige y esperando a las comprobaciones. Cada commit va a tu nombre, nunca al de la IA.</span></p>
+          <ul>
+            <li><span>Coodoo lleva tu flujo a GitHub como reglas de rama</span></li>
+            <li><span>Versiones para Mac y Windows en tres pasos</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">GitHub · <span>Ramas</span></span><span class="grow"></span><span class="pill"><span class="dot" style="color:var(--app-green)"></span><span>Sincronizado con GitHub</span></span></div>
+          <div class="flowp">
+            <div class="br first"><code>development</code><span class="tag blue"><span>Aquí trabaja el piloto automático</span></span><span class="abtn promote"><span>Promote a staging</span></span>
+              <div class="checks"><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>build</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>tests</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>review</span></div>
+            </div>
+            <div class="arrow-d">↓</div>
+            <div class="br"><code>staging</code><span class="lock"><span>Solo mediante pull request</span></span><span class="grow"></span><span class="sub"><span>3 objetivos de retraso</span></span></div>
+            <div class="arrow-d">↓</div>
+            <div class="br"><code>main</code><span class="lock"><span>Solo mediante pull request · sin force-push</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Y todo lo que lo rodea.</span></h2>
+      <p class="intro"><span>Lo que un buen equipo resuelve sin que se lo pidas.</span></p>
+      <div class="more">
+        <div><b><span>Un mapa de tu código</span></b><span><span>Los agentes se orientan por el significado, con un pequeño modelo de IA en tu propio ordenador. Más rápido y más barato.</span></span></div>
+        <div><b><span>Una caja fuerte para tus claves</span></b><span><span>Cifradas, nunca se vuelven a mostrar, nunca en un commit y sustituidas por REDACTED en todos los registros.</span></span></div>
+        <div><b><span>Herd, Docker, bases de datos</span></b><span><span>Coodoo inicia los servicios que necesita tu proyecto antes que tu app, y rellena la configuración.</span></span></div>
+        <div><b><span>Compartir con un enlace</span></b><span><span>Deja que otros prueben tu app en marcha a través de un túnel de Cloudflare, en tu propio dominio si quieres.</span></span></div>
+        <div><b><span>En todos tus ordenadores</span></b><span><span>¿Has trabajado en tu portátil? Trae lo último a tu ordenador de sobremesa. Un agente revisa antes ambos lados.</span></span></div>
+        <div><b><span>Cuando te necesita</span></b><span><span>¿Un comando que solo tú puedes ejecutar? Una tarjeta amarilla te lo indica, y con un clic Coodoo lo hace por ti.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="safety" class="alt">
+    <div class="wrap">
+      <h2><span>Los agentes trabajan solos. Dentro de límites estrictos.</span></h2>
+      <p class="intro"><span>Estas reglas están siempre activas. Ningún objetivo, agente ni botón puede desactivarlas; Coodoo detiene cualquier cosa que lo intente.</span></p>
+      <div class="safety-wrap">
+        <div class="safety">
+        <div class="safe"><span class="ok">✓</span><span><b><span>Tu repositorio se queda.</span></b> <span>Nunca se borra, archiva, transfiere ni hace público.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>El historial nunca se reescribe.</span></b> <span>Sin force push, sin borrar ramas ni etiquetas.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Las claves siguen siendo secretas.</span></b> <span>Cifradas, nunca mostradas, nunca en un commit.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Los agentes no pueden acceder a tu sesión.</span></b> <span>Solo escriben dentro de la carpeta de tu proyecto.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Commits a tu nombre.</span></b> <span>Nunca al de la IA.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>El trabajo sigue tu flujo.</span></b> <span>Nunca se salta ningún paso.</span></span></div>
+        </div>
+        <div class="stack">
+          <div class="toast">
+            <svg class="ic" style="color:var(--app-red);margin-top:2px"><use href="#i-shield"/></svg>
+            <span class="k"><span>Bloqueo de seguridad: push rechazado</span></span>
+            <p><code>git push --force</code> <span>reescribiría el historial en GitHub. El objetivo se detiene; no se ha cambiado nada.</span></p>
+          </div>
+          <div class="toast" style="border-left-color:var(--app-green)">
+            <svg class="ic ok-ic" style="margin-top:2px"><use href="#i-ok"/></svg>
+            <span class="k"><span>Clave excluida del commit</span></span>
+            <p><span>Un archivo con una clave de tu caja fuerte no se ha incluido en el commit. En el registro aparece</span> <code>REDACTED</code>.</p>
+          </div>
+          <div class="needs">
+            <b><span>Coodoo te necesita</span></b>
+            <span>El equipo ha dejado un comando:</span> <code>npm run db:migrate</code><br>
+            <span class="abtn" style="margin-top:9px"><span>Deja que Coodoo lo haga</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="disclaimer" id="ai">
+        <h3><span aria-hidden="true">⚠️</span><span>Trabajar con IA: léelo, por favor</span></h3>
+        <ul>
+          <li><span><b>La IA puede cometer errores.</b> El código puede no funcionar, tener un fallo de seguridad o hacer algo distinto de lo que pediste, y una respuesta puede ser incorrecta, aunque suene convincente.</span></li>
+          <li><span><b>Revisa tú mismo lo que crea el equipo</b> antes de usarlo, publicarlo o dárselo a otros. Sigues siendo responsable de tu proyecto y de lo que hagas con él.</span></li>
+          <li><span>Las reglas de seguridad de arriba limitan los riesgos, pero <b>no ofrecen ninguna garantía</b>.</span></li>
+          <li><span><b>Coodoo y CentreBrain no son responsables</b> de errores, daños o pérdidas causados por lo que la IA hace o crea. Usas Coodoo bajo tu propio riesgo. A los propios servicios de IA se aplican además las condiciones de Anthropic y OpenAI.</span></li>
+        </ul>
+        <p><span>Coodoo te muestra esto una vez, la primera vez que lo inicias, y lo aceptas antes de poder empezar. <a href="disclaimer.html">Lee el aviso legal completo y los riesgos de la IA</a>.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2><span>Cuatro cosas y ya estás creando.</span></h2>
+      <table>
+        <tr><td><span>Un ordenador</span></td><td><span>macOS (Apple silicon o Intel) o Windows (x64 o ARM)</span></td></tr>
+        <tr><td><span>Tu propia suscripción de IA</span></td><td><span><b>No incluida en Coodoo.</b> Claude (para Claude Code, de Anthropic) y/o ChatGPT (para Codex, de OpenAI), que contratas y pagas tú. Con una basta; con las dos, una crea y la otra revisa.</span></td></tr>
+        <tr><td><span>Una cuenta de GitHub</span></td><td><span>Aquí vive tu código.</span></td></tr>
+        <tr><td><span>Una licencia de Coodoo</span></td><td><span>19,99 € al año (IVA no incluido). Se te pide la primera vez que inicias la app. <a href="#price">Comprar una licencia</a></span></td></tr>
+      </table>
+      <p class="note" style="margin-left:0"><span>Coodoo instala por ti los programas Claude Code y Codex y las herramientas que necesita tu proyecto (como Node.js, PHP o Python), con los instaladores oficiales. Inicias sesión con tu propia cuenta.</span></p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2><span>Preguntas frecuentes</span></h2>
+      <div class="faq">
+        <details open>
+          <summary><span>¿Están incluidos Claude y ChatGPT?</span></summary>
+          <p><span>No. Coodoo es el equipo alrededor de la IA: los objetivos, el piloto automático, las revisiones, GitHub y las reglas de seguridad. La IA en sí viene de tu propia suscripción de Anthropic (Claude Pro o Max, para Claude Code) y/o de OpenAI (ChatGPT Plus o Pro, para Codex). La contratas y la pagas tú; no forma parte de la licencia de Coodoo.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Necesito saber programar?</span></summary>
+          <p><span>No. Describes lo que quieres con tus propias palabras y el equipo de IA lo crea. No necesitas un terminal. Eso sí, conviene revisar lo que crea el equipo antes de usarlo.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Necesito Claude y ChatGPT a la vez?</span></summary>
+          <p><span>Con uno basta. Con los dos, un agente crea y el otro revisa su trabajo, lo que detecta más errores.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Dónde está mi código?</span></summary>
+          <p><span>En tu propio ordenador y en tu propia cuenta de GitHub. Coodoo se ejecuta en tu ordenador; CentreBrain no almacena tu código. Lo que leen los agentes se envía al servicio de IA que usas (Anthropic u OpenAI), según sus condiciones.</span></p>
+        </details>
+        <details>
+          <summary><span>¿En qué ordenadores funciona Coodoo?</span></summary>
+          <p><span>macOS (Apple silicon e Intel) y Windows (x64 y ARM).</span></p>
+        </details>
+        <details>
+          <summary><span>¿Es seguro dejar que la IA trabaje sola?</span></summary>
+          <p><span>Coodoo tiene reglas de seguridad siempre activas, como no borrar nunca tu repositorio ni reescribir el historial, y mantener tus claves en secreto. Limitan los riesgos, pero no pueden eliminarlos: la IA puede cometer errores. Lee el <a href="disclaimer.html">aviso legal y los riesgos de la IA</a>.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="price" class="alt">
+    <div class="wrap">
+      <div style="text-align:center">
+        <h2><span>Una licencia, un precio.</span></h2>
+        <p class="intro" style="margin:0 auto 36px"><span>Descarga Coodoo gratis; para usarlo necesitas una licencia.</span></p>
+      </div>
+      <div class="price">
+        <div class="amount"><span>19,99 €</span></div>
+        <div class="per"><span>al año, IVA no incluido</span></div>
+        <ul>
+          <li><span>Todas las funciones: el equipo de IA, el piloto automático, el flujo de GitHub y las reglas de seguridad</span></li>
+          <li><span>Todas las actualizaciones mientras tu licencia sea válida</span></li>
+          <li><span>Mac y Windows</span></li>
+          <li><span>Un pago único: nada se renueva automáticamente</span></li>
+          <li class="not"><span>No incluido: tu suscripción de IA (Claude o ChatGPT)</span></li>
+        </ul>
+        <a class="btn primary" href="https://buy.stripe.com/fZu7sM7wagEY8AN2yd1oI00" rel="noopener"><span>Comprar una licencia</span></a>
+        <div class="fine"><span>Pagas de forma segura a través de Stripe. Tu suscripción de IA con Anthropic u OpenAI es aparte y no forma parte de este precio.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <div class="wrap">
+      <img src="/assets/logo.png" alt="" width="56" height="56">
+      <h2><span>Descargar Coodoo</span></h2>
+      <div class="meta" data-version><span>La última versión</span></div>
+      <div class="dl">
+        <a href="https://github.com/CentreBrain/coodoo/releases/latest" data-asset="arm64.dmg" data-os="mac">
+          <b><span>Mac con Apple silicon</span></b>
+          <span>M1, M2, M3, M4 <span>y posteriores</span></span>
+          <span class="file">.dmg</span>
+        </a>
+        <a href="https://github.com/CentreBrain/coodoo/releases/latest" data-asset="intel.dmg" data-os="mac">
+          <b><span>Mac con Intel</span></b>
+          <span><span>Macs más antiguos</span></span>
+          <span class="file">.dmg</span>
+        </a>
+        <a href="https://github.com/CentreBrain/coodoo/releases/latest" data-asset="exe" data-os="win">
+          <b>Windows</b>
+          <span>x64 &amp; ARM</span>
+          <span class="file">.exe</span>
+        </a>
+      </div>
+      <p class="note">
+        <span><b>En un Mac</b>, Coodoo está firmado y notarizado por Apple: se abre directamente. <b>¿Primera vez en Windows?</b> Si Windows dice que ha protegido tu PC, elige Más información → Ejecutar de todas formas. Después, las actualizaciones llegan solas.</span>
+      </p>
+      <div class="cta" style="margin-top:22px">
+        <a class="btn" href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Leer el manual</span></a>
+        <a class="btn" href="https://github.com/CentreBrain/coodoo/releases"><span>Todas las versiones</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Versiones</span></a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html"><span>Aviso legal &amp; riesgos de la IA</span></a>
+    </div>
+    <div class="fine"><span>La IA puede cometer errores: revisa lo que crea Coodoo antes de usarlo. Coodoo y CentreBrain no son responsables de lo que la IA hace o crea (<a href="disclaimer.html">aviso legal</a>). </span><span>Coodoo no está afiliado a Anthropic ni a OpenAI. Claude Code es un producto de Anthropic; Codex es un producto de OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  const T = {"version":"Versión {v} · {date}","versionLine":"Versión {v} · para macOS y Windows","date":"es-ES"}
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+
+  // this visitor's computer goes first
+  const ua = navigator.userAgent
+  const os = /Windows/i.test(ua) ? 'win' : /Mac/i.test(ua) ? 'mac' : ''
+  if (os) {
+    const box = document.querySelector('.dl')
+    const mine = [...box.children].filter((a) => a.dataset.os === os)
+    mine.forEach((a) => a.classList.add('mine'))
+    mine.reverse().forEach((a) => box.prepend(a))
+  }
+
+  // the newest version and its files, straight from GitHub
+  fetch('https://api.github.com/repos/CentreBrain/coodoo/releases/latest')
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((rel) => {
+      const v = rel.tag_name.replace(/^v/, '')
+      const find = (test) => rel.assets.find((a) => test(a.name))
+      const files = {
+        'arm64.dmg': find((n) => /arm64\.dmg$/.test(n)),
+        'intel.dmg': find((n) => /\.dmg$/.test(n) && !/arm64/.test(n)),
+        exe: find((n) => /\.exe$/.test(n))
+      }
+      document.querySelectorAll('[data-asset]').forEach((a) => {
+        const f = files[a.dataset.asset]
+        if (!f) return
+        a.href = f.browser_download_url
+        a.querySelector('.file').textContent = `${f.name} · ${Math.round(f.size / 1048576)} MB`
+      })
+      const date = new Date(rel.published_at).toLocaleDateString(T.date, { day: 'numeric', month: 'long', year: 'numeric' })
+      document.querySelector('[data-version]').textContent = T.version.replace('{v}', v).replace('{date}', date)
+      document.querySelector('[data-version-line]').textContent = T.versionLine.replace('{v}', v)
+      // the big button downloads straight away for Windows; on a Mac the choice between chips stays below
+      if (os === 'win' && files.exe) document.querySelector('[data-hero-download]').href = files.exe.browser_download_url
+    })
+    .catch(() => {})
+</script>
+</body>
+</html>

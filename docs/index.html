@@ -11,6 +11,8 @@
 <link rel="canonical" href="https://coodoo.centrebrain.net/">
 <link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/">
 <link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/">
 <link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coodoo">
@@ -23,6 +25,8 @@
 <meta property="og:image:alt" content="The Coodoo app: an AI team building a recipe app, with goals, tasks and a run log">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Coodoo · Your own AI software team, on your computer">
 <meta name="twitter:description" content="Describe your idea in plain words; AI agents build, test and review it and put it on GitHub. No terminal needed. Works with Claude Code and Codex.">
@@ -48,7 +52,7 @@
       <a href="#price"><span>Price</span></a>
       <a href="#download">Download</a>
     </nav>
-    <nav class="lang" aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang-link="en" aria-current="page">EN</a><a href="/nl/" hreflang="nl" lang="nl" data-lang-link="nl">NL</a></nav>
+    <nav class="lang" aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang-link="en" aria-current="page">EN</a><a href="/nl/" hreflang="nl" lang="nl" data-lang-link="nl">NL</a><a href="/de/" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/" hreflang="es" lang="es" data-lang-link="es">ES</a></nav>
   </div>
 </header>
 
@@ -473,7 +477,7 @@
     try { saved = localStorage.getItem('coodoo-lang') } catch {}
     if (saved === 'en' || document.referrer.startsWith(location.origin)) return
     const want = saved || (navigator.language || '').slice(0, 2).toLowerCase()
-    const to = [{"code":"nl","path":"/nl/"}].find((o) => o.code === want)
+    const to = [{"code":"nl","path":"/nl/"},{"code":"de","path":"/de/"},{"code":"es","path":"/es/"}].find((o) => o.code === want)
     if (to) location.replace(to.path + location.pathname.split('/').pop() + location.hash)
   })()
 

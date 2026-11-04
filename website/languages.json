@@ -1,6 +1,6 @@
 [
   { "code": "en", "path": "/", "locale": "en_US", "date": "en-GB", "manual": "https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo", "ready": true },
   { "code": "nl", "path": "/nl/", "locale": "nl_NL", "date": "nl-NL", "manual": "https://github.com/CentreBrain/coodoo/wiki/Welkom-bij-Coodoo-(NL)", "ready": true },
-  { "code": "de", "path": "/de/", "locale": "de_DE", "date": "de-DE", "manual": "https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo", "ready": false },
-  { "code": "es", "path": "/es/", "locale": "es_ES", "date": "es-ES", "manual": "https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo", "ready": false }
+  { "code": "de", "path": "/de/", "locale": "de_DE", "date": "de-DE", "manual": "https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo", "ready": true },
+  { "code": "es", "path": "/es/", "locale": "es_ES", "date": "es-ES", "manual": "https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo", "ready": true }
 ]
