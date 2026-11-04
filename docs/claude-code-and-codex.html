@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coodoo with Claude Code and Codex: what it adds · Coodoo</title>
+<meta name="description" content="Claude Code and Codex are AI coding agents for the terminal. Coodoo puts them to work as a team without a terminal, with goals, an autopilot, reviews, GitHub and safety rules.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CentreBrain">
+<meta name="theme-color" content="#3574f0">
+<link rel="canonical" href="https://coodoo.centrebrain.net/claude-code-and-codex.html">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/claude-code-and-codex.html">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/claude-code-and-codex.html">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/claude-code-and-codex.html">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/claude-code-and-codex.html">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/claude-code-and-codex.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coodoo">
+<meta property="og:logo" content="https://coodoo.centrebrain.net/assets/logo.png">
+<meta property="og:url" content="https://coodoo.centrebrain.net/claude-code-and-codex.html">
+<meta property="og:title" content="Coodoo with Claude Code and Codex: what it adds · Coodoo">
+<meta property="og:description" content="Claude Code and Codex are AI coding agents for the terminal. Coodoo puts them to work as a team without a terminal, with goals, an autopilot, reviews, GitHub and safety rules.">
+<meta property="og:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coodoo with Claude Code and Codex: what it adds · Coodoo">
+<meta name="twitter:description" content="Claude Code and Codex are AI coding agents for the terminal. Coodoo puts them to work as a team without a terminal, with goals, an autopilot, reviews, GitHub and safety rules.">
+<meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Coodoo with Claude Code and Codex: what it adds · Coodoo","url":"https://coodoo.centrebrain.net/claude-code-and-codex.html","inLanguage":"en","dateModified":"2026-11-04","isPartOf":{"@type":"WebSite","name":"Coodoo","url":"https://coodoo.centrebrain.net/"},"publisher":{"@type":"Organization","name":"CentreBrain"}},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Is Coodoo made by Anthropic or OpenAI?","acceptedAnswer":{"@type":"Answer","text":"No. Coodoo is made by CentreBrain and is not affiliated with Anthropic or OpenAI."}},{"@type":"Question","name":"Which subscription do I need?","acceptedAnswer":{"@type":"Answer","text":"Claude (Pro or Max) for Claude Code and/or ChatGPT (Plus or Pro) for Codex. One is enough; with both, one builds and the other reviews."}},{"@type":"Question","name":"Can I still use Claude Code and Codex myself?","acceptedAnswer":{"@type":"Answer","text":"Yes. Coodoo uses the normal programs, so you can keep using them in your own terminal as well."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features"><span>Features</span></a>
+      <a href="./#how"><span>How it works</span></a>
+      <a href="./#safety"><span>Safety</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="./#price"><span>Price</span></a>
+      <a href="./#download">Download</a>
+    </nav>
+    <nav class="lang" aria-label="Language"><a href="/claude-code-and-codex.html" hreflang="en" lang="en" data-lang-link="en" aria-current="page">EN</a><a href="/nl/claude-code-and-codex.html" hreflang="nl" lang="nl" data-lang-link="nl">NL</a><a href="/de/claude-code-and-codex.html" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/claude-code-and-codex.html" hreflang="es" lang="es" data-lang-link="es">ES</a></nav>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features"><span>Features</span></a></nav>
+      <h1><span>Claude Code and Codex, as a team. Without the terminal.</span></h1>
+      <p class="lead"><span>Claude Code and Codex are powerful AI coding agents, made for the terminal. Coodoo puts them to work together for you, with goals, an autopilot, reviews, GitHub and safety rules around them.</span></p>
+      <div class="cta">
+        <a class="btn primary" href="./#download"><span>Download Coodoo</span></a>
+        <a class="btn" href="./#price"><span>See the price</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="feature">
+        <div>
+          <h2><span>What Coodoo adds</span></h2>
+          <p><span>On their own, the agents wait for your next command in a terminal, and you arrange Git, testing and safety yourself. Coodoo turns them into a team you talk to in plain words.</span></p>
+          <ul>
+            <li><span>A chat in plain words instead of terminal commands</span></li>
+            <li><span>Two agents that check each other’s work</span></li>
+            <li><span>An autopilot that works through goals and tasks</span></li>
+            <li><span>Branches, pull requests and releases, arranged</span></li>
+            <li><span>Safety rules that are always on</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">Chat</span><span class="grow"></span><span class="pill"><span class="who cl"></span>Claude Code</span></div>
+          <div class="chat">
+            <div class="msg me"><span>I want people to be able to save recipes they like, so they can find them again later.</span></div>
+            <div class="msg ai">
+              <div class="from"><span class="who cl"></span>Claude Code</div>
+              <span>Good idea. Users already log in, so I'll keep the favourites per account. This is the goal I suggest:</span>
+              <div class="goal-card">
+                <div class="k"><span>Goal</span></div>
+                <div class="t"><span>Save recipes as favourites</span></div>
+                <ul>
+                  <li><span>A heart on every recipe card</span></li>
+                  <li><span>A “My favourites” page</span></li>
+                  <li><span>Only for logged-in users</span></li>
+                </ul>
+                <span class="abtn"><span>Add to queue</span></span>
+                <span class="abtn ghost"><span>Change</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="input"><span class="grow"><span>Message Claude Code…</span></span><svg class="ic"><use href="#i-send"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>How it works</span></h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span><span>Install Coodoo. It installs Claude Code and Codex for you.</span></span></li>
+          <li><span class="n">2</span><span><span>Sign in with your own Claude and/or ChatGPT account.</span></span></li>
+          <li><span class="n">3</span><span><span>Connect GitHub.</span></span></li>
+          <li><span class="n">4</span><span><span>Describe your idea, and let the team build it.</span></span></li>
+      </ol>
+      <div class="fp-note">
+        <h3><span>Not included: your AI subscription</span></h3>
+        <p><span>Coodoo is not made by Anthropic or OpenAI and does not include their services. You use your own subscription with Anthropic (Claude) and/or OpenAI (ChatGPT), under their terms.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2><span>Frequently asked questions</span></h2>
+      <div class="faq">
+        <details open>
+          <summary><span>Is Coodoo made by Anthropic or OpenAI?</span></summary>
+          <p><span>No. Coodoo is made by CentreBrain and is not affiliated with Anthropic or OpenAI.</span></p>
+        </details>
+        <details>
+          <summary><span>Which subscription do I need?</span></summary>
+          <p><span>Claude (Pro or Max) for Claude Code and/or ChatGPT (Plus or Pro) for Codex. One is enough; with both, one builds and the other reviews.</span></p>
+        </details>
+        <details>
+          <summary><span>Can I still use Claude Code and Codex myself?</span></summary>
+          <p><span>Yes. Coodoo uses the normal programs, so you can keep using them in your own terminal as well.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>More of Coodoo</span></h2>
+      <div class="fp-related">
+        <a href="autopilot.html"><b><span>The autopilot</span></b><span><span>From idea to working app, task by task.</span></span></a>
+        <a href="ai-code-review.html"><b><span>AI code review</span></b><span><span>One AI builds, the other checks.</span></span></a>
+        <a href="safety.html"><b><span>Safety rules</span></b><span><span>Hard limits that are always on.</span></span></a>
+        <a href="github-flow.html"><b><span>GitHub flow</span></b><span><span>Branches, pull requests and releases, arranged.</span></span></a>
+        <a href="programs.html"><b><span>Programs</span></b><span><span>Languages and databases, without installing.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2><span>Try it with your own idea.</span></h2>
+      <p class="intro" style="margin:0 auto 22px"><span>Coodoo is free to download. To use it you need a license (€19.99 per year, excl. VAT) and your own Claude and/or ChatGPT subscription.</span></p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download"><span>Download Coodoo</span></a>
+        <a class="btn" href="./"><span>Back to the overview</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Releases</span></a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html"><span>Disclaimer &amp; AI risks</span></a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html"><span>The autopilot</span></a>
+      <a href="ai-code-review.html"><span>AI code review</span></a>
+      <a href="safety.html"><span>Safety rules</span></a>
+      <a href="github-flow.html"><span>GitHub flow</span></a>
+      <a href="programs.html"><span>Programs</span></a>
+      <a href="claude-code-and-codex.html"><span>With Claude Code and Codex</span></a>
+    </nav>
+    <div class="fine"><span>AI can make mistakes: check what Coodoo makes before you use it. Coodoo and CentreBrain are not liable for what the AI does or makes (<a href="disclaimer.html">disclaimer</a>). </span><span>Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+  // the first visit in another language: once to that language's page (a choice made before always wins)
+  ;(() => {
+    let saved = null
+    try { saved = localStorage.getItem('coodoo-lang') } catch {}
+    if (saved === 'en' || document.referrer.startsWith(location.origin)) return
+    const want = saved || (navigator.language || '').slice(0, 2).toLowerCase()
+    const to = [{"code":"nl","path":"/nl/"},{"code":"de","path":"/de/"},{"code":"es","path":"/es/"}].find((o) => o.code === want)
+    if (to) location.replace(to.path + location.pathname.split('/').pop() + location.hash)
+  })()
+</script>
+</body>
+</html>

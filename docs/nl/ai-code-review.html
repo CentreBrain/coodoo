@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-code-review: twee AI’s die elkaar controleren · Coodoo</title>
+<meta name="description" content="In Coodoo bouwt de ene AI en reviewt de andere. Elke taak wordt gecontroleerd, Coodoo start je app om te zien of hij werkt, en beveiligingsproblemen worden vroeg gevonden.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CentreBrain">
+<meta name="theme-color" content="#3574f0">
+<link rel="canonical" href="https://coodoo.centrebrain.net/nl/ai-code-review.html">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/ai-code-review.html">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/ai-code-review.html">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/ai-code-review.html">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/ai-code-review.html">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/ai-code-review.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coodoo">
+<meta property="og:logo" content="https://coodoo.centrebrain.net/assets/logo.png">
+<meta property="og:url" content="https://coodoo.centrebrain.net/nl/ai-code-review.html">
+<meta property="og:title" content="AI-code-review: twee AI’s die elkaar controleren · Coodoo">
+<meta property="og:description" content="In Coodoo bouwt de ene AI en reviewt de andere. Elke taak wordt gecontroleerd, Coodoo start je app om te zien of hij werkt, en beveiligingsproblemen worden vroeg gevonden.">
+<meta property="og:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-code-review: twee AI’s die elkaar controleren · Coodoo">
+<meta name="twitter:description" content="In Coodoo bouwt de ene AI en reviewt de andere. Elke taak wordt gecontroleerd, Coodoo start je app om te zien of hij werkt, en beveiligingsproblemen worden vroeg gevonden.">
+<meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"AI-code-review: twee AI’s die elkaar controleren · Coodoo","url":"https://coodoo.centrebrain.net/nl/ai-code-review.html","inLanguage":"nl","dateModified":"2026-11-04","isPartOf":{"@type":"WebSite","name":"Coodoo","url":"https://coodoo.centrebrain.net/"},"publisher":{"@type":"Organization","name":"CentreBrain"}},{"@type":"FAQPage","inLanguage":"nl","mainEntity":[{"@type":"Question","name":"Heb ik zowel Claude als ChatGPT nodig?","acceptedAnswer":{"@type":"Answer","text":"Nee, één is genoeg. Met beide bouwt de een en reviewt de ander, en dat vangt meer fouten af."}},{"@type":"Question","name":"Kan ik de review uitzetten?","acceptedAnswer":{"@type":"Answer","text":"Ja. Elke fase kun je per project aan- of uitzetten. We raden aan de review aan te laten."}},{"@type":"Question","name":"Vervangt de AI-review mijn eigen controle?","acceptedAnswer":{"@type":"Answer","text":"Nee. Hij vangt veel af, maar AI kan fouten maken. Bekijk en probeer wat het team maakte voordat je het gebruikt."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features"><span>Functies</span></a>
+      <a href="./#how"><span>Hoe het werkt</span></a>
+      <a href="./#safety"><span>Veiligheid</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welkom-bij-Coodoo-(NL)"><span>Handleiding</span></a>
+      <a href="./#price"><span>Prijs</span></a>
+      <a href="./#download">Download</a>
+    </nav>
+    <nav class="lang" aria-label="Language"><a href="/ai-code-review.html" hreflang="en" lang="en" data-lang-link="en">EN</a><a href="/nl/ai-code-review.html" hreflang="nl" lang="nl" data-lang-link="nl" aria-current="page">NL</a><a href="/de/ai-code-review.html" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/ai-code-review.html" hreflang="es" lang="es" data-lang-link="es">ES</a></nav>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features"><span>Functies</span></a></nav>
+      <h1><span>De ene AI bouwt. De andere controleert.</span></h1>
+      <p class="lead"><span>Met Claude Code en Codex samen krijgt elke taak een tweede paar ogen. De reviewer keurt het werk goed of vraagt om aanpassingen, en Coodoo start je app om te zien of hij echt werkt.</span></p>
+      <div class="cta">
+        <a class="btn primary" href="./#download"><span>Download Coodoo</span></a>
+        <a class="btn" href="./#price"><span>Bekijk de prijs</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="feature">
+        <div>
+          <h2><span>Bouwen, controleren, verbeteren</span></h2>
+          <p><span>Twee verschillende AI-modellen maken verschillende fouten, en vangen daardoor meer van elkaars fouten af. De reviewer leest wat er veranderd is, de testresultaten en het verslag van de draaiende app, en beslist pas dan.</span></p>
+          <ul>
+            <li><span>De reviewer keurt goed of vraagt om concrete aanpassingen</span></li>
+            <li><span>De bouwer verwerkt ze, zoveel rondes als jij toestaat</span></li>
+            <li><span>Coodoo start je app, bekijkt de pagina’s en maakt schermafbeeldingen</span></li>
+            <li><span>Zoekt naar gelekte sleutels en bekende kwetsbare pakketten</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project"><span>Review · API: favoriet toevoegen en verwijderen</span></span></div>
+          <div class="rev">
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag red"><span>verbeteren</span></span></span>
+              <p><span>Iedereen kan de favoriet van een ander verwijderen: de route controleert de eigenaar niet.</span> <code>routes/favorites.ts:38</code></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cl" style="width:20px;height:20px;font-size:10px">✳</span>
+              <span><b>Claude Code</b> · <span class="tag blue"><span>opgelost</span></span></span>
+              <p><span>Alleen de eigenaar kan hem nu verwijderen, met een test voor het andere geval.</span></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag green"><span>goedgekeurd</span></span></span>
+            </div>
+            <div class="peek">
+              <div class="mini"><div class="mb"><i></i><i></i><i></i></div><div class="mc"><div class="h"></div><span></span><span></span><span></span><span></span></div></div>
+              <div>
+                <div style="display:flex;gap:6px;align-items:center;font-weight:600"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>App gestart en bekeken</span></div>
+                <div class="sub" style="margin-top:3px"><span>De pagina laadt zonder fouten; de hartjes staan op de kaarten.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Zo werkt het</span></h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span><span>De ontwikkelaar-agent bouwt de taak en schrijft tests.</span></span></li>
+          <li><span class="n">2</span><span><span>Coodoo draait de tests en start je app om hem te bekijken.</span></span></li>
+          <li><span class="n">3</span><span><span>De reviewer leest de wijzigingen en het app-verslag.</span></span></li>
+          <li><span class="n">4</span><span><span>Goedgekeurd: de taak wordt op jouw naam gecommit. Aanpassingen nodig: de ontwikkelaar verwerkt ze en de reviewer kijkt opnieuw.</span></span></li>
+      </ol>
+      <div class="fp-note">
+        <h3><span>Met één abonnement</span></h3>
+        <p><span>Eén abonnement is genoeg: dan doet dezelfde AI de review, in een aparte stap met een frisse blik. Twee verschillende AI’s vangen meer af, en daarom werkt Coodoo het best met beide.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2><span>Veelgestelde vragen</span></h2>
+      <div class="faq">
+        <details open>
+          <summary><span>Heb ik zowel Claude als ChatGPT nodig?</span></summary>
+          <p><span>Nee, één is genoeg. Met beide bouwt de een en reviewt de ander, en dat vangt meer fouten af.</span></p>
+        </details>
+        <details>
+          <summary><span>Kan ik de review uitzetten?</span></summary>
+          <p><span>Ja. Elke fase kun je per project aan- of uitzetten. We raden aan de review aan te laten.</span></p>
+        </details>
+        <details>
+          <summary><span>Vervangt de AI-review mijn eigen controle?</span></summary>
+          <p><span>Nee. Hij vangt veel af, maar AI kan fouten maken. Bekijk en probeer wat het team maakte voordat je het gebruikt.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Meer van Coodoo</span></h2>
+      <div class="fp-related">
+        <a href="autopilot.html"><b><span>De autopilot</span></b><span><span>Van idee tot werkende app, taak voor taak.</span></span></a>
+        <a href="safety.html"><b><span>Veiligheidsregels</span></b><span><span>Harde grenzen die altijd aanstaan.</span></span></a>
+        <a href="github-flow.html"><b><span>GitHub-flow</span></b><span><span>Branches, pull requests en releases, geregeld.</span></span></a>
+        <a href="programs.html"><b><span>Programma’s</span></b><span><span>Talen en databases, zonder installatiegedoe.</span></span></a>
+        <a href="claude-code-and-codex.html"><b><span>Met Claude Code en Codex</span></b><span><span>Wat Coodoo toevoegt aan de agents die je gebruikt.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2><span>Probeer het met je eigen idee.</span></h2>
+      <p class="intro" style="margin:0 auto 22px"><span>Coodoo downloaden is gratis. Om het te gebruiken heb je een licentie nodig (€19,99 per jaar, excl. btw) en je eigen Claude- en/of ChatGPT-abonnement.</span></p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download"><span>Download Coodoo</span></a>
+        <a class="btn" href="./"><span>Terug naar het overzicht</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welkom-bij-Coodoo-(NL)"><span>Handleiding</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Versies</span></a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html"><span>Disclaimer &amp; AI-risico’s</span></a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html"><span>De autopilot</span></a>
+      <a href="ai-code-review.html"><span>AI-code-review</span></a>
+      <a href="safety.html"><span>Veiligheidsregels</span></a>
+      <a href="github-flow.html"><span>GitHub-flow</span></a>
+      <a href="programs.html"><span>Programma’s</span></a>
+      <a href="claude-code-and-codex.html"><span>Met Claude Code en Codex</span></a>
+    </nav>
+    <div class="fine"><span>AI kan fouten maken: controleer wat Coodoo maakt voordat je het gebruikt. Coodoo en CentreBrain zijn niet aansprakelijk voor wat de AI doet of maakt (<a href="disclaimer.html">disclaimer</a>). </span><span>Coodoo is niet verbonden aan Anthropic of OpenAI. Claude Code is een product van Anthropic; Codex is een product van OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+</script>
+</body>
+</html>

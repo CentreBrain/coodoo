@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión de código con IA: dos IA que se revisan · Coodoo</title>
+<meta name="description" content="En Coodoo una IA crea y la otra revisa. Cada tarea se comprueba, Coodoo inicia tu app para ver si funciona y los problemas de seguridad se detectan pronto.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CentreBrain">
+<meta name="theme-color" content="#3574f0">
+<link rel="canonical" href="https://coodoo.centrebrain.net/es/ai-code-review.html">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/ai-code-review.html">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/ai-code-review.html">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/ai-code-review.html">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/ai-code-review.html">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/ai-code-review.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coodoo">
+<meta property="og:logo" content="https://coodoo.centrebrain.net/assets/logo.png">
+<meta property="og:url" content="https://coodoo.centrebrain.net/es/ai-code-review.html">
+<meta property="og:title" content="Revisión de código con IA: dos IA que se revisan · Coodoo">
+<meta property="og:description" content="En Coodoo una IA crea y la otra revisa. Cada tarea se comprueba, Coodoo inicia tu app para ver si funciona y los problemas de seguridad se detectan pronto.">
+<meta property="og:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Revisión de código con IA: dos IA que se revisan · Coodoo">
+<meta name="twitter:description" content="En Coodoo una IA crea y la otra revisa. Cada tarea se comprueba, Coodoo inicia tu app para ver si funciona y los problemas de seguridad se detectan pronto.">
+<meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Revisión de código con IA: dos IA que se revisan · Coodoo","url":"https://coodoo.centrebrain.net/es/ai-code-review.html","inLanguage":"es","dateModified":"2026-11-04","isPartOf":{"@type":"WebSite","name":"Coodoo","url":"https://coodoo.centrebrain.net/"},"publisher":{"@type":"Organization","name":"CentreBrain"}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Necesito Claude y ChatGPT a la vez?","acceptedAnswer":{"@type":"Answer","text":"No, con uno basta. Con los dos, uno crea y el otro revisa, lo que detecta más errores."}},{"@type":"Question","name":"¿Puedo desactivar la revisión?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cada fase se puede activar o desactivar por proyecto. Te recomendamos dejar la revisión activada."}},{"@type":"Question","name":"¿La revisión de la IA sustituye mi propia comprobación?","acceptedAnswer":{"@type":"Answer","text":"No. Detecta mucho, pero la IA puede cometer errores. Mira y prueba lo que ha creado el equipo antes de usarlo."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features"><span>Funciones</span></a>
+      <a href="./#how"><span>Cómo funciona</span></a>
+      <a href="./#safety"><span>Seguridad</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="./#price"><span>Precio</span></a>
+      <a href="./#download">Download</a>
+    </nav>
+    <nav class="lang" aria-label="Language"><a href="/ai-code-review.html" hreflang="en" lang="en" data-lang-link="en">EN</a><a href="/nl/ai-code-review.html" hreflang="nl" lang="nl" data-lang-link="nl">NL</a><a href="/de/ai-code-review.html" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/ai-code-review.html" hreflang="es" lang="es" data-lang-link="es" aria-current="page">ES</a></nav>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features"><span>Funciones</span></a></nav>
+      <h1><span>Una IA crea. La otra revisa.</span></h1>
+      <p class="lead"><span>Con Claude Code y Codex juntos, cada tarea recibe una segunda mirada. El revisor aprueba el trabajo o pide cambios, y Coodoo inicia tu app para ver si de verdad funciona.</span></p>
+      <div class="cta">
+        <a class="btn primary" href="./#download"><span>Descargar Coodoo</span></a>
+        <a class="btn" href="./#price"><span>Ver el precio</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="feature">
+        <div>
+          <h2><span>Crear, revisar, arreglar</span></h2>
+          <p><span>Dos modelos de IA distintos cometen errores distintos, así que detectan más errores el uno del otro. El revisor lee lo que ha cambiado, los resultados de las pruebas y el informe de la app en marcha, y solo entonces decide.</span></p>
+          <ul>
+            <li><span>El revisor aprueba o pide cambios concretos</span></li>
+            <li><span>El desarrollador los arregla, en tantas rondas como permitas</span></li>
+            <li><span>Coodoo inicia tu app, mira sus páginas y hace capturas de pantalla</span></li>
+            <li><span>Busca claves filtradas y paquetes con vulnerabilidades conocidas</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project"><span>Revisión · API: añadir y quitar un favorito</span></span></div>
+          <div class="rev">
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag red"><span>cambios necesarios</span></span></span>
+              <p><span>Cualquiera puede quitar el favorito de otra persona: la ruta no comprueba quién es el propietario.</span> <code>routes/favorites.ts:38</code></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cl" style="width:20px;height:20px;font-size:10px">✳</span>
+              <span><b>Claude Code</b> · <span class="tag blue"><span>arreglado</span></span></span>
+              <p><span>Ahora solo el propietario puede quitarlo, con una prueba para el otro caso.</span></p>
+            </div>
+            <div class="rv">
+              <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
+              <span><b>Codex</b> · <span class="tag green"><span>aprobado</span></span></span>
+            </div>
+            <div class="peek">
+              <div class="mini"><div class="mb"><i></i><i></i><i></i></div><div class="mc"><div class="h"></div><span></span><span></span><span></span><span></span></div></div>
+              <div>
+                <div style="display:flex;gap:6px;align-items:center;font-weight:600"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>App iniciada y revisada</span></div>
+                <div class="sub" style="margin-top:3px"><span>La página carga sin errores; los corazones están en las tarjetas.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Cómo funciona</span></h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span><span>El agente desarrollador crea la tarea y escribe pruebas.</span></span></li>
+          <li><span class="n">2</span><span><span>Coodoo ejecuta las pruebas e inicia tu app para mirarla.</span></span></li>
+          <li><span class="n">3</span><span><span>El revisor lee los cambios y el informe de la app.</span></span></li>
+          <li><span class="n">4</span><span><span>Aprobada: se hace el commit de la tarea a tu nombre. Cambios necesarios: el desarrollador los arregla y el revisor vuelve a mirar.</span></span></li>
+      </ol>
+      <div class="fp-note">
+        <h3><span>Con una sola suscripción</span></h3>
+        <p><span>Con una suscripción basta: entonces la misma IA hace la revisión, en un paso aparte y con una mirada nueva. Dos IA distintas detectan más, por eso Coodoo funciona mejor con las dos.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2><span>Preguntas frecuentes</span></h2>
+      <div class="faq">
+        <details open>
+          <summary><span>¿Necesito Claude y ChatGPT a la vez?</span></summary>
+          <p><span>No, con uno basta. Con los dos, uno crea y el otro revisa, lo que detecta más errores.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Puedo desactivar la revisión?</span></summary>
+          <p><span>Sí. Cada fase se puede activar o desactivar por proyecto. Te recomendamos dejar la revisión activada.</span></p>
+        </details>
+        <details>
+          <summary><span>¿La revisión de la IA sustituye mi propia comprobación?</span></summary>
+          <p><span>No. Detecta mucho, pero la IA puede cometer errores. Mira y prueba lo que ha creado el equipo antes de usarlo.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Más de Coodoo</span></h2>
+      <div class="fp-related">
+        <a href="autopilot.html"><b><span>El piloto automático</span></b><span><span>De la idea a una app que funciona, tarea a tarea.</span></span></a>
+        <a href="safety.html"><b><span>Reglas de seguridad</span></b><span><span>Límites estrictos, siempre activos.</span></span></a>
+        <a href="github-flow.html"><b><span>Flujo de GitHub</span></b><span><span>Ramas, pull requests y versiones, resueltos.</span></span></a>
+        <a href="programs.html"><b><span>Programas</span></b><span><span>Lenguajes y bases de datos, sin instalar nada.</span></span></a>
+        <a href="claude-code-and-codex.html"><b><span>Con Claude Code y Codex</span></b><span><span>Lo que Coodoo añade a los agentes que ya usas.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2><span>Pruébalo con tu propia idea.</span></h2>
+      <p class="intro" style="margin:0 auto 22px"><span>Descargar Coodoo es gratis. Para usarlo necesitas una licencia (19,99 € al año, IVA no incluido) y tu propia suscripción de Claude y/o ChatGPT.</span></p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download"><span>Descargar Coodoo</span></a>
+        <a class="btn" href="./"><span>Volver a la vista general</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Versiones</span></a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html"><span>Aviso legal &amp; riesgos de la IA</span></a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html"><span>El piloto automático</span></a>
+      <a href="ai-code-review.html"><span>Revisión de código con IA</span></a>
+      <a href="safety.html"><span>Reglas de seguridad</span></a>
+      <a href="github-flow.html"><span>Flujo de GitHub</span></a>
+      <a href="programs.html"><span>Programas</span></a>
+      <a href="claude-code-and-codex.html"><span>Con Claude Code y Codex</span></a>
+    </nav>
+    <div class="fine"><span>La IA puede cometer errores: revisa lo que crea Coodoo antes de usarlo. Coodoo y CentreBrain no son responsables de lo que la IA hace o crea (<a href="disclaimer.html">aviso legal</a>). </span><span>Coodoo no está afiliado a Anthropic ni a OpenAI. Claude Code es un producto de Anthropic; Codex es un producto de OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+</script>
+</body>
+</html>

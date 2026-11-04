@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El piloto automático: de la idea a una app que funciona · Coodoo</title>
+<meta name="description" content="El piloto automático de Coodoo convierte tu idea en objetivos y tareas. Un equipo de IA planifica, crea, prueba, revisa y sube a GitHub, mientras tú miras.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CentreBrain">
+<meta name="theme-color" content="#3574f0">
+<link rel="canonical" href="https://coodoo.centrebrain.net/es/autopilot.html">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/autopilot.html">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/autopilot.html">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/autopilot.html">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/autopilot.html">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/autopilot.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coodoo">
+<meta property="og:logo" content="https://coodoo.centrebrain.net/assets/logo.png">
+<meta property="og:url" content="https://coodoo.centrebrain.net/es/autopilot.html">
+<meta property="og:title" content="El piloto automático: de la idea a una app que funciona · Coodoo">
+<meta property="og:description" content="El piloto automático de Coodoo convierte tu idea en objetivos y tareas. Un equipo de IA planifica, crea, prueba, revisa y sube a GitHub, mientras tú miras.">
+<meta property="og:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El piloto automático: de la idea a una app que funciona · Coodoo">
+<meta name="twitter:description" content="El piloto automático de Coodoo convierte tu idea en objetivos y tareas. Un equipo de IA planifica, crea, prueba, revisa y sube a GitHub, mientras tú miras.">
+<meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"El piloto automático: de la idea a una app que funciona · Coodoo","url":"https://coodoo.centrebrain.net/es/autopilot.html","inLanguage":"es","dateModified":"2026-11-04","isPartOf":{"@type":"WebSite","name":"Coodoo","url":"https://coodoo.centrebrain.net/"},"publisher":{"@type":"Organization","name":"CentreBrain"}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Puedo parar el piloto automático en cualquier momento?","acceptedAnswer":{"@type":"Answer","text":"Sí. Ponlo en pausa y continúa más tarde, o detenlo. El trabajo hecho hasta ese momento se queda en su rama."}},{"@type":"Question","name":"¿Sigue trabajando cuando no estoy?","acceptedAnswer":{"@type":"Answer","text":"Sí, mientras tu ordenador esté encendido y Coodoo esté abierto. Mientras trabaja, evita que el ordenador entre en reposo."}},{"@type":"Question","name":"¿Y si falla una tarea?","acceptedAnswer":{"@type":"Answer","text":"El registro de ejecución dice qué ha fallado. El equipo intenta arreglarlo; si te necesita, una tarjeta amarilla te dice qué hacer."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features"><span>Funciones</span></a>
+      <a href="./#how"><span>Cómo funciona</span></a>
+      <a href="./#safety"><span>Seguridad</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="./#price"><span>Precio</span></a>
+      <a href="./#download">Download</a>
+    </nav>
+    <nav class="lang" aria-label="Language"><a href="/autopilot.html" hreflang="en" lang="en" data-lang-link="en">EN</a><a href="/nl/autopilot.html" hreflang="nl" lang="nl" data-lang-link="nl">NL</a><a href="/de/autopilot.html" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/autopilot.html" hreflang="es" lang="es" data-lang-link="es" aria-current="page">ES</a></nav>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features"><span>Funciones</span></a></nav>
+      <h1><span>El piloto automático: de la idea a una app que funciona.</span></h1>
+      <p class="lead"><span>Coodoo convierte tu idea en objetivos y tareas, y deja que un equipo de IA los resuelva por su cuenta: planificar, crear, probar, revisar y subir a GitHub. Tú miras, pausas o intervienes cuando quieras.</span></p>
+      <div class="cta">
+        <a class="btn primary" href="./#download"><span>Descargar Coodoo</span></a>
+        <a class="btn" href="./#price"><span>Ver el precio</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="fp-wide">
+        <div>
+          <h2><span>Un equipo que sigue trabajando sin ti</span></h2>
+          <p><span>Cada objetivo pasa por las mismas fases que en un equipo de software de verdad: investigación, diseño, planificación, desarrollo, revisión y entrega. Tú eliges qué fases están activas y qué agente asume cada rol. Con «Seguir trabajando» activado, el equipo incluso propone por sí mismo nuevos objetivos que tengan sentido.</span></p>
+          <ul>
+            <li><span>Fases que activas y desactivas tú</span></li>
+            <li><span>Pausa y continúa cuando quieras; no se pierde nada</span></li>
+            <li><span>Cada paso en el registro de ejecución, con palabras sencillas</span></li>
+            <li><span>Una tarjeta amarilla cuando te necesita, por ejemplo para un comando que solo tú puedes ejecutar</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fp-mock"><div class="win big">
+          <div class="titlebar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="tb-project"><span class="av">R</span>recepten-app</span>
+            <span class="tb-branch"><svg><use href="#i-branch"/></svg>development</span>
+            <span class="grow"></span>
+            <span class="pill live"><span class="dot"></span><span>Piloto automático en marcha · Desarrollo</span></span>
+            <span class="tbtn"><span>Pausar</span></span>
+          </div>
+          <div class="app">
+            <div class="rail">
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-files"/></svg>
+              <svg class="ic" style="color:var(--blue)"><use href="#i-list"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-gh"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-rocket"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-chart"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-book"/></svg>
+              <span class="grow"></span>
+              <svg class="ic" style="color:var(--app-muted);margin-bottom:12px"><use href="#i-term"/></svg>
+            </div>
+            <div class="pane">
+              <div class="pane-title"><span>Objetivos</span></div>
+              <div class="heading"><span>Trabajando en</span></div>
+              <div class="box now">
+                <div class="t"><span>Guardar recetas como favoritas</span></div>
+                <div class="segs"><i class="d"></i><i class="d"></i><i class="a"></i><i></i><i></i></div>
+                <div class="sub"><span>2/5 tareas · 14 min</span></div>
+              </div>
+              <div class="heading"><span>Cola</span><span class="n">2</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Buscar por ingrediente</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Modo oscuro</span></div>
+              </div>
+              <div class="heading"><span>Historial</span><span class="n">6</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Iniciar sesión con email</span></div>
+                <div class="q"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Página de receta con fotos</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Seguridad: actualizar paquetes</span></div>
+              </div>
+            </div>
+            <div class="main">
+              <div class="tabs"><span class="on">Autopilot</span><span>GitHub</span><span>Chat</span></div>
+              <div class="page">
+                <div class="card-a proj">
+                  <div class="grow">
+                    <h4>recepten-app</h4>
+                    <div class="sub">demo/recepten-app · <span>6 hechos · 2 en cola</span></div>
+                  </div>
+                </div>
+                <div class="card-a pipe">
+                  <div class="d"><b>✓</b>Research<small>Codex</small></div>
+                  <div class="d"><b>✓</b>Design<small>Claude</small></div>
+                  <div class="d"><b>✓</b><span>Planificar</span><small>Claude</small></div>
+                  <div class="a"><b>3</b><span>Desarrollo</span><small><span class="who cl"></span>Claude</small></div>
+                  <div><b>–</b>Review<small><span class="who cx"></span>Codex</small></div>
+                  <div><b>–</b><span>Finalizar</span><small>Coodoo</small></div>
+                </div>
+                <div class="card-a">
+                  <div class="heading" style="margin-top:0"><span>Tareas</span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Tabla de favoritos y migración</span><span class="r"><span class="tag green"><span>aprobado</span></span></span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>API: añadir y quitar un favorito</span><span class="r"><span class="tag green"><span>aprobado</span></span></span></div>
+                  <div class="task cur"><svg class="ic run-ic"><use href="#i-run"/></svg><span>Botón de corazón en la tarjeta de receta</span><span class="r"><span class="who cl"></span>Claude</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Página «Mis favoritos»</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Pruebas y un vistazo a la app</span></div>
+                </div>
+              </div>
+              <div class="log">
+                <div class="lt"><b>Run</b><span>Todo</span><span>Mensajes</span><span>Problemas</span></div>
+                <p><time>14:02:11</time><span class="g">✔ <span>Revisión aprobada: API: añadir y quitar un favorito</span></span></p>
+                <p><time>14:02:14</time><span class="bl"><span>Commit y push a development</span></span></p>
+                <p><time>14:02:15</time><span><span>Claude Code · Desarrollo: trabajando en «Botón de corazón en la tarjeta de receta»</span></span></p>
+              </div>
+            </div>
+            <div class="pane right">
+              <div class="pane-title">Team</div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cl">✳</span><div class="grow"><b>Claude Code</b><div class="sub"><span>Trabajando</span></div></div><span class="pill live" style="padding:2px 7px"><span class="dot"></span></span></div>
+                <div class="chips"><span class="chip-a"><span>Desarrollo</span></span><span class="chip-a">Design</span></div>
+                <div class="doing"><span>Escribe</span> <code>FavoriteButton.tsx</code></div>
+                <div class="bar"><i></i></div>
+              </div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cx">◎</span><div class="grow"><b>Codex</b><div class="sub"><span>Esperando revisión</span></div></div></div>
+                <div class="chips"><span class="chip-a">Research</span><span class="chip-a">Code review</span></div>
+              </div>
+              <div class="heading"><span>Seguridad</span></div>
+              <div class="box q" style="padding:8px 10px"><svg class="ic ok-ic"><use href="#i-shield"/></svg><span>Ningún problema abierto</span></div>
+            </div>
+          </div>
+        </div></div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Cómo funciona</span></h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span><span>Describe tu idea en el chat, con tus propias palabras.</span></span></li>
+          <li><span class="n">2</span><span><span>Acuerda un objetivo con el agente: te pregunta lo que necesita saber y te propone uno.</span></span></li>
+          <li><span class="n">3</span><span><span>Inicia el piloto automático. El equipo hace un plan y lo divide en tareas.</span></span></li>
+          <li><span class="n">4</span><span><span>Tarea a tarea, un agente crea y se ejecutan las pruebas.</span></span></li>
+          <li><span class="n">5</span><span><span>El otro agente revisa, y Coodoo inicia tu app para ver si funciona.</span></span></li>
+          <li><span class="n">6</span><span><span>El objetivo terminado llega a tu rama development en GitHub.</span></span></li>
+      </ol>
+      <div class="fp-note">
+        <h3><span>Bueno saberlo</span></h3>
+        <p><span>El piloto automático funciona en tu propio ordenador, con tu propia suscripción de Claude y/o ChatGPT. Mientras trabaja, Coodoo mantiene tu ordenador despierto y te muestra cuánto de tu suscripción usas. Sus reglas de seguridad están siempre activas.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2><span>Preguntas frecuentes</span></h2>
+      <div class="faq">
+        <details open>
+          <summary><span>¿Puedo parar el piloto automático en cualquier momento?</span></summary>
+          <p><span>Sí. Ponlo en pausa y continúa más tarde, o detenlo. El trabajo hecho hasta ese momento se queda en su rama.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Sigue trabajando cuando no estoy?</span></summary>
+          <p><span>Sí, mientras tu ordenador esté encendido y Coodoo esté abierto. Mientras trabaja, evita que el ordenador entre en reposo.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Y si falla una tarea?</span></summary>
+          <p><span>El registro de ejecución dice qué ha fallado. El equipo intenta arreglarlo; si te necesita, una tarjeta amarilla te dice qué hacer.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Más de Coodoo</span></h2>
+      <div class="fp-related">
+        <a href="ai-code-review.html"><b><span>Revisión de código con IA</span></b><span><span>Una IA crea, la otra revisa.</span></span></a>
+        <a href="safety.html"><b><span>Reglas de seguridad</span></b><span><span>Límites estrictos, siempre activos.</span></span></a>
+        <a href="github-flow.html"><b><span>Flujo de GitHub</span></b><span><span>Ramas, pull requests y versiones, resueltos.</span></span></a>
+        <a href="programs.html"><b><span>Programas</span></b><span><span>Lenguajes y bases de datos, sin instalar nada.</span></span></a>
+        <a href="claude-code-and-codex.html"><b><span>Con Claude Code y Codex</span></b><span><span>Lo que Coodoo añade a los agentes que ya usas.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2><span>Pruébalo con tu propia idea.</span></h2>
+      <p class="intro" style="margin:0 auto 22px"><span>Descargar Coodoo es gratis. Para usarlo necesitas una licencia (19,99 € al año, IVA no incluido) y tu propia suscripción de Claude y/o ChatGPT.</span></p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download"><span>Descargar Coodoo</span></a>
+        <a class="btn" href="./"><span>Volver a la vista general</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Versiones</span></a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html"><span>Aviso legal &amp; riesgos de la IA</span></a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html"><span>El piloto automático</span></a>
+      <a href="ai-code-review.html"><span>Revisión de código con IA</span></a>
+      <a href="safety.html"><span>Reglas de seguridad</span></a>
+      <a href="github-flow.html"><span>Flujo de GitHub</span></a>
+      <a href="programs.html"><span>Programas</span></a>
+      <a href="claude-code-and-codex.html"><span>Con Claude Code y Codex</span></a>
+    </nav>
+    <div class="fine"><span>La IA puede cometer errores: revisa lo que crea Coodoo antes de usarlo. Coodoo y CentreBrain no son responsables de lo que la IA hace o crea (<a href="disclaimer.html">aviso legal</a>). </span><span>Coodoo no está afiliado a Anthropic ni a OpenAI. Claude Code es un producto de Anthropic; Codex es un producto de OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+</script>
+</body>
+</html>

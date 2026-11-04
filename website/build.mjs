@@ -10,13 +10,14 @@
  * dictionary has every key (a missing key stops the build and is named).
  * See website/README.md for adding a language.
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
 const here = import.meta.dirname
 const docs = join(here, '..', 'docs')
 const SITE = 'https://coodoo.centrebrain.net'
-const PAGES = ['index.html', 'disclaimer.html']
+// every template in pages/ is a page, in every language
+const PAGES = readdirSync(join(here, 'pages')).filter((f) => f.endsWith('.html')).sort((a, b) => (a === 'index.html' ? -1 : b === 'index.html' ? 1 : a.localeCompare(b)))
 const EN_MANUAL = 'https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo'
 const today = new Date().toISOString().slice(0, 10)
 
@@ -43,6 +44,7 @@ function head(l, page, t, body) {
   const title = t[`meta.${name}.title`]
   const description = t[`meta.${name}.description`]
   const share = t[`meta.${name}.share`] ?? description
+  const faq = [...body.matchAll(/<summary>([\s\S]*?)<\/summary>\s*<p>([\s\S]*?)<\/p>/g)].map((m) => ({ '@type': 'Question', name: plain(m[1]), acceptedAnswer: { '@type': 'Answer', text: plain(m[2]) } }))
   const alternates = [...live.map((o) => `<link rel="alternate" hreflang="${o.code}" href="${url(o, page)}">`), `<link rel="alternate" hreflang="x-default" href="${url(live[0], page)}">`]
   const ld =
     name === 'index'
@@ -67,11 +69,17 @@ function head(l, page, t, body) {
             {
               '@type': 'FAQPage',
               inLanguage: l.code,
-              mainEntity: [...body.matchAll(/<summary>([\s\S]*?)<\/summary>\s*<p>([\s\S]*?)<\/p>/g)].map((m) => ({ '@type': 'Question', name: plain(m[1]), acceptedAnswer: { '@type': 'Answer', text: plain(m[2]) } }))
+              mainEntity: faq
             }
           ]
         }
-      : { '@context': 'https://schema.org', '@type': 'WebPage', name: plain(title), url: url(l, page), inLanguage: l.code, dateModified: today, isPartOf: { '@type': 'WebSite', name: 'Coodoo', url: `${SITE}/` }, publisher: { '@type': 'Organization', name: 'CentreBrain' } }
+      : {
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebPage', name: plain(title), url: url(l, page), inLanguage: l.code, dateModified: today, isPartOf: { '@type': 'WebSite', name: 'Coodoo', url: `${SITE}/` }, publisher: { '@type': 'Organization', name: 'CentreBrain' } },
+            ...(faq.length ? [{ '@type': 'FAQPage', inLanguage: l.code, mainEntity: faq }] : [])
+          ]
+        }
   return [
     `<title>${esc(title)}</title>`,
     `<meta name="description" content="${esc(description)}">`,
@@ -172,7 +180,7 @@ for (const l of live) {
   const t = dict[l.code]
   for (const page of PAGES) {
     let html = readFileSync(join(here, 'pages', page), 'utf8')
-    html = html.replace(/\{\{t:([\w.]+)\}\}/g, (_, k) => {
+    html = html.replace(/\{\{t:([\w.-]+)\}\}/g, (_, k) => {
       if (t[k] === undefined) throw new Error(`${page}: tekst ${k} ontbreekt`)
       // in a span, as before: a text with bold or a link stays one piece in a flex row
       return `<span>${t[k]}</span>`

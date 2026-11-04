@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{head}}
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features">{{t:fc338f87}}</a>
+      <a href="./#how">{{t:1dd6a17c}}</a>
+      <a href="./#safety">{{t:db6e7e41}}</a>
+      <a href="{{manual}}">{{t:4e836fdc}}</a>
+      <a href="./#price">{{t:3e8248e3}}</a>
+      <a href="./#download">Download</a>
+    </nav>
+    {{langnav}}
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features">{{t:fp.crumbs}}</a></nav>
+      <h1>{{t:autopilot.h1}}</h1>
+      <p class="lead">{{t:autopilot.lead}}</p>
+      <div class="cta">
+        <a class="btn primary" href="./#download">{{t:fp.download}}</a>
+        <a class="btn" href="./#price">{{t:fp.price}}</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="fp-wide">
+        <div>
+          <h2>{{t:autopilot.s1h}}</h2>
+          <p>{{t:autopilot.s1p}}</p>
+          <ul>
+            <li>{{t:autopilot.pt1}}</li>
+            <li>{{t:autopilot.pt2}}</li>
+            <li>{{t:autopilot.pt3}}</li>
+            <li>{{t:autopilot.pt4}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fp-mock"><div class="win big">
+          <div class="titlebar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="tb-project"><span class="av">R</span>recepten-app</span>
+            <span class="tb-branch"><svg><use href="#i-branch"/></svg>development</span>
+            <span class="grow"></span>
+            <span class="pill live"><span class="dot"></span>{{t:598638d8}}</span>
+            <span class="tbtn">{{t:781961bc}}</span>
+          </div>
+          <div class="app">
+            <div class="rail">
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-files"/></svg>
+              <svg class="ic" style="color:var(--blue)"><use href="#i-list"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-gh"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-rocket"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-chart"/></svg>
+              <svg class="ic" style="color:var(--app-muted)"><use href="#i-book"/></svg>
+              <span class="grow"></span>
+              <svg class="ic" style="color:var(--app-muted);margin-bottom:12px"><use href="#i-term"/></svg>
+            </div>
+            <div class="pane">
+              <div class="pane-title">{{t:48d8c627}}</div>
+              <div class="heading">{{t:8b8ea15d}}</div>
+              <div class="box now">
+                <div class="t">{{t:6729d9f2}}</div>
+                <div class="segs"><i class="d"></i><i class="d"></i><i class="a"></i><i></i><i></i></div>
+                <div class="sub">{{t:301a8c42}}</div>
+              </div>
+              <div class="heading">{{t:d325fcd9}}<span class="n">2</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg>{{t:fa51ce87}}</div>
+                <div class="q" style="padding-bottom:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg>{{t:9cf83d1f}}</div>
+              </div>
+              <div class="heading">{{t:90ccd649}}<span class="n">6</span></div>
+              <div class="box">
+                <div class="q" style="padding-top:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg>{{t:e3459254}}</div>
+                <div class="q"><svg class="ic ok-ic"><use href="#i-ok"/></svg>{{t:196668a9}}</div>
+                <div class="q" style="padding-bottom:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg>{{t:11fbcd37}}</div>
+              </div>
+            </div>
+            <div class="main">
+              <div class="tabs"><span class="on">Autopilot</span><span>GitHub</span><span>Chat</span></div>
+              <div class="page">
+                <div class="card-a proj">
+                  <div class="grow">
+                    <h4>recepten-app</h4>
+                    <div class="sub">demo/recepten-app · {{t:1baa7dc4}}</div>
+                  </div>
+                </div>
+                <div class="card-a pipe">
+                  <div class="d"><b>✓</b>Research<small>Codex</small></div>
+                  <div class="d"><b>✓</b>Design<small>Claude</small></div>
+                  <div class="d"><b>✓</b>{{t:ae2f98a0}}<small>Claude</small></div>
+                  <div class="a"><b>3</b>{{t:bbd80cf7}}<small><span class="who cl"></span>Claude</small></div>
+                  <div><b>–</b>Review<small><span class="who cx"></span>Codex</small></div>
+                  <div><b>–</b>{{t:b74bdee9}}<small>Coodoo</small></div>
+                </div>
+                <div class="card-a">
+                  <div class="heading" style="margin-top:0">{{t:090ec5f5}}</div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg>{{t:098ffb99}}<span class="r"><span class="tag green">{{t:c9560d94}}</span></span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg>{{t:cbcc4cb1}}<span class="r"><span class="tag green">{{t:c9560d94}}</span></span></div>
+                  <div class="task cur"><svg class="ic run-ic"><use href="#i-run"/></svg>{{t:44093ee2}}<span class="r"><span class="who cl"></span>Claude</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg>{{t:cdb4635e}}</div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg>{{t:ae4506e4}}</div>
+                </div>
+              </div>
+              <div class="log">
+                <div class="lt"><b>Run</b>{{t:6a720856}}{{t:f1702b46}}{{t:8e6b86dc}}</div>
+                <p><time>14:02:11</time><span class="g">✔ {{t:ab1892b8}}</span></p>
+                <p><time>14:02:14</time><span class="bl">{{t:75062208}}</span></p>
+                <p><time>14:02:15</time><span>{{t:9d54c3ed}}</span></p>
+              </div>
+            </div>
+            <div class="pane right">
+              <div class="pane-title">Team</div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cl">✳</span><div class="grow"><b>Claude Code</b><div class="sub">{{t:3b4dfc97}}</div></div><span class="pill live" style="padding:2px 7px"><span class="dot"></span></span></div>
+                <div class="chips"><span class="chip-a">{{t:4c17aadf}}</span><span class="chip-a">Design</span></div>
+                <div class="doing">{{t:9b1ff2c9}} <code>FavoriteButton.tsx</code></div>
+                <div class="bar"><i></i></div>
+              </div>
+              <div class="agent">
+                <div class="agent-h"><span class="logo-sq cx">◎</span><div class="grow"><b>Codex</b><div class="sub">{{t:ab1ff8cb}}</div></div></div>
+                <div class="chips"><span class="chip-a">Research</span><span class="chip-a">Code review</span></div>
+              </div>
+              <div class="heading">{{t:f25ce1b8}}</div>
+              <div class="box q" style="padding:8px 10px"><svg class="ic ok-ic"><use href="#i-shield"/></svg>{{t:9cea8314}}</div>
+            </div>
+          </div>
+        </div></div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>{{t:fp.how}}</h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span>{{t:autopilot.step1}}</span></li>
+          <li><span class="n">2</span><span>{{t:autopilot.step2}}</span></li>
+          <li><span class="n">3</span><span>{{t:autopilot.step3}}</span></li>
+          <li><span class="n">4</span><span>{{t:autopilot.step4}}</span></li>
+          <li><span class="n">5</span><span>{{t:autopilot.step5}}</span></li>
+          <li><span class="n">6</span><span>{{t:autopilot.step6}}</span></li>
+      </ol>
+      <div class="fp-note">
+        <h3>{{t:autopilot.s2h}}</h3>
+        <p>{{t:autopilot.s2p}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>{{t:fp.faq}}</h2>
+      <div class="faq">
+        <details open>
+          <summary>{{t:autopilot.q1}}</summary>
+          <p>{{t:autopilot.a1}}</p>
+        </details>
+        <details>
+          <summary>{{t:autopilot.q2}}</summary>
+          <p>{{t:autopilot.a2}}</p>
+        </details>
+        <details>
+          <summary>{{t:autopilot.q3}}</summary>
+          <p>{{t:autopilot.a3}}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>{{t:fp.more}}</h2>
+      <div class="fp-related">
+        <a href="ai-code-review.html"><b>{{t:card.ai-code-review.title}}</b><span>{{t:card.ai-code-review.text}}</span></a>
+        <a href="safety.html"><b>{{t:card.safety.title}}</b><span>{{t:card.safety.text}}</span></a>
+        <a href="github-flow.html"><b>{{t:card.github-flow.title}}</b><span>{{t:card.github-flow.text}}</span></a>
+        <a href="programs.html"><b>{{t:card.programs.title}}</b><span>{{t:card.programs.text}}</span></a>
+        <a href="claude-code-and-codex.html"><b>{{t:card.claude-code-and-codex.title}}</b><span>{{t:card.claude-code-and-codex.text}}</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2>{{t:fp.ctah}}</h2>
+      <p class="intro" style="margin:0 auto 22px">{{t:fp.ctap}}</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download">{{t:fp.download}}</a>
+        <a class="btn" href="./">{{t:fp.home}}</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="{{manual}}">{{t:4e836fdc}}</a>
+      <a href="https://github.com/CentreBrain/coodoo/releases">{{t:8fa41d59}}</a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html">{{t:8b9aa611}}</a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html">{{t:card.autopilot.title}}</a>
+      <a href="ai-code-review.html">{{t:card.ai-code-review.title}}</a>
+      <a href="safety.html">{{t:card.safety.title}}</a>
+      <a href="github-flow.html">{{t:card.github-flow.title}}</a>
+      <a href="programs.html">{{t:card.programs.title}}</a>
+      <a href="claude-code-and-codex.html">{{t:card.claude-code-and-codex.title}}</a>
+    </nav>
+    <div class="fine">{{t:6e62cdd1}}{{t:41ddfdae}}</div>
+  </div>
+</footer>
+
+{{script}}
+</body>
+</html>

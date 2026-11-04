@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{head}}
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features">{{t:fc338f87}}</a>
+      <a href="./#how">{{t:1dd6a17c}}</a>
+      <a href="./#safety">{{t:db6e7e41}}</a>
+      <a href="{{manual}}">{{t:4e836fdc}}</a>
+      <a href="./#price">{{t:3e8248e3}}</a>
+      <a href="./#download">Download</a>
+    </nav>
+    {{langnav}}
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features">{{t:fp.crumbs}}</a></nav>
+      <h1>{{t:safety.h1}}</h1>
+      <p class="lead">{{t:safety.lead}}</p>
+      <div class="cta">
+        <a class="btn primary" href="./#download">{{t:fp.download}}</a>
+        <a class="btn" href="./#price">{{t:fp.price}}</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="feature">
+        <div>
+          <h2>{{t:safety.s1h}}</h2>
+          <p>{{t:safety.s1p}}</p>
+          <ul>
+            <li>{{t:safety.pt1}}</li>
+            <li>{{t:safety.pt2}}</li>
+            <li>{{t:safety.pt3}}</li>
+            <li>{{t:safety.pt4}}</li>
+            <li>{{t:safety.pt5}}</li>
+            <li>{{t:safety.pt6}}</li>
+          </ul>
+        </div>
+        <div class="stack">
+          <div class="toast">
+            <svg class="ic" style="color:var(--app-red);margin-top:2px"><use href="#i-shield"/></svg>
+            <span class="k">{{t:db31e28e}}</span>
+            <p><code>git push --force</code> {{t:f07308d8}}</p>
+          </div>
+          <div class="toast" style="border-left-color:var(--app-green)">
+            <svg class="ic ok-ic" style="margin-top:2px"><use href="#i-ok"/></svg>
+            <span class="k">{{t:3b788868}}</span>
+            <p>{{t:9d5d1d44}} <code>REDACTED</code>.</p>
+          </div>
+          <div class="needs">
+            <b>{{t:5481503d}}</b>
+            {{t:fbc370bd}} <code>npm run db:migrate</code><br>
+            <span class="abtn" style="margin-top:9px">{{t:9c39f291}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>{{t:fp.how}}</h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span>{{t:safety.step1}}</span></li>
+          <li><span class="n">2</span><span>{{t:safety.step2}}</span></li>
+          <li><span class="n">3</span><span>{{t:safety.step3}}</span></li>
+          <li><span class="n">4</span><span>{{t:safety.step4}}</span></li>
+      </ol>
+      <div class="fp-note">
+        <h3>{{t:safety.s2h}}</h3>
+        <p>{{t:safety.s2p}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>{{t:fp.faq}}</h2>
+      <div class="faq">
+        <details open>
+          <summary>{{t:safety.q1}}</summary>
+          <p>{{t:safety.a1}}</p>
+        </details>
+        <details>
+          <summary>{{t:safety.q2}}</summary>
+          <p>{{t:safety.a2}}</p>
+        </details>
+        <details>
+          <summary>{{t:safety.q3}}</summary>
+          <p>{{t:safety.a3}}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>{{t:fp.more}}</h2>
+      <div class="fp-related">
+        <a href="autopilot.html"><b>{{t:card.autopilot.title}}</b><span>{{t:card.autopilot.text}}</span></a>
+        <a href="ai-code-review.html"><b>{{t:card.ai-code-review.title}}</b><span>{{t:card.ai-code-review.text}}</span></a>
+        <a href="github-flow.html"><b>{{t:card.github-flow.title}}</b><span>{{t:card.github-flow.text}}</span></a>
+        <a href="programs.html"><b>{{t:card.programs.title}}</b><span>{{t:card.programs.text}}</span></a>
+        <a href="claude-code-and-codex.html"><b>{{t:card.claude-code-and-codex.title}}</b><span>{{t:card.claude-code-and-codex.text}}</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2>{{t:fp.ctah}}</h2>
+      <p class="intro" style="margin:0 auto 22px">{{t:fp.ctap}}</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download">{{t:fp.download}}</a>
+        <a class="btn" href="./">{{t:fp.home}}</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="{{manual}}">{{t:4e836fdc}}</a>
+      <a href="https://github.com/CentreBrain/coodoo/releases">{{t:8fa41d59}}</a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html">{{t:8b9aa611}}</a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html">{{t:card.autopilot.title}}</a>
+      <a href="ai-code-review.html">{{t:card.ai-code-review.title}}</a>
+      <a href="safety.html">{{t:card.safety.title}}</a>
+      <a href="github-flow.html">{{t:card.github-flow.title}}</a>
+      <a href="programs.html">{{t:card.programs.title}}</a>
+      <a href="claude-code-and-codex.html">{{t:card.claude-code-and-codex.title}}</a>
+    </nav>
+    <div class="fine">{{t:6e62cdd1}}{{t:41ddfdae}}</div>
+  </div>
+</footer>
+
+{{script}}
+</body>
+</html>

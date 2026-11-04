@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un flujo de GitHub ordenado para apps creadas con IA · Coodoo</title>
+<meta name="description" content="Coodoo trabaja con ramas como un equipo profesional: cada objetivo en su propia rama, entregado en development y pasado a staging y main con comprobaciones.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CentreBrain">
+<meta name="theme-color" content="#3574f0">
+<link rel="canonical" href="https://coodoo.centrebrain.net/es/github-flow.html">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/github-flow.html">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/github-flow.html">
+<link rel="alternate" hreflang="de" href="https://coodoo.centrebrain.net/de/github-flow.html">
+<link rel="alternate" hreflang="es" href="https://coodoo.centrebrain.net/es/github-flow.html">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/github-flow.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Coodoo">
+<meta property="og:logo" content="https://coodoo.centrebrain.net/assets/logo.png">
+<meta property="og:url" content="https://coodoo.centrebrain.net/es/github-flow.html">
+<meta property="og:title" content="Un flujo de GitHub ordenado para apps creadas con IA · Coodoo">
+<meta property="og:description" content="Coodoo trabaja con ramas como un equipo profesional: cada objetivo en su propia rama, entregado en development y pasado a staging y main con comprobaciones.">
+<meta property="og:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Un flujo de GitHub ordenado para apps creadas con IA · Coodoo">
+<meta name="twitter:description" content="Coodoo trabaja con ramas como un equipo profesional: cada objetivo en su propia rama, entregado en development y pasado a staging y main con comprobaciones.">
+<meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Un flujo de GitHub ordenado para apps creadas con IA · Coodoo","url":"https://coodoo.centrebrain.net/es/github-flow.html","inLanguage":"es","dateModified":"2026-11-04","isPartOf":{"@type":"WebSite","name":"Coodoo","url":"https://coodoo.centrebrain.net/"},"publisher":{"@type":"Organization","name":"CentreBrain"}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Necesito saber Git?","acceptedAnswer":{"@type":"Answer","text":"No. Coodoo se encarga por ti de las ramas, los commits y los pull requests."}},{"@type":"Question","name":"¿Puedo usar un repositorio que ya tengo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Abre o clona un repositorio que ya tengas; Coodoo trabaja con él tal como está."}},{"@type":"Question","name":"¿Y si trabajo en dos ordenadores?","acceptedAnswer":{"@type":"Answer","text":"Trae el trabajo más reciente al otro ordenador con un clic. Un agente revisa antes ambos lados, para que no se pierda nada."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#features"><span>Funciones</span></a>
+      <a href="./#how"><span>Cómo funciona</span></a>
+      <a href="./#safety"><span>Seguridad</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="./#price"><span>Precio</span></a>
+      <a href="./#download">Download</a>
+    </nav>
+    <nav class="lang" aria-label="Language"><a href="/github-flow.html" hreflang="en" lang="en" data-lang-link="en">EN</a><a href="/nl/github-flow.html" hreflang="nl" lang="nl" data-lang-link="nl">NL</a><a href="/de/github-flow.html" hreflang="de" lang="de" data-lang-link="de">DE</a><a href="/es/github-flow.html" hreflang="es" lang="es" data-lang-link="es" aria-current="page">ES</a></nav>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6l2 2h8v12H4z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2M12 15l-3-3a22 22 0 0 1 2-4A13 13 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16M9 16v-5M14 16V8M19 16v-3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 7 5 5-5 5M12 19h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+
+<main class="fp">
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Coodoo</a> <span>›</span> <a href="./#features"><span>Funciones</span></a></nav>
+      <h1><span>Ordenado en GitHub. Nada llega a main sin probar.</span></h1>
+      <p class="lead"><span>Coodoo trabaja con Git y GitHub como lo hace un equipo profesional, para que tú no tengas que hacerlo: cada objetivo en su propia rama, entregado en development y pasado a staging y main a través de las comprobaciones que tú elijas.</span></p>
+      <div class="cta">
+        <a class="btn primary" href="./#download"><span>Descargar Coodoo</span></a>
+        <a class="btn" href="./#price"><span>Ver el precio</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="feature">
+        <div>
+          <h2><span>Tu flujo, respetado cada vez</span></h2>
+          <p><span>Tú decides por qué ramas pasa tu trabajo, por ejemplo development → staging → main. Coodoo nunca se salta un paso, abre pull requests donde una rama está protegida y lo guarda todo en tu propia cuenta de GitHub.</span></p>
+          <ul>
+            <li><span>Cada objetivo en su propia rama, que se limpia después</span></li>
+            <li><span>Commits a tu nombre, nunca al de la IA</span></li>
+            <li><span>Promote a la siguiente rama con un clic</span></li>
+            <li><span>Versiones con una lista de cambios en palabras sencillas</span></li>
+          </ul>
+        </div>
+        <div class="win">
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">GitHub · <span>Ramas</span></span><span class="grow"></span><span class="pill"><span class="dot" style="color:var(--app-green)"></span><span>Sincronizado con GitHub</span></span></div>
+          <div class="flowp">
+            <div class="br first"><code>development</code><span class="tag blue"><span>Aquí trabaja el piloto automático</span></span><span class="abtn promote"><span>Promote a staging</span></span>
+              <div class="checks"><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>build</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>tests</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>review</span></div>
+            </div>
+            <div class="arrow-d">↓</div>
+            <div class="br"><code>staging</code><span class="lock"><span>Solo mediante pull request</span></span><span class="grow"></span><span class="sub"><span>3 objetivos de retraso</span></span></div>
+            <div class="arrow-d">↓</div>
+            <div class="br"><code>main</code><span class="lock"><span>Solo mediante pull request · sin force-push</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Cómo funciona</span></h2>
+      <ol class="fp-steps">
+          <li><span class="n">1</span><span><span>Un objetivo recibe su propia rama.</span></span></li>
+          <li><span class="n">2</span><span><span>Allí se hace el commit de cada tarea aprobada, a tu nombre.</span></span></li>
+          <li><span class="n">3</span><span><span>El objetivo terminado se une, se prueba, se revisa y va a development.</span></span></li>
+          <li><span class="n">4</span><span><span>Tú lo pasas a staging y main, a través de las comprobaciones de tu flujo.</span></span></li>
+      </ol>
+      <div class="fp-note">
+        <h3><span>Sin saber nada de Git</span></h3>
+        <p><span>No necesitas saber qué es una rama o un merge. Coodoo te explica lo que pasa con palabras sencillas y solo te pregunta cuando la decisión es tuya, por ejemplo antes de que algo vaya a main.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2><span>Preguntas frecuentes</span></h2>
+      <div class="faq">
+        <details open>
+          <summary><span>¿Necesito saber Git?</span></summary>
+          <p><span>No. Coodoo se encarga por ti de las ramas, los commits y los pull requests.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Puedo usar un repositorio que ya tengo?</span></summary>
+          <p><span>Sí. Abre o clona un repositorio que ya tengas; Coodoo trabaja con él tal como está.</span></p>
+        </details>
+        <details>
+          <summary><span>¿Y si trabajo en dos ordenadores?</span></summary>
+          <p><span>Trae el trabajo más reciente al otro ordenador con un clic. Un agente revisa antes ambos lados, para que no se pierda nada.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2><span>Más de Coodoo</span></h2>
+      <div class="fp-related">
+        <a href="autopilot.html"><b><span>El piloto automático</span></b><span><span>De la idea a una app que funciona, tarea a tarea.</span></span></a>
+        <a href="ai-code-review.html"><b><span>Revisión de código con IA</span></b><span><span>Una IA crea, la otra revisa.</span></span></a>
+        <a href="safety.html"><b><span>Reglas de seguridad</span></b><span><span>Límites estrictos, siempre activos.</span></span></a>
+        <a href="programs.html"><b><span>Programas</span></b><span><span>Lenguajes y bases de datos, sin instalar nada.</span></span></a>
+        <a href="claude-code-and-codex.html"><b><span>Con Claude Code y Codex</span></b><span><span>Lo que Coodoo añade a los agentes que ya usas.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download">
+    <div class="wrap">
+      <h2><span>Pruébalo con tu propia idea.</span></h2>
+      <p class="intro" style="margin:0 auto 22px"><span>Descargar Coodoo es gratis. Para usarlo necesitas una licencia (19,99 € al año, IVA no incluido) y tu propia suscripción de Claude y/o ChatGPT.</span></p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn primary" href="./#download"><span>Descargar Coodoo</span></a>
+        <a class="btn" href="./"><span>Volver a la vista general</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Versiones</span></a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html"><span>Aviso legal &amp; riesgos de la IA</span></a>
+    </div>
+    <nav class="links fp-foot" aria-label="Features">
+      <a href="autopilot.html"><span>El piloto automático</span></a>
+      <a href="ai-code-review.html"><span>Revisión de código con IA</span></a>
+      <a href="safety.html"><span>Reglas de seguridad</span></a>
+      <a href="github-flow.html"><span>Flujo de GitHub</span></a>
+      <a href="programs.html"><span>Programas</span></a>
+      <a href="claude-code-and-codex.html"><span>Con Claude Code y Codex</span></a>
+    </nav>
+    <div class="fine"><span>La IA puede cometer errores: revisa lo que crea Coodoo antes de usarlo. Coodoo y CentreBrain no son responsables de lo que la IA hace o crea (<a href="disclaimer.html">aviso legal</a>). </span><span>Coodoo no está afiliado a Anthropic ni a OpenAI. Claude Code es un producto de Anthropic; Codex es un producto de OpenAI.</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+</script>
+</body>
+</html>
