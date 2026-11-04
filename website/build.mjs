@@ -82,6 +82,8 @@ function head(l, page, t, body) {
     ...alternates,
     `<meta property="og:type" content="${name === 'index' ? 'website' : 'article'}">`,
     '<meta property="og:site_name" content="Coodoo">',
+    // not part of the Open Graph standard, but some sites and SEO tools read it
+    `<meta property="og:logo" content="${SITE}/assets/logo.png">`,
     `<meta property="og:url" content="${url(l, page)}">`,
     `<meta property="og:title" content="${esc(title)}">`,
     `<meta property="og:description" content="${esc(share)}">`,
