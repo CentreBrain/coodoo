@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{head}}
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .legal { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+  .legal h1 { font-size: clamp(30px, 4.6vw, 44px); letter-spacing: -0.02em; line-height: 1.12; margin: 0 0 12px; }
+  .legal .updated { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+  .legal h2 { font-size: 22px; margin: 40px 0 10px; letter-spacing: -0.01em; }
+  .legal h3 { font-size: 17px; margin: 22px 0 6px; }
+  .legal p, .legal li { font-size: 16px; line-height: 1.65; color: var(--text-2); }
+  .legal ul { padding-left: 20px; display: grid; gap: 6px; }
+  .legal a { color: var(--blue); }
+  .legal .summary { padding: 20px 22px; border-radius: 14px; background: #fff8e6; border: 1px solid #f3d27a; color: #4a3b10; }
+  .legal .summary p, .legal .summary li { color: #4a3b10; }
+  @media (prefers-color-scheme: dark) {
+    .legal .summary { background: #2a2210; border-color: #5c4a1a; }
+    .legal .summary p, .legal .summary li { color: #eadcb0; }
+  }
+  .legal .back { display: inline-block; margin-bottom: 18px; font-size: 14px; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <nav class="nav">
+      <a href="./#how">{{t:1dd6a17c}}</a>
+      <a href="./#safety">{{t:db6e7e41}}</a>
+      <a href="./#faq">{{t:03688ba6}}</a>
+      <a href="./#download">Download</a>
+    </nav>
+    {{langnav}}
+  </div>
+</header>
+
+<main class="legal">
+  <a class="back" href="./">{{t:c83ba608}}</a>
+  <h1>{{t:1c5e3366}}</h1>
+  <p class="updated">{{t:eb8e4e9b}}</p>
+
+  <div class="summary">
+    <p><b>{{t:7b0a2234}}</b></p>
+    <ul>
+      <li>{{t:f718c618}}</li>
+      <li>{{t:6e49a352}}</li>
+      <li>{{t:67e0eb31}}</li>
+      <li>{{t:8b8e35ac}}</li>
+    </ul>
+  </div>
+
+  <h2>{{t:79f2556f}}</h2>
+  <p>{{t:ce8fe3c9}}</p>
+
+  <h2>{{t:ff907c30}}</h2>
+
+  <h3>{{t:24834aae}}</h3>
+  <p>{{t:8699ed77}}</p>
+
+  <h3>{{t:ad2cad61}}</h3>
+  <p>{{t:9c529b43}}</p>
+
+  <h3>{{t:6093c17a}}</h3>
+  <p>{{t:8710e78f}}</p>
+
+  <h3>{{t:324a7ffd}}</h3>
+  <p>{{t:d986e44e}}</p>
+
+  <h3>{{t:1c5c3109}}</h3>
+  <p>{{t:3b6bcf60}}</p>
+
+  <h3>{{t:799b3e5c}}</h3>
+  <p>{{t:a4355ac4}}</p>
+
+  <h3>{{t:c13fad98}}</h3>
+  <p>{{t:c6916956}}</p>
+
+  <h3>{{t:9bf17100}}</h3>
+  <p>{{t:4f7a6c61}}</p>
+
+  <h3>{{t:e1765720}}</h3>
+  <p>{{t:777e2159}}</p>
+
+  <h3>{{t:2d2b1ac0}}</h3>
+  <p>{{t:0d3b5d11}}</p>
+
+  <h2>{{t:27dcd04c}}</h2>
+  <ul>
+    <li>{{t:a5c5b390}}</li>
+    <li>{{t:49274477}}</li>
+    <li>{{t:10ff7916}}</li>
+    <li>{{t:d1ef6549}}</li>
+  </ul>
+  <p>{{t:a77360bf}}</p>
+
+  <h2>{{t:f07c360e}}</h2>
+  <ul>
+    <li>{{t:cff2ef23}}</li>
+    <li>{{t:45ce3f95}}</li>
+    <li>{{t:7307b1bc}}</li>
+    <li>{{t:4114f1b8}}</li>
+  </ul>
+
+  <h2>{{t:ba841fa0}}</h2>
+  <p>{{t:4b21bef0}}</p>
+
+  <h2>{{t:ecd05348}}</h2>
+  <p>{{t:7b698389}}</p>
+
+  <h2>{{t:8e46caf6}}</h2>
+  <p>{{t:eec3cad6}}</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <span>© <span data-year>2026</span> CentreBrain</span>
+    <div class="links">
+      <a href="{{manual}}">{{t:4e836fdc}}</a>
+      <a href="https://github.com/CentreBrain/coodoo/releases">{{t:8fa41d59}}</a>
+      <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
+      <a href="disclaimer.html">{{t:8b9aa611}}</a>
+    </div>
+  </div>
+</footer>
+
+{{script}}
+</body>
+</html>

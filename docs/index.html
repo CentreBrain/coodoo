@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,9 @@
 <meta name="author" content="CentreBrain">
 <meta name="theme-color" content="#3574f0">
 <link rel="canonical" href="https://coodoo.centrebrain.net/">
+<link rel="alternate" hreflang="en" href="https://coodoo.centrebrain.net/">
+<link rel="alternate" hreflang="nl" href="https://coodoo.centrebrain.net/nl/">
+<link rel="alternate" hreflang="x-default" href="https://coodoo.centrebrain.net/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coodoo">
 <meta property="og:url" content="https://coodoo.centrebrain.net/">
@@ -22,32 +25,30 @@
 <meta property="og:locale:alternate" content="nl_NL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Coodoo · Your own AI software team, on your computer">
-<meta name="twitter:description" content="Describe your idea in plain words; AI agents build, test and review it and put it on GitHub.">
+<meta name="twitter:description" content="Describe your idea in plain words; AI agents build, test and review it and put it on GitHub. No terminal needed. Works with Claude Code and Codex.">
 <meta name="twitter:image" content="https://coodoo.centrebrain.net/assets/og-image.png">
-<link rel="apple-touch-icon" href="assets/logo.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "@id": "https://coodoo.centrebrain.net/#app", "name": "Coodoo", "url": "https://coodoo.centrebrain.net/", "description": "An AI software team on your own computer. Describe your idea in plain words; AI agents research, build, test and review it and put it on GitHub. Works with Claude Code and Codex through your own subscription.", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, Windows", "inLanguage": ["en", "nl"], "image": "https://coodoo.centrebrain.net/assets/og-image.png", "downloadUrl": "https://github.com/CentreBrain/coodoo/releases/latest", "offers": {"@type": "Offer", "price": "19.99", "priceCurrency": "EUR", "description": "License per year, excl. VAT. Your AI subscription (Claude or ChatGPT) is not included.", "url": "https://coodoo.centrebrain.net/#price"}, "publisher": {"@id": "https://coodoo.centrebrain.net/#org"}}, {"@type": "Organization", "@id": "https://coodoo.centrebrain.net/#org", "name": "CentreBrain", "url": "https://coodoo.centrebrain.net/", "logo": "https://coodoo.centrebrain.net/assets/logo.png", "sameAs": ["https://github.com/CentreBrain"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are Claude and ChatGPT included?", "acceptedAnswer": {"@type": "Answer", "text": "No. Coodoo is the team around the AI. The AI itself comes from your own subscription with Anthropic (Claude, for Claude Code) and/or OpenAI (ChatGPT, for Codex), which you pay for yourself; it is not part of the Coodoo license."}}, {"@type": "Question", "name": "Do I need to be able to program?", "acceptedAnswer": {"@type": "Answer", "text": "No. You describe what you want in plain words, and the AI team builds it. You don't need a terminal."}}, {"@type": "Question", "name": "Do I need both Claude and ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "One is enough. With both, one agent builds and the other reviews its work."}}, {"@type": "Question", "name": "Where does my code live?", "acceptedAnswer": {"@type": "Answer", "text": "On your own computer and in your own GitHub account. What the agents read is sent to the AI service you use (Anthropic or OpenAI), under their terms."}}, {"@type": "Question", "name": "Which computers does Coodoo run on?", "acceptedAnswer": {"@type": "Answer", "text": "macOS (Apple silicon and Intel) and Windows (x64 and ARM)."}}]}]}</script>
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://coodoo.centrebrain.net/#app","name":"Coodoo","url":"https://coodoo.centrebrain.net/","description":"Coodoo is an AI software team on your own computer. Describe your idea in plain words; AI agents build, test and review it and put it on GitHub. Works with Claude Code and Codex (your own subscription, not included).","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Windows","inLanguage":"en","image":"https://coodoo.centrebrain.net/assets/og-image.png","downloadUrl":"https://github.com/CentreBrain/coodoo/releases/latest","offers":{"@type":"Offer","price":"19.99","priceCurrency":"EUR","description":"License per year, excl. VAT. Your AI subscription (Claude or ChatGPT) is not included.","url":"https://coodoo.centrebrain.net/#price"},"publisher":{"@id":"https://coodoo.centrebrain.net/#org"}},{"@type":"Organization","@id":"https://coodoo.centrebrain.net/#org","name":"CentreBrain","url":"https://coodoo.centrebrain.net/","logo":"https://coodoo.centrebrain.net/assets/logo.png","sameAs":["https://github.com/CentreBrain"]},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Are Claude and ChatGPT included?","acceptedAnswer":{"@type":"Answer","text":"No. Coodoo is the team around the AI: the goals, the autopilot, the reviews, GitHub and the safety rules. The AI itself comes from your own subscription with Anthropic (Claude Pro or Max, for Claude Code) and/or OpenAI (ChatGPT Plus or Pro, for Codex). You take that out and pay for it yourself; it is not part of the Coodoo license."}},{"@type":"Question","name":"Do I need to be able to program?","acceptedAnswer":{"@type":"Answer","text":"No. You describe what you want in plain words, and the AI team builds it. You don't need a terminal. It does help to look at what the team makes before you use it."}},{"@type":"Question","name":"Do I need both Claude and ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"One is enough. With both, one agent builds and the other reviews its work, which catches more mistakes."}},{"@type":"Question","name":"Where does my code live?","acceptedAnswer":{"@type":"Answer","text":"On your own computer and in your own GitHub account. Coodoo runs on your computer; your code is not stored by CentreBrain. What the agents read is sent to the AI service you use (Anthropic or OpenAI), under their terms."}},{"@type":"Question","name":"Which computers does Coodoo run on?","acceptedAnswer":{"@type":"Answer","text":"macOS (Apple silicon and Intel) and Windows (x64 and ARM)."}},{"@type":"Question","name":"Is it safe to let AI work on its own?","acceptedAnswer":{"@type":"Answer","text":"Coodoo has safety rules that are always on, such as never deleting your repository or rewriting history, and keeping your keys secret. They limit the risks but cannot rule them out: AI can make mistakes. Read the disclaimer and the risks of AI."}}]}]}</script>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
+    <a class="brand" href="./"><img src="/assets/logo.png" alt="Coodoo logo" width="28" height="28">Coodoo</a>
     <nav class="nav">
-      <a href="#features"><span lang="en">Features</span><span lang="nl">Functies</span></a>
-      <a href="#how"><span lang="en">How it works</span><span lang="nl">Hoe het werkt</span></a>
-      <a href="#safety"><span lang="en">Safety</span><span lang="nl">Veiligheid</span></a>
-      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Manual</span><span lang="nl">Handleiding</span></a>
-      <a href="#price"><span lang="en">Price</span><span lang="nl">Prijs</span></a>
+      <a href="#features"><span>Features</span></a>
+      <a href="#how"><span>How it works</span></a>
+      <a href="#safety"><span>Safety</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="#price"><span>Price</span></a>
       <a href="#download">Download</a>
     </nav>
-    <div class="lang" role="group" aria-label="Language">
-      <button data-set="en">EN</button><button data-set="nl">NL</button>
-    </div>
+    <nav class="lang" aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang-link="en" aria-current="page">EN</a><a href="/nl/" hreflang="nl" lang="nl" data-lang-link="nl">NL</a></nav>
   </div>
 </header>
 
@@ -71,22 +72,20 @@
   <div class="hero">
     <div class="wrap">
       <h1>
-        <span lang="en">Your idea, built by your own AI team. <em>While you watch.</em></span>
-        <span lang="nl">Jouw idee, gebouwd door je eigen AI-team. <em>Terwijl jij meekijkt.</em></span>
+        <span>Your idea, built by your own AI team. <em>While you watch.</em></span>
       </h1>
       <p class="lead">
-        <span lang="en">A software team on your own computer. You say what you want in plain words; AI agents research, build, test and review it, and put it on GitHub. No terminal needed. Coodoo works with the AI coding agents you already use: Claude Code and Codex.</span>
-        <span lang="nl">Een softwareteam op je eigen computer. Jij zegt in gewone woorden wat je wilt; AI-agents onderzoeken, bouwen, testen en reviewen het, en zetten het op GitHub. Zonder terminal. Coodoo werkt met de AI-codeeragents die je al gebruikt: Claude Code en Codex.</span>
+        <span>A software team on your own computer. You say what you want in plain words; AI agents research, build, test and review it, and put it on GitHub. No terminal needed. Coodoo works with the AI coding agents you already use: Claude Code and Codex.</span>
       </p>
       <div class="cta">
         <a class="btn primary" href="#download" data-hero-download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg>
-          <span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span>
+          <span>Download Coodoo</span>
         </a>
-        <a class="btn" href="#how"><span lang="en">See how it works</span><span lang="nl">Zo werkt het</span></a>
-        <span class="meta" data-version-line><span lang="en">For macOS and Windows</span><span lang="nl">Voor macOS en Windows</span></span>
+        <a class="btn" href="#how"><span>See how it works</span></a>
+        <span class="meta" data-version-line><span>For macOS and Windows</span></span>
       </div>
-      <p class="byo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span lang="en"><b>Claude and ChatGPT are not included.</b> You use your own subscription with Anthropic (Claude) and/or OpenAI (ChatGPT); Coodoo is the team around it. <a href="#faq">How that works</a></span><span lang="nl"><b>Claude en ChatGPT zitten er niet bij.</b> Je gebruikt je eigen abonnement bij Anthropic (Claude) en/of OpenAI (ChatGPT); Coodoo is het team eromheen. <a href="#faq">Hoe dat zit</a></span></p>
+      <p class="byo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Claude and ChatGPT are not included.</b> You use your own subscription with Anthropic (Claude) and/or OpenAI (ChatGPT); Coodoo is the team around it. <a href="#faq">How that works</a></span></p>
 
       <!-- the app, with a demo project -->
       <div class="shot" aria-label="Coodoo">
@@ -96,8 +95,8 @@
             <span class="tb-project"><span class="av">R</span>recepten-app</span>
             <span class="tb-branch"><svg><use href="#i-branch"/></svg>development</span>
             <span class="grow"></span>
-            <span class="pill live"><span class="dot"></span><span lang="en">Autopilot working · Build</span><span lang="nl">Autopilot werkt · Ontwikkelen</span></span>
-            <span class="tbtn"><span lang="en">Pause</span><span lang="nl">Pauzeren</span></span>
+            <span class="pill live"><span class="dot"></span><span>Autopilot working · Build</span></span>
+            <span class="tbtn"><span>Pause</span></span>
           </div>
           <div class="app">
             <div class="rail">
@@ -111,23 +110,23 @@
               <svg class="ic" style="color:var(--app-muted);margin-bottom:12px"><use href="#i-term"/></svg>
             </div>
             <div class="pane">
-              <div class="pane-title"><span lang="en">Goals</span><span lang="nl">Doelen</span></div>
-              <div class="heading"><span lang="en">Working on</span><span lang="nl">Nu bezig</span></div>
+              <div class="pane-title"><span>Goals</span></div>
+              <div class="heading"><span>Working on</span></div>
               <div class="box now">
-                <div class="t"><span lang="en">Save recipes as favourites</span><span lang="nl">Recepten bewaren als favoriet</span></div>
+                <div class="t"><span>Save recipes as favourites</span></div>
                 <div class="segs"><i class="d"></i><i class="d"></i><i class="a"></i><i></i><i></i></div>
-                <div class="sub"><span lang="en">2/5 tasks · 14 min</span><span lang="nl">2/5 taken · 14 min</span></div>
+                <div class="sub"><span>2/5 tasks · 14 min</span></div>
               </div>
-              <div class="heading"><span lang="en">Queue</span><span lang="nl">Wachtrij</span><span class="n">2</span></div>
+              <div class="heading"><span>Queue</span><span class="n">2</span></div>
               <div class="box">
-                <div class="q" style="padding-top:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">Search by ingredient</span><span lang="nl">Zoeken op ingrediënt</span></div>
-                <div class="q" style="padding-bottom:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">Dark mode</span><span lang="nl">Donkere modus</span></div>
+                <div class="q" style="padding-top:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Search by ingredient</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Dark mode</span></div>
               </div>
-              <div class="heading"><span lang="en">History</span><span lang="nl">Geschiedenis</span><span class="n">6</span></div>
+              <div class="heading"><span>History</span><span class="n">6</span></div>
               <div class="box">
-                <div class="q" style="padding-top:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Log in with email</span><span lang="nl">Inloggen met e-mail</span></div>
-                <div class="q"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Recipe page with photos</span><span lang="nl">Receptpagina met foto’s</span></div>
-                <div class="q" style="padding-bottom:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Security: update packages</span><span lang="nl">Beveiliging: packages bijwerken</span></div>
+                <div class="q" style="padding-top:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Log in with email</span></div>
+                <div class="q"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Recipe page with photos</span></div>
+                <div class="q" style="padding-bottom:0"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Security: update packages</span></div>
               </div>
             </div>
             <div class="main">
@@ -136,47 +135,47 @@
                 <div class="card-a proj">
                   <div class="grow">
                     <h4>recepten-app</h4>
-                    <div class="sub">demo/recepten-app · <span lang="en">6 done · 2 in queue</span><span lang="nl">6 afgerond · 2 in wachtrij</span></div>
+                    <div class="sub">demo/recepten-app · <span>6 done · 2 in queue</span></div>
                   </div>
                 </div>
                 <div class="card-a pipe">
                   <div class="d"><b>✓</b>Research<small>Codex</small></div>
                   <div class="d"><b>✓</b>Design<small>Claude</small></div>
-                  <div class="d"><b>✓</b><span lang="en">Plan</span><span lang="nl">Plannen</span><small>Claude</small></div>
-                  <div class="a"><b>3</b><span lang="en">Build</span><span lang="nl">Ontwikkelen</span><small><span class="who cl"></span>Claude</small></div>
+                  <div class="d"><b>✓</b><span>Plan</span><small>Claude</small></div>
+                  <div class="a"><b>3</b><span>Build</span><small><span class="who cl"></span>Claude</small></div>
                   <div><b>–</b>Review<small><span class="who cx"></span>Codex</small></div>
-                  <div><b>–</b><span lang="en">Finish</span><span lang="nl">Afronden</span><small>Coodoo</small></div>
+                  <div><b>–</b><span>Finish</span><small>Coodoo</small></div>
                 </div>
                 <div class="card-a">
-                  <div class="heading" style="margin-top:0"><span lang="en">Tasks</span><span lang="nl">Taken</span></div>
-                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">Favourites table and migration</span><span lang="nl">Tabel en migratie voor favorieten</span><span class="r"><span class="tag green"><span lang="en">approved</span><span lang="nl">goedgekeurd</span></span></span></div>
-                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">API: add and remove a favourite</span><span lang="nl">API: favoriet toevoegen en verwijderen</span><span class="r"><span class="tag green"><span lang="en">approved</span><span lang="nl">goedgekeurd</span></span></span></div>
-                  <div class="task cur"><svg class="ic run-ic"><use href="#i-run"/></svg><span lang="en">Heart button on the recipe card</span><span lang="nl">Hartje-knop op de receptkaart</span><span class="r"><span class="who cl"></span>Claude</span></div>
-                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">“My favourites” page</span><span lang="nl">Pagina “Mijn favorieten”</span></div>
-                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span lang="en">Tests and a look at the app</span><span lang="nl">Tests en de app bekijken</span></div>
+                  <div class="heading" style="margin-top:0"><span>Tasks</span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>Favourites table and migration</span><span class="r"><span class="tag green"><span>approved</span></span></span></div>
+                  <div class="task"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>API: add and remove a favourite</span><span class="r"><span class="tag green"><span>approved</span></span></span></div>
+                  <div class="task cur"><svg class="ic run-ic"><use href="#i-run"/></svg><span>Heart button on the recipe card</span><span class="r"><span class="who cl"></span>Claude</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>“My favourites” page</span></div>
+                  <div class="task"><svg class="ic wait-ic"><use href="#i-wait"/></svg><span>Tests and a look at the app</span></div>
                 </div>
               </div>
               <div class="log">
-                <div class="lt"><b>Run</b><span lang="en">All</span><span lang="nl">Alles</span><span lang="en">Messages</span><span lang="nl">Berichten</span><span lang="en">Problems</span><span lang="nl">Problemen</span></div>
-                <p><time>14:02:11</time><span class="g">✔ <span lang="en">Review approved: API: add and remove a favourite</span><span lang="nl">Review goedgekeurd: API: favoriet toevoegen en verwijderen</span></span></p>
-                <p><time>14:02:14</time><span class="bl"><span lang="en">Commit and push to development</span><span lang="nl">Commit en push naar development</span></span></p>
-                <p><time>14:02:15</time><span><span lang="en">Claude Code · Build: working on “Heart button on the recipe card”</span><span lang="nl">Claude Code · Ontwikkelen: bezig met “Hartje-knop op de receptkaart”</span></span></p>
+                <div class="lt"><b>Run</b><span>All</span><span>Messages</span><span>Problems</span></div>
+                <p><time>14:02:11</time><span class="g">✔ <span>Review approved: API: add and remove a favourite</span></span></p>
+                <p><time>14:02:14</time><span class="bl"><span>Commit and push to development</span></span></p>
+                <p><time>14:02:15</time><span><span>Claude Code · Build: working on “Heart button on the recipe card”</span></span></p>
               </div>
             </div>
             <div class="pane right">
               <div class="pane-title">Team</div>
               <div class="agent">
-                <div class="agent-h"><span class="logo-sq cl">✳</span><div class="grow"><b>Claude Code</b><div class="sub"><span lang="en">Working</span><span lang="nl">Bezig</span></div></div><span class="pill live" style="padding:2px 7px"><span class="dot"></span></span></div>
-                <div class="chips"><span class="chip-a"><span lang="en">Development</span><span lang="nl">Ontwikkeling</span></span><span class="chip-a">Design</span></div>
-                <div class="doing"><span lang="en">Writes</span><span lang="nl">Schrijft</span> <code>FavoriteButton.tsx</code></div>
+                <div class="agent-h"><span class="logo-sq cl">✳</span><div class="grow"><b>Claude Code</b><div class="sub"><span>Working</span></div></div><span class="pill live" style="padding:2px 7px"><span class="dot"></span></span></div>
+                <div class="chips"><span class="chip-a"><span>Development</span></span><span class="chip-a">Design</span></div>
+                <div class="doing"><span>Writes</span> <code>FavoriteButton.tsx</code></div>
                 <div class="bar"><i></i></div>
               </div>
               <div class="agent">
-                <div class="agent-h"><span class="logo-sq cx">◎</span><div class="grow"><b>Codex</b><div class="sub"><span lang="en">Waiting for review</span><span lang="nl">Wacht op review</span></div></div></div>
+                <div class="agent-h"><span class="logo-sq cx">◎</span><div class="grow"><b>Codex</b><div class="sub"><span>Waiting for review</span></div></div></div>
                 <div class="chips"><span class="chip-a">Research</span><span class="chip-a">Code review</span></div>
               </div>
-              <div class="heading"><span lang="en">Security</span><span lang="nl">Veiligheid</span></div>
-              <div class="box q" style="padding:8px 10px"><svg class="ic ok-ic"><use href="#i-shield"/></svg><span lang="en">No open problems</span><span lang="nl">Geen open problemen</span></div>
+              <div class="heading"><span>Security</span></div>
+              <div class="box q" style="padding:8px 10px"><svg class="ic ok-ic"><use href="#i-shield"/></svg><span>No open problems</span></div>
             </div>
           </div>
         </div>
@@ -186,39 +185,39 @@
 
   <section id="how">
     <div class="wrap">
-      <h2 class="how-h"><span lang="en">From idea to working app, in three steps.</span><span lang="nl">Van idee tot werkende app, in drie stappen.</span></h2>
+      <h2 class="how-h"><span>From idea to working app, in three steps.</span></h2>
       <!-- 1. chat -->
       <div class="feature" id="features">
         <div>
           <span class="step-no">01</span>
-          <h3><span lang="en">Say what you want. Together you turn it into a goal.</span><span lang="nl">Zeg wat je wilt. Samen maak je er een doel van.</span></h3>
-          <p><span lang="en">You don't need to be a programmer. Describe what you want in your own words; the agent asks what it needs to know and proposes a goal. One click puts it in the queue.</span><span lang="nl">Je hoeft geen programmeur te zijn. Beschrijf in je eigen woorden wat je wilt; de agent vraagt wat hij moet weten en stelt een doel voor. Eén klik zet het in de wachtrij.</span></p>
+          <h3><span>Say what you want. Together you turn it into a goal.</span></h3>
+          <p><span>You don't need to be a programmer. Describe what you want in your own words; the agent asks what it needs to know and proposes a goal. One click puts it in the queue.</span></p>
           <ul>
-            <li><span lang="en">Testers' GitHub issues can be discussed the same way</span><span lang="nl">GitHub-issues van je testers bespreek je op dezelfde manier</span></li>
-            <li><span lang="en">Chatting never changes your code</span><span lang="nl">Chatten verandert nooit je code</span></li>
+            <li><span>Testers' GitHub issues can be discussed the same way</span></li>
+            <li><span>Chatting never changes your code</span></li>
           </ul>
         </div>
         <div class="win">
           <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">Chat</span><span class="grow"></span><span class="pill"><span class="who cl"></span>Claude Code</span></div>
           <div class="chat">
-            <div class="msg me"><span lang="en">I want people to be able to save recipes they like, so they can find them again later.</span><span lang="nl">Ik wil dat mensen recepten die ze lekker vinden kunnen bewaren, zodat ze ze later terugvinden.</span></div>
+            <div class="msg me"><span>I want people to be able to save recipes they like, so they can find them again later.</span></div>
             <div class="msg ai">
               <div class="from"><span class="who cl"></span>Claude Code</div>
-              <span lang="en">Good idea. Users already log in, so I'll keep the favourites per account. This is the goal I suggest:</span><span lang="nl">Goed idee. Gebruikers loggen al in, dus ik bewaar de favorieten per account. Dit doel stel ik voor:</span>
+              <span>Good idea. Users already log in, so I'll keep the favourites per account. This is the goal I suggest:</span>
               <div class="goal-card">
-                <div class="k"><span lang="en">Goal</span><span lang="nl">Doel</span></div>
-                <div class="t"><span lang="en">Save recipes as favourites</span><span lang="nl">Recepten bewaren als favoriet</span></div>
+                <div class="k"><span>Goal</span></div>
+                <div class="t"><span>Save recipes as favourites</span></div>
                 <ul>
-                  <li><span lang="en">A heart on every recipe card</span><span lang="nl">Een hartje op elke receptkaart</span></li>
-                  <li><span lang="en">A “My favourites” page</span><span lang="nl">Een pagina “Mijn favorieten”</span></li>
-                  <li><span lang="en">Only for logged-in users</span><span lang="nl">Alleen voor ingelogde gebruikers</span></li>
+                  <li><span>A heart on every recipe card</span></li>
+                  <li><span>A “My favourites” page</span></li>
+                  <li><span>Only for logged-in users</span></li>
                 </ul>
-                <span class="abtn"><span lang="en">Add to queue</span><span lang="nl">In de wachtrij</span></span>
-                <span class="abtn ghost"><span lang="en">Change</span><span lang="nl">Aanpassen</span></span>
+                <span class="abtn"><span>Add to queue</span></span>
+                <span class="abtn ghost"><span>Change</span></span>
               </div>
             </div>
           </div>
-          <div class="input"><span class="grow"><span lang="en">Message Claude Code…</span><span lang="nl">Bericht aan Claude Code…</span></span><svg class="ic"><use href="#i-send"/></svg></div>
+          <div class="input"><span class="grow"><span>Message Claude Code…</span></span><svg class="ic"><use href="#i-send"/></svg></div>
         </div>
       </div>
 
@@ -226,35 +225,35 @@
       <div class="feature flip">
         <div>
           <span class="step-no">02</span>
-          <h3><span lang="en">One AI builds. The other checks. Then it looks at your app.</span><span lang="nl">De ene AI bouwt. De andere controleert. Dan kijkt hij naar je app.</span></h3>
-          <p><span lang="en">Every task is reviewed by the other agent before it's committed. After that Coodoo starts your app and looks at it, like a person would. Broken or unsafe? It goes back to the developer first.</span><span lang="nl">Elke taak wordt door de andere agent gereviewd voordat hij wordt gecommit. Daarna start Coodoo je app en bekijkt hem, zoals een mens zou doen. Kapot of onveilig? Dan gaat het eerst terug naar de ontwikkelaar.</span></p>
+          <h3><span>One AI builds. The other checks. Then it looks at your app.</span></h3>
+          <p><span>Every task is reviewed by the other agent before it's committed. After that Coodoo starts your app and looks at it, like a person would. Broken or unsafe? It goes back to the developer first.</span></p>
           <ul>
-            <li><span lang="en">Security problems are fixed before anything else</span><span lang="nl">Beveiligingsproblemen worden eerst opgelost</span></li>
-            <li><span lang="en">Lessons from rejected work are remembered next to the code</span><span lang="nl">Lessen uit afgekeurd werk worden bij de code onthouden</span></li>
+            <li><span>Security problems are fixed before anything else</span></li>
+            <li><span>Lessons from rejected work are remembered next to the code</span></li>
           </ul>
         </div>
         <div class="win">
-          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project"><span lang="en">Review · API: add and remove a favourite</span><span lang="nl">Review · API: favoriet toevoegen en verwijderen</span></span></div>
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project"><span>Review · API: add and remove a favourite</span></span></div>
           <div class="rev">
             <div class="rv">
               <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
-              <span><b>Codex</b> · <span class="tag red"><span lang="en">changes needed</span><span lang="nl">verbeteren</span></span></span>
-              <p><span lang="en">Anyone can remove someone else's favourite: the route doesn't check the owner.</span><span lang="nl">Iedereen kan de favoriet van een ander verwijderen: de route controleert de eigenaar niet.</span> <code>routes/favorites.ts:38</code></p>
+              <span><b>Codex</b> · <span class="tag red"><span>changes needed</span></span></span>
+              <p><span>Anyone can remove someone else's favourite: the route doesn't check the owner.</span> <code>routes/favorites.ts:38</code></p>
             </div>
             <div class="rv">
               <span class="logo-sq cl" style="width:20px;height:20px;font-size:10px">✳</span>
-              <span><b>Claude Code</b> · <span class="tag blue"><span lang="en">fixed</span><span lang="nl">opgelost</span></span></span>
-              <p><span lang="en">Only the owner can remove it now, with a test for the other case.</span><span lang="nl">Alleen de eigenaar kan hem nu verwijderen, met een test voor het andere geval.</span></p>
+              <span><b>Claude Code</b> · <span class="tag blue"><span>fixed</span></span></span>
+              <p><span>Only the owner can remove it now, with a test for the other case.</span></p>
             </div>
             <div class="rv">
               <span class="logo-sq cx" style="width:20px;height:20px;font-size:10px">◎</span>
-              <span><b>Codex</b> · <span class="tag green"><span lang="en">approved</span><span lang="nl">goedgekeurd</span></span></span>
+              <span><b>Codex</b> · <span class="tag green"><span>approved</span></span></span>
             </div>
             <div class="peek">
               <div class="mini"><div class="mb"><i></i><i></i><i></i></div><div class="mc"><div class="h"></div><span></span><span></span><span></span><span></span></div></div>
               <div>
-                <div style="display:flex;gap:6px;align-items:center;font-weight:600"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span lang="en">App started and looked at</span><span lang="nl">App gestart en bekeken</span></div>
-                <div class="sub" style="margin-top:3px"><span lang="en">The page loads without errors; the hearts are on the cards.</span><span lang="nl">De pagina laadt zonder fouten; de hartjes staan op de kaarten.</span></div>
+                <div style="display:flex;gap:6px;align-items:center;font-weight:600"><svg class="ic ok-ic"><use href="#i-ok"/></svg><span>App started and looked at</span></div>
+                <div class="sub" style="margin-top:3px"><span>The page loads without errors; the hearts are on the cards.</span></div>
               </div>
             </div>
           </div>
@@ -265,23 +264,23 @@
       <div class="feature">
         <div>
           <span class="step-no">03</span>
-          <h3><span lang="en">Neat on GitHub. Nothing reaches main untested.</span><span lang="nl">Netjes op GitHub. Niets komt ongetest op main.</span></h3>
-          <p><span lang="en">The autopilot works on the first branch of your flow. With Promote the work moves one step on, through a pull request where GitHub asks for one, waiting for the checks. Every commit is in your name, never in the AI's.</span><span lang="nl">De autopilot werkt op de eerste branch van je flow. Met Promote gaat het werk een stap verder, via een pull request waar GitHub daarom vraagt, en wachtend op de checks. Elke commit staat op jouw naam, nooit op die van de AI.</span></p>
+          <h3><span>Neat on GitHub. Nothing reaches main untested.</span></h3>
+          <p><span>The autopilot works on the first branch of your flow. With Promote the work moves one step on, through a pull request where GitHub asks for one, waiting for the checks. Every commit is in your name, never in the AI's.</span></p>
           <ul>
-            <li><span lang="en">Coodoo puts your flow on GitHub as branch rules</span><span lang="nl">Coodoo zet je flow als branch-regels op GitHub</span></li>
-            <li><span lang="en">Releases for Mac and Windows in three steps</span><span lang="nl">Releases voor Mac en Windows in drie stappen</span></li>
+            <li><span>Coodoo puts your flow on GitHub as branch rules</span></li>
+            <li><span>Releases for Mac and Windows in three steps</span></li>
           </ul>
         </div>
         <div class="win">
-          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">GitHub · <span lang="en">Branches</span><span lang="nl">Branches</span></span><span class="grow"></span><span class="pill"><span class="dot" style="color:var(--app-green)"></span><span lang="en">In sync with GitHub</span><span lang="nl">Gelijk met GitHub</span></span></div>
+          <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span><span class="tb-project">GitHub · <span>Branches</span></span><span class="grow"></span><span class="pill"><span class="dot" style="color:var(--app-green)"></span><span>In sync with GitHub</span></span></div>
           <div class="flowp">
-            <div class="br first"><code>development</code><span class="tag blue"><span lang="en">The autopilot works here</span><span lang="nl">Hier werkt de autopilot</span></span><span class="abtn promote"><span lang="en">Promote to staging</span><span lang="nl">Promote naar staging</span></span>
+            <div class="br first"><code>development</code><span class="tag blue"><span>The autopilot works here</span></span><span class="abtn promote"><span>Promote to staging</span></span>
               <div class="checks"><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>build</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>tests</span><span><svg class="ic ok-ic"><use href="#i-ok"/></svg>review</span></div>
             </div>
             <div class="arrow-d">↓</div>
-            <div class="br"><code>staging</code><span class="lock"><span lang="en">Only through a pull request</span><span lang="nl">Alleen via een pull request</span></span><span class="grow"></span><span class="sub"><span lang="en">3 goals behind</span><span lang="nl">3 doelen achter</span></span></div>
+            <div class="br"><code>staging</code><span class="lock"><span>Only through a pull request</span></span><span class="grow"></span><span class="sub"><span>3 goals behind</span></span></div>
             <div class="arrow-d">↓</div>
-            <div class="br"><code>main</code><span class="lock"><span lang="en">Only through a pull request · no force-push</span><span lang="nl">Alleen via een pull request · geen force-push</span></span></div>
+            <div class="br"><code>main</code><span class="lock"><span>Only through a pull request · no force-push</span></span></div>
           </div>
         </div>
       </div>
@@ -290,103 +289,103 @@
 
   <section class="alt">
     <div class="wrap">
-      <h2><span lang="en">And everything around it.</span><span lang="nl">En alles eromheen.</span></h2>
-      <p class="intro"><span lang="en">The things a good team takes care of without being asked.</span><span lang="nl">Wat een goed team regelt zonder dat je erom vraagt.</span></p>
+      <h2><span>And everything around it.</span></h2>
+      <p class="intro"><span>The things a good team takes care of without being asked.</span></p>
       <div class="more">
-        <div><b><span lang="en">A map of your code</span><span lang="nl">Een kaart van je code</span></b><span><span lang="en">The agents find their way by meaning, with a small AI model on your own computer. Faster and cheaper.</span><span lang="nl">De agents vinden hun weg op betekenis, met een klein AI-model op je eigen computer. Sneller en goedkoper.</span></span></div>
-        <div><b><span lang="en">A vault for your keys</span><span lang="nl">Een kluis voor je sleutels</span></b><span><span lang="en">Encrypted, never shown again, never in a commit, and blanked out as REDACTED in every log.</span><span lang="nl">Versleuteld, nooit meer zichtbaar, nooit in een commit, en als REDACTED weggelakt in elk log.</span></span></div>
-        <div><b><span lang="en">Herd, Docker, databases</span><span lang="nl">Herd, Docker, databases</span></b><span><span lang="en">Coodoo starts the services your project needs before your app, and fills in the settings.</span><span lang="nl">Coodoo start de services van je project voor je app, en vult de instellingen in.</span></span></div>
-        <div><b><span lang="en">Share with a link</span><span lang="nl">Delen met een link</span></b><span><span lang="en">Let others try your running app through a Cloudflare tunnel, on your own domain if you like.</span><span lang="nl">Laat anderen je draaiende app proberen via een Cloudflare-tunnel, als je wilt op je eigen domein.</span></span></div>
-        <div><b><span lang="en">On every computer</span><span lang="nl">Op elke computer</span></b><span><span lang="en">Worked on your laptop? Get latest on your desktop. An agent checks both sides first.</span><span lang="nl">Gewerkt op je laptop? Haal het nieuwste op je desktop. Een agent kijkt eerst beide kanten na.</span></span></div>
-        <div><b><span lang="en">When it needs you</span><span lang="nl">Als hij je nodig heeft</span></b><span><span lang="en">A command only you can run? A yellow card says so, and one click lets Coodoo do it for you.</span><span lang="nl">Een opdracht die alleen jij kunt geven? Een gele kaart zegt het, en met één klik doet Coodoo het voor je.</span></span></div>
+        <div><b><span>A map of your code</span></b><span><span>The agents find their way by meaning, with a small AI model on your own computer. Faster and cheaper.</span></span></div>
+        <div><b><span>A vault for your keys</span></b><span><span>Encrypted, never shown again, never in a commit, and blanked out as REDACTED in every log.</span></span></div>
+        <div><b><span>Herd, Docker, databases</span></b><span><span>Coodoo starts the services your project needs before your app, and fills in the settings.</span></span></div>
+        <div><b><span>Share with a link</span></b><span><span>Let others try your running app through a Cloudflare tunnel, on your own domain if you like.</span></span></div>
+        <div><b><span>On every computer</span></b><span><span>Worked on your laptop? Get latest on your desktop. An agent checks both sides first.</span></span></div>
+        <div><b><span>When it needs you</span></b><span><span>A command only you can run? A yellow card says so, and one click lets Coodoo do it for you.</span></span></div>
       </div>
     </div>
   </section>
 
   <section id="safety" class="alt">
     <div class="wrap">
-      <h2><span lang="en">The agents work on their own. Within hard limits.</span><span lang="nl">De agents werken zelfstandig. Binnen harde grenzen.</span></h2>
-      <p class="intro"><span lang="en">These rules are always on. No goal, agent or button can switch them off; Coodoo stops whatever tries.</span><span lang="nl">Deze regels staan altijd aan. Geen doel, agent of knop kan ze uitzetten; Coodoo houdt tegen wat het toch probeert.</span></p>
+      <h2><span>The agents work on their own. Within hard limits.</span></h2>
+      <p class="intro"><span>These rules are always on. No goal, agent or button can switch them off; Coodoo stops whatever tries.</span></p>
       <div class="safety-wrap">
         <div class="safety">
-        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Your repository stays.</span><span lang="nl">Je repository blijft.</span></b> <span lang="en">Never deleted, archived, transferred or made public.</span><span lang="nl">Nooit verwijderd, gearchiveerd, overgedragen of openbaar gemaakt.</span></span></div>
-        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">History is never rewritten.</span><span lang="nl">Geschiedenis wordt nooit herschreven.</span></b> <span lang="en">No force pushes, no deleted branches or tags.</span><span lang="nl">Geen force-push, geen verwijderde branches of tags.</span></span></div>
-        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Keys stay secret.</span><span lang="nl">Sleutels blijven geheim.</span></b> <span lang="en">Encrypted, never shown, never committed.</span><span lang="nl">Versleuteld, nooit getoond, nooit gecommit.</span></span></div>
-        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">The agents can't reach your login.</span><span lang="nl">De agents kunnen niet bij je login.</span></b> <span lang="en">They only write inside your project folder.</span><span lang="nl">Ze schrijven alleen in je projectmap.</span></span></div>
-        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Commits in your name.</span><span lang="nl">Commits op jouw naam.</span></b> <span lang="en">Never in the AI's.</span><span lang="nl">Nooit op naam van de AI.</span></span></div>
-        <div class="safe"><span class="ok">✓</span><span><b><span lang="en">Work follows your flow.</span><span lang="nl">Werk volgt je flow.</span></b> <span lang="en">No step is ever skipped.</span><span lang="nl">Er wordt nooit een stap overgeslagen.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Your repository stays.</span></b> <span>Never deleted, archived, transferred or made public.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>History is never rewritten.</span></b> <span>No force pushes, no deleted branches or tags.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Keys stay secret.</span></b> <span>Encrypted, never shown, never committed.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>The agents can't reach your login.</span></b> <span>They only write inside your project folder.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Commits in your name.</span></b> <span>Never in the AI's.</span></span></div>
+        <div class="safe"><span class="ok">✓</span><span><b><span>Work follows your flow.</span></b> <span>No step is ever skipped.</span></span></div>
         </div>
         <div class="stack">
           <div class="toast">
             <svg class="ic" style="color:var(--app-red);margin-top:2px"><use href="#i-shield"/></svg>
-            <span class="k"><span lang="en">Failsafe: push refused</span><span lang="nl">Failsafe: push geweigerd</span></span>
-            <p><code>git push --force</code> <span lang="en">would rewrite history on GitHub. The goal stops; nothing was changed.</span><span lang="nl">zou de geschiedenis op GitHub herschrijven. Het doel stopt; er is niets veranderd.</span></p>
+            <span class="k"><span>Failsafe: push refused</span></span>
+            <p><code>git push --force</code> <span>would rewrite history on GitHub. The goal stops; nothing was changed.</span></p>
           </div>
           <div class="toast" style="border-left-color:var(--app-green)">
             <svg class="ic ok-ic" style="margin-top:2px"><use href="#i-ok"/></svg>
-            <span class="k"><span lang="en">Key kept out of the commit</span><span lang="nl">Sleutel buiten de commit gehouden</span></span>
-            <p><span lang="en">A file with a key from your vault was not committed. In the log it says</span><span lang="nl">Een bestand met een sleutel uit je kluis is niet gecommit. In het log staat</span> <code>REDACTED</code>.</p>
+            <span class="k"><span>Key kept out of the commit</span></span>
+            <p><span>A file with a key from your vault was not committed. In the log it says</span> <code>REDACTED</code>.</p>
           </div>
           <div class="needs">
-            <b><span lang="en">Coodoo needs you</span><span lang="nl">Coodoo heeft je nodig</span></b>
-            <span lang="en">The team left a command:</span><span lang="nl">Het team liet een opdracht achter:</span> <code>npm run db:migrate</code><br>
-            <span class="abtn" style="margin-top:9px"><span lang="en">Let Coodoo do this</span><span lang="nl">Laat Coodoo dit doen</span></span>
+            <b><span>Coodoo needs you</span></b>
+            <span>The team left a command:</span> <code>npm run db:migrate</code><br>
+            <span class="abtn" style="margin-top:9px"><span>Let Coodoo do this</span></span>
           </div>
         </div>
       </div>
       <div class="disclaimer" id="ai">
-        <h3><span aria-hidden="true">⚠️</span><span lang="en">Working with AI: please read</span><span lang="nl">Werken met AI: lees dit even</span></h3>
+        <h3><span aria-hidden="true">⚠️</span><span>Working with AI: please read</span></h3>
         <ul>
-          <li><span lang="en"><b>AI can make mistakes.</b> Code may not work, may contain a security hole or may do something other than you asked, and an answer can be wrong, even when it sounds convincing.</span><span lang="nl"><b>AI kan fouten maken.</b> Code kan niet werken, een beveiligingslek bevatten of iets anders doen dan je vroeg, en een antwoord kan onjuist zijn, ook als het overtuigend klinkt.</span></li>
-          <li><span lang="en"><b>Check what the team makes yourself</b>, before you use it, publish it or give it to others. You remain responsible for your project and for what you do with it.</span><span lang="nl"><b>Controleer zelf wat het team maakt</b>, voordat je het gebruikt, publiceert of aan anderen geeft. Jij blijft verantwoordelijk voor je project en voor wat je ermee doet.</span></li>
-          <li><span lang="en">The safety rules above limit the risks, but <b>offer no guarantee</b>.</span><span lang="nl">De veiligheidsregels hierboven beperken de risico’s, maar <b>bieden geen garantie</b>.</span></li>
-          <li><span lang="en"><b>Coodoo and CentreBrain are not liable</b> for mistakes, damage or loss caused by what the AI does or makes. You use Coodoo at your own risk. The terms of Anthropic and OpenAI also apply to the AI services themselves.</span><span lang="nl"><b>Coodoo en CentreBrain zijn niet aansprakelijk</b> voor fouten, schade of verlies door wat de AI doet of maakt. Je gebruikt Coodoo op eigen risico. Voor de AI-diensten zelf gelden ook de voorwaarden van Anthropic en OpenAI.</span></li>
+          <li><span><b>AI can make mistakes.</b> Code may not work, may contain a security hole or may do something other than you asked, and an answer can be wrong, even when it sounds convincing.</span></li>
+          <li><span><b>Check what the team makes yourself</b>, before you use it, publish it or give it to others. You remain responsible for your project and for what you do with it.</span></li>
+          <li><span>The safety rules above limit the risks, but <b>offer no guarantee</b>.</span></li>
+          <li><span><b>Coodoo and CentreBrain are not liable</b> for mistakes, damage or loss caused by what the AI does or makes. You use Coodoo at your own risk. The terms of Anthropic and OpenAI also apply to the AI services themselves.</span></li>
         </ul>
-        <p><span lang="en">Coodoo shows this once when you first start it, and you accept it before you can begin. <a href="disclaimer.html">Read the full disclaimer and the risks of AI</a>.</span><span lang="nl">Coodoo laat dit zien als je hem voor het eerst start, en je accepteert het voordat je kunt beginnen. <a href="disclaimer.html">Lees de volledige disclaimer en de risico’s van AI</a>.</span></p>
+        <p><span>Coodoo shows this once when you first start it, and you accept it before you can begin. <a href="disclaimer.html">Read the full disclaimer and the risks of AI</a>.</span></p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2><span lang="en">Four things, and you're building.</span><span lang="nl">Vier dingen, en je bouwt.</span></h2>
+      <h2><span>Four things, and you're building.</span></h2>
       <table>
-        <tr><td><span lang="en">A computer</span><span lang="nl">Een computer</span></td><td><span lang="en">macOS (Apple silicon or Intel) or Windows (x64 or ARM)</span><span lang="nl">macOS (Apple silicon of Intel) of Windows (x64 of ARM)</span></td></tr>
-        <tr><td><span lang="en">Your own AI subscription</span><span lang="nl">Je eigen AI-abonnement</span></td><td><span lang="en"><b>Not included in Coodoo.</b> Claude (for Claude Code, from Anthropic) and/or ChatGPT (for Codex, from OpenAI), which you take out and pay for yourself. One is enough; with both, one builds and the other reviews.</span><span lang="nl"><b>Niet inbegrepen bij Coodoo.</b> Claude (voor Claude Code, van Anthropic) en/of ChatGPT (voor Codex, van OpenAI), die je zelf afsluit en betaalt. Eén is genoeg; met beide bouwt de een en reviewt de ander.</span></td></tr>
-        <tr><td><span lang="en">A GitHub account</span><span lang="nl">Een GitHub-account</span></td><td><span lang="en">Your code lives here.</span><span lang="nl">Hier staat je code.</span></td></tr>
-        <tr><td><span lang="en">A Coodoo license</span><span lang="nl">Een Coodoo-licentie</span></td><td><span lang="en">€19.99 per year (excl. VAT). Asked for when you first start the app. <a href="#price">Buy a license</a></span><span lang="nl">€19,99 per jaar (excl. btw). Wordt gevraagd als je de app voor het eerst start. <a href="#price">Licentie kopen</a></span></td></tr>
+        <tr><td><span>A computer</span></td><td><span>macOS (Apple silicon or Intel) or Windows (x64 or ARM)</span></td></tr>
+        <tr><td><span>Your own AI subscription</span></td><td><span><b>Not included in Coodoo.</b> Claude (for Claude Code, from Anthropic) and/or ChatGPT (for Codex, from OpenAI), which you take out and pay for yourself. One is enough; with both, one builds and the other reviews.</span></td></tr>
+        <tr><td><span>A GitHub account</span></td><td><span>Your code lives here.</span></td></tr>
+        <tr><td><span>A Coodoo license</span></td><td><span>€19.99 per year (excl. VAT). Asked for when you first start the app. <a href="#price">Buy a license</a></span></td></tr>
       </table>
-      <p class="note" style="margin-left:0"><span lang="en">Coodoo installs the Claude Code and Codex programs and the tools your project needs (such as Node.js, PHP or Python) for you, with the official installers. You sign in with your own account.</span><span lang="nl">Coodoo installeert de programma’s Claude Code en Codex en wat je project nodig heeft (zoals Node.js, PHP of Python) voor je, met de officiële installers. Je logt in met je eigen account.</span></p>
+      <p class="note" style="margin-left:0"><span>Coodoo installs the Claude Code and Codex programs and the tools your project needs (such as Node.js, PHP or Python) for you, with the official installers. You sign in with your own account.</span></p>
     </div>
   </section>
 
   <section id="faq">
     <div class="wrap">
-      <h2><span lang="en">Frequently asked questions</span><span lang="nl">Veelgestelde vragen</span></h2>
+      <h2><span>Frequently asked questions</span></h2>
       <div class="faq">
         <details open>
-          <summary><span lang="en">Are Claude and ChatGPT included?</span><span lang="nl">Zitten Claude en ChatGPT erbij?</span></summary>
-          <p><span lang="en">No. Coodoo is the team around the AI: the goals, the autopilot, the reviews, GitHub and the safety rules. The AI itself comes from your own subscription with Anthropic (Claude Pro or Max, for Claude Code) and/or OpenAI (ChatGPT Plus or Pro, for Codex). You take that out and pay for it yourself; it is not part of the Coodoo license.</span><span lang="nl">Nee. Coodoo is het team rond de AI: de doelen, de autopilot, de reviews, GitHub en de veiligheidsregels. De AI zelf komt uit je eigen abonnement bij Anthropic (Claude Pro of Max, voor Claude Code) en/of OpenAI (ChatGPT Plus of Pro, voor Codex). Dat sluit en betaal je zelf af; het zit niet in de Coodoo-licentie.</span></p>
+          <summary><span>Are Claude and ChatGPT included?</span></summary>
+          <p><span>No. Coodoo is the team around the AI: the goals, the autopilot, the reviews, GitHub and the safety rules. The AI itself comes from your own subscription with Anthropic (Claude Pro or Max, for Claude Code) and/or OpenAI (ChatGPT Plus or Pro, for Codex). You take that out and pay for it yourself; it is not part of the Coodoo license.</span></p>
         </details>
         <details>
-          <summary><span lang="en">Do I need to be able to program?</span><span lang="nl">Moet ik kunnen programmeren?</span></summary>
-          <p><span lang="en">No. You describe what you want in plain words, and the AI team builds it. You don't need a terminal. It does help to look at what the team makes before you use it.</span><span lang="nl">Nee. Je beschrijft in gewone woorden wat je wilt, en het AI-team bouwt het. Je hebt geen terminal nodig. Het helpt wel om te bekijken wat het team maakt voordat je het gebruikt.</span></p>
+          <summary><span>Do I need to be able to program?</span></summary>
+          <p><span>No. You describe what you want in plain words, and the AI team builds it. You don't need a terminal. It does help to look at what the team makes before you use it.</span></p>
         </details>
         <details>
-          <summary><span lang="en">Do I need both Claude and ChatGPT?</span><span lang="nl">Heb ik zowel Claude als ChatGPT nodig?</span></summary>
-          <p><span lang="en">One is enough. With both, one agent builds and the other reviews its work, which catches more mistakes.</span><span lang="nl">Eén is genoeg. Met beide bouwt de ene agent en controleert de andere zijn werk, en dat vangt meer fouten af.</span></p>
+          <summary><span>Do I need both Claude and ChatGPT?</span></summary>
+          <p><span>One is enough. With both, one agent builds and the other reviews its work, which catches more mistakes.</span></p>
         </details>
         <details>
-          <summary><span lang="en">Where does my code live?</span><span lang="nl">Waar staat mijn code?</span></summary>
-          <p><span lang="en">On your own computer and in your own GitHub account. Coodoo runs on your computer; your code is not stored by CentreBrain. What the agents read is sent to the AI service you use (Anthropic or OpenAI), under their terms.</span><span lang="nl">Op je eigen computer en in je eigen GitHub-account. Coodoo draait op je computer; CentreBrain bewaart je code niet. Wat de agents lezen, gaat naar de AI-dienst die je gebruikt (Anthropic of OpenAI), onder hun voorwaarden.</span></p>
+          <summary><span>Where does my code live?</span></summary>
+          <p><span>On your own computer and in your own GitHub account. Coodoo runs on your computer; your code is not stored by CentreBrain. What the agents read is sent to the AI service you use (Anthropic or OpenAI), under their terms.</span></p>
         </details>
         <details>
-          <summary><span lang="en">Which computers does Coodoo run on?</span><span lang="nl">Op welke computers werkt Coodoo?</span></summary>
-          <p><span lang="en">macOS (Apple silicon and Intel) and Windows (x64 and ARM).</span><span lang="nl">macOS (Apple silicon en Intel) en Windows (x64 en ARM).</span></p>
+          <summary><span>Which computers does Coodoo run on?</span></summary>
+          <p><span>macOS (Apple silicon and Intel) and Windows (x64 and ARM).</span></p>
         </details>
         <details>
-          <summary><span lang="en">Is it safe to let AI work on its own?</span><span lang="nl">Is het veilig om AI zelfstandig te laten werken?</span></summary>
-          <p><span lang="en">Coodoo has safety rules that are always on, such as never deleting your repository or rewriting history, and keeping your keys secret. They limit the risks but cannot rule them out: AI can make mistakes. Read the <a href="disclaimer.html">disclaimer and the risks of AI</a>.</span><span lang="nl">Coodoo heeft veiligheidsregels die altijd aanstaan, zoals nooit je repository verwijderen of de geschiedenis herschrijven, en je sleutels geheimhouden. Die beperken de risico’s, maar kunnen ze niet uitsluiten: AI kan fouten maken. Lees de <a href="disclaimer.html">disclaimer en de risico’s van AI</a>.</span></p>
+          <summary><span>Is it safe to let AI work on its own?</span></summary>
+          <p><span>Coodoo has safety rules that are always on, such as never deleting your repository or rewriting history, and keeping your keys secret. They limit the risks but cannot rule them out: AI can make mistakes. Read the <a href="disclaimer.html">disclaimer and the risks of AI</a>.</span></p>
         </details>
       </div>
     </div>
@@ -395,39 +394,39 @@
   <section id="price" class="alt">
     <div class="wrap">
       <div style="text-align:center">
-        <h2><span lang="en">One license, one price.</span><span lang="nl">Eén licentie, één prijs.</span></h2>
-        <p class="intro" style="margin:0 auto 36px"><span lang="en">Download Coodoo for free; to use it you need a license.</span><span lang="nl">Coodoo downloaden is gratis; om het te gebruiken heb je een licentie nodig.</span></p>
+        <h2><span>One license, one price.</span></h2>
+        <p class="intro" style="margin:0 auto 36px"><span>Download Coodoo for free; to use it you need a license.</span></p>
       </div>
       <div class="price">
-        <div class="amount"><span lang="en">€19.99</span><span lang="nl">€19,99</span></div>
-        <div class="per"><span lang="en">per year, excl. VAT</span><span lang="nl">per jaar, excl. btw</span></div>
+        <div class="amount"><span>€19.99</span></div>
+        <div class="per"><span>per year, excl. VAT</span></div>
         <ul>
-          <li><span lang="en">Every feature: the AI team, the autopilot, the GitHub flow and the safety rules</span><span lang="nl">Alles erin: het AI-team, de autopilot, de GitHub-flow en de veiligheidsregels</span></li>
-          <li><span lang="en">Every update while your license is valid</span><span lang="nl">Alle updates zolang je licentie geldig is</span></li>
-          <li><span lang="en">Mac and Windows</span><span lang="nl">Mac en Windows</span></li>
-          <li><span lang="en">A one-off payment: nothing renews by itself</span><span lang="nl">Eén keer betalen: er loopt niets vanzelf door</span></li>
-          <li class="not"><span lang="en">Not included: your AI subscription (Claude or ChatGPT)</span><span lang="nl">Niet inbegrepen: je AI-abonnement (Claude of ChatGPT)</span></li>
+          <li><span>Every feature: the AI team, the autopilot, the GitHub flow and the safety rules</span></li>
+          <li><span>Every update while your license is valid</span></li>
+          <li><span>Mac and Windows</span></li>
+          <li><span>A one-off payment: nothing renews by itself</span></li>
+          <li class="not"><span>Not included: your AI subscription (Claude or ChatGPT)</span></li>
         </ul>
-        <a class="btn primary" href="https://buy.stripe.com/fZu7sM7wagEY8AN2yd1oI00" rel="noopener"><span lang="en">Buy a license</span><span lang="nl">Licentie kopen</span></a>
-        <div class="fine"><span lang="en">You pay securely through Stripe. Your AI subscription with Anthropic or OpenAI is separate and not part of this price.</span><span lang="nl">Je betaalt veilig via Stripe. Je AI-abonnement bij Anthropic of OpenAI staat daar los van en zit niet in deze prijs.</span></div>
+        <a class="btn primary" href="https://buy.stripe.com/fZu7sM7wagEY8AN2yd1oI00" rel="noopener"><span>Buy a license</span></a>
+        <div class="fine"><span>You pay securely through Stripe. Your AI subscription with Anthropic or OpenAI is separate and not part of this price.</span></div>
       </div>
     </div>
   </section>
 
   <section id="download" class="download">
     <div class="wrap">
-      <img src="assets/logo.png" alt="" width="56" height="56">
-      <h2><span lang="en">Download Coodoo</span><span lang="nl">Download Coodoo</span></h2>
-      <div class="meta" data-version><span lang="en">The latest version</span><span lang="nl">De nieuwste versie</span></div>
+      <img src="/assets/logo.png" alt="" width="56" height="56">
+      <h2><span>Download Coodoo</span></h2>
+      <div class="meta" data-version><span>The latest version</span></div>
       <div class="dl">
         <a href="https://github.com/CentreBrain/coodoo/releases/latest" data-asset="arm64.dmg" data-os="mac">
-          <b><span lang="en">Mac with Apple silicon</span><span lang="nl">Mac met Apple silicon</span></b>
-          <span>M1, M2, M3, M4 <span lang="en">and newer</span><span lang="nl">en nieuwer</span></span>
+          <b><span>Mac with Apple silicon</span></b>
+          <span>M1, M2, M3, M4 <span>and newer</span></span>
           <span class="file">.dmg</span>
         </a>
         <a href="https://github.com/CentreBrain/coodoo/releases/latest" data-asset="intel.dmg" data-os="mac">
-          <b><span lang="en">Mac with Intel</span><span lang="nl">Mac met Intel</span></b>
-          <span><span lang="en">Older Macs</span><span lang="nl">Oudere Macs</span></span>
+          <b><span>Mac with Intel</span></b>
+          <span><span>Older Macs</span></span>
           <span class="file">.dmg</span>
         </a>
         <a href="https://github.com/CentreBrain/coodoo/releases/latest" data-asset="exe" data-os="win">
@@ -437,12 +436,11 @@
         </a>
       </div>
       <p class="note">
-        <span lang="en"><b>On a Mac</b>, Coodoo is signed and notarized by Apple: it opens right away. <b>First time on Windows?</b> If Windows says it protected your PC, choose More info → Run anyway. Updates come in by themselves after that.</span>
-        <span lang="nl"><b>Op een Mac</b> is Coodoo ondertekend en door Apple gecontroleerd: hij opent meteen. <b>Eerste keer op Windows?</b> Zegt Windows dat het je pc heeft beschermd, kies dan Meer informatie → Toch uitvoeren. Daarna komen updates vanzelf binnen.</span>
+        <span><b>On a Mac</b>, Coodoo is signed and notarized by Apple: it opens right away. <b>First time on Windows?</b> If Windows says it protected your PC, choose More info → Run anyway. Updates come in by themselves after that.</span>
       </p>
       <div class="cta" style="margin-top:22px">
-        <a class="btn" href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Read the manual</span><span lang="nl">Lees de handleiding</span></a>
-        <a class="btn" href="https://github.com/CentreBrain/coodoo/releases"><span lang="en">All versions</span><span lang="nl">Alle versies</span></a>
+        <a class="btn" href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Read the manual</span></a>
+        <a class="btn" href="https://github.com/CentreBrain/coodoo/releases"><span>All versions</span></a>
       </div>
     </div>
   </section>
@@ -450,42 +448,34 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#" style="font-size:15px"><img src="assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
+    <a class="brand" href="./" style="font-size:15px"><img src="/assets/logo.png" alt="" style="width:24px;height:24px">Coodoo</a>
     <span>© <span data-year>2026</span> CentreBrain</span>
     <div class="links">
-      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo" data-manual><span lang="en">Manual</span><span lang="nl">Handleiding</span></a>
-      <a href="https://github.com/CentreBrain/coodoo/releases"><span lang="en">Releases</span><span lang="nl">Versies</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo"><span>Manual</span></a>
+      <a href="https://github.com/CentreBrain/coodoo/releases"><span>Releases</span></a>
       <a href="https://github.com/CentreBrain/coodoo">GitHub</a>
-      <a href="disclaimer.html"><span lang="en">Disclaimer &amp; AI risks</span><span lang="nl">Disclaimer &amp; AI-risico’s</span></a>
+      <a href="disclaimer.html"><span>Disclaimer &amp; AI risks</span></a>
     </div>
-    <div class="fine"><span lang="en">AI can make mistakes: check what Coodoo makes before you use it. Coodoo and CentreBrain are not liable for what the AI does or makes (<a href="disclaimer.html">disclaimer</a>). </span><span lang="nl">AI kan fouten maken: controleer wat Coodoo maakt voordat je het gebruikt. Coodoo en CentreBrain zijn niet aansprakelijk voor wat de AI doet of maakt (<a href="disclaimer.html">disclaimer</a>). </span><span lang="en">Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.</span><span lang="nl">Coodoo is niet verbonden aan Anthropic of OpenAI. Claude Code is een product van Anthropic; Codex is een product van OpenAI.</span></div>
+    <div class="fine"><span>AI can make mistakes: check what Coodoo makes before you use it. Coodoo and CentreBrain are not liable for what the AI does or makes (<a href="disclaimer.html">disclaimer</a>). </span><span>Coodoo is not affiliated with Anthropic or OpenAI. Claude Code is a product of Anthropic; Codex is a product of OpenAI.</span></div>
   </div>
 </footer>
 
 <script>
-  // language: the visitor's choice, else the browser's language
-  const MANUAL = { en: 'https://github.com/CentreBrain/coodoo/wiki/Welcome-to-Coodoo', nl: 'https://github.com/CentreBrain/coodoo/wiki/Welkom-bij-Coodoo-(NL)' }
-  const PAGE = {
-    en: { title: 'Coodoo · Your own AI software team, on your computer', description: 'Coodoo is an AI software team on your own computer. Describe your idea in plain words; AI agents build, test and review it and put it on GitHub. Works with Claude Code and Codex (your own subscription, not included).' },
-    nl: { title: 'Coodoo · Je eigen AI-softwareteam, op je eigen computer', description: 'Coodoo is een AI-softwareteam op je eigen computer. Beschrijf je idee in gewone woorden; AI-agents bouwen, testen en reviewen het en zetten het op GitHub. Werkt met Claude Code en Codex (je eigen abonnement, niet inbegrepen).' }
-  }
-  function setLang(lang) {
-    document.documentElement.dataset.lang = lang
-    document.documentElement.lang = lang
-    document.querySelectorAll('.lang button').forEach((b) => b.classList.toggle('on', b.dataset.set === lang))
-    document.querySelectorAll('[data-manual]').forEach((a) => (a.href = MANUAL[lang]))
-    const page = PAGE[lang]
-    if (page) {
-      document.title = page.title
-      document.querySelector('meta[name="description"]').setAttribute('content', page.description)
-    }
-    try { localStorage.setItem('coodoo-lang', lang) } catch {}
-  }
-  let saved = null
-  try { saved = localStorage.getItem('coodoo-lang') } catch {}
-  setLang(saved || ((navigator.language || '').toLowerCase().startsWith('nl') ? 'nl' : 'en'))
-  document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.set)))
+  const T = {"version":"Version {v} · {date}","versionLine":"Version {v} · for macOS and Windows","date":"en-GB"}
   document.querySelector('[data-year]').textContent = new Date().getFullYear()
+  // a language the visitor picks is remembered
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    try { localStorage.setItem('coodoo-lang', a.dataset.langLink) } catch {}
+  }))
+  // the first visit in another language: once to that language's page (a choice made before always wins)
+  ;(() => {
+    let saved = null
+    try { saved = localStorage.getItem('coodoo-lang') } catch {}
+    if (saved === 'en' || document.referrer.startsWith(location.origin)) return
+    const want = saved || (navigator.language || '').slice(0, 2).toLowerCase()
+    const to = [{"code":"nl","path":"/nl/"}].find((o) => o.code === want)
+    if (to) location.replace(to.path + location.pathname.split('/').pop() + location.hash)
+  })()
 
   // this visitor's computer goes first
   const ua = navigator.userAgent
@@ -514,12 +504,9 @@
         a.href = f.browser_download_url
         a.querySelector('.file').textContent = `${f.name} · ${Math.round(f.size / 1048576)} MB`
       })
-      const date = new Date(rel.published_at)
-      document.querySelector('[data-version]').innerHTML =
-        `<span lang="en">Version ${v} · ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>` +
-        `<span lang="nl">Versie ${v} · ${date.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}</span>`
-      document.querySelector('[data-version-line]').innerHTML =
-        `<span lang="en">Version ${v} · for macOS and Windows</span><span lang="nl">Versie ${v} · voor macOS en Windows</span>`
+      const date = new Date(rel.published_at).toLocaleDateString(T.date, { day: 'numeric', month: 'long', year: 'numeric' })
+      document.querySelector('[data-version]').textContent = T.version.replace('{v}', v).replace('{date}', date)
+      document.querySelector('[data-version-line]').textContent = T.versionLine.replace('{v}', v)
       // the big button downloads straight away for Windows; on a Mac the choice between chips stays below
       if (os === 'win' && files.exe) document.querySelector('[data-hero-download]').href = files.exe.browser_download_url
     })
